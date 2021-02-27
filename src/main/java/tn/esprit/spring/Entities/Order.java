@@ -40,6 +40,9 @@ public class Order implements Serializable {
 	@OneToOne
 	private Bill bill;
 	
+	@ManyToOne
+	private User user ;
+	
 	public Order(Long id, Date date, String adress, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
 			List<Complaint> complaints) {
 		super();

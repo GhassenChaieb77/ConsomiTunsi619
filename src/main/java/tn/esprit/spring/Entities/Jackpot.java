@@ -2,13 +2,17 @@ package tn.esprit.spring.Entities;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 
@@ -66,4 +70,7 @@ public class Jackpot implements Serializable {
 		jackpotsNum = jackpotsNum;
 	}
 	
+	@ManyToMany	(mappedBy="jackpots", 
+			cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	private List<User> users = new ArrayList<>();
 }

@@ -1,14 +1,21 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,7 +47,9 @@ public class User implements Serializable{
     private int telephone;
     @Column(name="Balance")
     private float balance;
-
+    
+    @Column(name="Gender")
+    private String gender;
     
 	public User() {
 		
@@ -73,8 +82,6 @@ public class User implements Serializable{
 
 
 
-
-
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
@@ -96,8 +103,6 @@ public class User implements Serializable{
 	public void setBalance(float balance) {
 		this.balance = balance;
 	}
-
-
 
 
 
@@ -167,8 +172,67 @@ public class User implements Serializable{
 		this.password = password;
 	} 
 	
+	@ManyToMany	
+	private List<Jackpot> jackpots = new ArrayList<>();
     
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+	private List<Order> orders = new ArrayList<>();
     
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+	private List<Comment> comments = new ArrayList<>();
+
+	public String getGender() {
+		return gender;
+	}
+
+
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+
+
+	public List<Jackpot> getJackpots() {
+		return jackpots;
+	}
+
+
+
+
+	public void setJackpots(List<Jackpot> jackpots) {
+		this.jackpots = jackpots;
+	}
+
+
+
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+
+
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+
+
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+
+
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 	
 	
 }
