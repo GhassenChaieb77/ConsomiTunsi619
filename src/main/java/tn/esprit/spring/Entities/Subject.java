@@ -1,28 +1,43 @@
 package tn.esprit.spring.Entities;
 
+
+import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+public class Subject implements Serializable {
 
-public class Subject {
-
-	public int idsubject;
-	public String title;
-	public String Content;
-	public int rating;
-	public int likes ;
-	public int dislikes;
-	public Date date;
-	public int getIdsubject() {
-		return idsubject;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	int id ;
+	
+	@Column(name="Title")
+	String title ;
+	@Column(name="Content")
+	String content;
+	@Column(name="Rating")
+	int rating;
+	@Column(name="Likes")
+	int likes;
+	@Column(name="disikes")
+	int dislikes;
+	@Temporal(TemporalType.DATE)
+    Date date;
+	public int getId() {
+		return id;
 	}
-	public void setIdsubject(int idsubject) {
-		this.idsubject = idsubject;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -31,10 +46,10 @@ public class Subject {
 		this.title = title;
 	}
 	public String getContent() {
-		return Content;
+		return content;
 	}
 	public void setContent(String content) {
-		Content = content;
+		this.content = content;
 	}
 	public int getRating() {
 		return rating;
@@ -60,21 +75,6 @@ public class Subject {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Subject(int idsubject, String title, String content, int rating, int likes, int dislikes, Date date) {
-		super();
-		this.idsubject = idsubject;
-		this.title = title;
-		Content = content;
-		this.rating = rating;
-		this.likes = likes;
-		this.dislikes = dislikes;
-		this.date = date;
-	}
-	public Subject() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
 	
 	
 }
