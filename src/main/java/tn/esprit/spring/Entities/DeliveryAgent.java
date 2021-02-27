@@ -1,10 +1,19 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 @Entity
 public class DeliveryAgent implements Serializable {
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String firstname;
@@ -19,16 +28,22 @@ public class DeliveryAgent implements Serializable {
 	
 	private float traveledpath;
 
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="deliveryagent")
+	private List<Order> orders;
+	
+	
+
 	public DeliveryAgent(Long id, String firstname, String lastname, boolean isavailable, Long phonenumber,
-			String position, float traveledpath) {
+			String position, float traveledpath, List<Order> orders) {
 		super();
-		this.id = id;
+		this.id=id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.isavailable = isavailable;
 		this.phonenumber = phonenumber;
 		this.position = position;
 		this.traveledpath = traveledpath;
+		this.orders = orders;
 	}
 
 	public Long getId() {
@@ -85,6 +100,14 @@ public class DeliveryAgent implements Serializable {
 
 	public void setTraveledpath(float traveledpath) {
 		this.traveledpath = traveledpath;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 	
 }
