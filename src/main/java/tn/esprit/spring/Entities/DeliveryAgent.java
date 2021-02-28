@@ -33,10 +33,9 @@ public class DeliveryAgent implements Serializable {
 	
 	
 
-	public DeliveryAgent(Long id, String firstname, String lastname, boolean isavailable, Long phonenumber,
+	public DeliveryAgent(String firstname, String lastname, boolean isavailable, Long phonenumber,
 			String position, float traveledpath, List<Order> orders) {
 		super();
-		this.id=id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.isavailable = isavailable;

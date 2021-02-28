@@ -24,11 +24,11 @@ public class Event implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	int id;
+	private Long id;
 	@Column(name="Name")
-	String name ;
+	private String name ;
 	@Column(name="Place")
-	String place ;
+	private String place ;
 	@Column(name="Participants_nbrs")
 	int participants ;
 	
@@ -37,13 +37,31 @@ public class Event implements Serializable {
 	
 	@OneToMany(mappedBy="event", 
 			cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	private List<Donation> donations = new ArrayList<>();
+	private List<Donation> donations;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="event",fetch=FetchType.EAGER)
+	private List<Publicity> publicities;
+	
+	
+	public Event(String name, String place, int participants, Jackpot jackpot, List<Donation> donations,
+			List<Publicity> publicities) {
+		super();
+		this.name = name;
+		this.place = place;
+		this.participants = participants;
+		this.jackpot = jackpot;
+		this.donations = donations;
+		this.publicities = publicities;
+	}
 
-	public int getId() {
+	
+	
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -87,6 +105,13 @@ public class Event implements Serializable {
 		this.donations = donations;
 	}
 	
-	
+	public List<Publicity> getPublicities() {
+		return publicities;
+	}
+
+	public void setPublicities(List<Publicity> publicities) {
+		this.publicities = publicities;
+	}
+
     
 }

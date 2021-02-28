@@ -20,17 +20,17 @@ public class Comment  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	int id ;
+	private Long id ;
 	
 	@Column(name="Comment")
 	String comment; 
 	@Column(name="LikesComment")
-	int likesComment ;
+	private int likesComment ;
 	@Column(name="DislikesComment")
-	int dislikesComment;
+	private int dislikesComment;
 	
 	@Temporal(TemporalType.DATE)
-	Date date;
+	private Date date;
 	
 	
 	@ManyToOne
@@ -39,11 +39,22 @@ public class Comment  implements Serializable {
 	@ManyToOne
 	private User user ;
 
-	public int getId() {
+	
+	public Comment(String comment, int likesComment, int dislikesComment, Date date, Subject subject, User user) {
+		super();
+		this.comment = comment;
+		this.likesComment = likesComment;
+		this.dislikesComment = dislikesComment;
+		this.date = date;
+		this.subject = subject;
+		this.user = user;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

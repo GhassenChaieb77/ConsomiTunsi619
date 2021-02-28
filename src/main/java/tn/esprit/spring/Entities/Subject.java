@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,24 +25,44 @@ public class Subject implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	int id ;
+	private Long id ;
 	
 	@Column(name="Title")
-	String title ;
+	private String title ;
 	@Column(name="Content")
-	String content;
+	private String content;
 	@Column(name="Rating")
-	int rating;
+	private int rating;
 	@Column(name="Likes")
-	int likes;
+	private int likes;
 	@Column(name="disikes")
-	int dislikes;
+	private int dislikes;
 	@Temporal(TemporalType.DATE)
-    Date date;
-	public int getId() {
+	private Date date;
+	
+	@OneToOne(mappedBy="subject")
+	private Product product;
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="subject")
+	private List<Comment> comments;
+	
+	
+	public Subject(String title, String content, int rating, int likes, int dislikes, Date date, Product product,
+			List<Comment> comments) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.rating = rating;
+		this.likes = likes;
+		this.dislikes = dislikes;
+		this.date = date;
+		this.product = product;
+		this.comments = comments;
+	}
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTitle() {
@@ -80,10 +101,21 @@ public class Subject implements Serializable {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	public List<Comment> getComments() {
+		return comments;
+	}
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 	
 
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="subject")
-	private List<Comment> comments = new ArrayList<>();
+	
 
 	
 }

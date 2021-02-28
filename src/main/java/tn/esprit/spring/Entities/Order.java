@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -43,16 +44,23 @@ public class Order implements Serializable {
 	@ManyToOne
 	private User user ;
 	
-	public Order(Long id, Date date, String adress, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
-			List<Complaint> complaints) {
+	@OneToOne
+	private Cart cart;
+	
+	
+
+	public Order(Date date, String adress, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
+			List<Complaint> complaints, Bill bill, User user, Cart cart) {
 		super();
-		this.id = id;
 		this.date = date;
 		this.adress = adress;
 		this.totalprice = totalprice;
 		this.paymentmethod = paymentmethod;
 		this.deliveryagent = deliveryagent;
 		this.complaints = complaints;
+		this.bill = bill;
+		this.user = user;
+		this.cart = cart;
 	}
 
 	public Long getId() {
@@ -109,6 +117,30 @@ public class Order implements Serializable {
 
 	public void setComplaints(List<Complaint> complaints) {
 		this.complaints = complaints;
+	}
+
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 	
 	

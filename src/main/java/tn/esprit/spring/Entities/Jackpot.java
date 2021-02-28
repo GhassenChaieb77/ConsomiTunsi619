@@ -26,18 +26,31 @@ public class Jackpot implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	int id ;
+	private Long id ;
 	
 	@Column(name="Amount")
-	float amount ;
+	private float amount ;
 	
 	@Column(name="JackpotsNum")
-	int jackpotsNum ;
+	private int jackpotsNum ;
 	
 	@OneToOne(mappedBy="jackpot",cascade = CascadeType.ALL)
 	private Event event;
 
+	@ManyToMany	(mappedBy="jackpots", 
+			cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	private List<User> users;
 	
+	
+	
+	public Jackpot(float amount, int jackpotsNum, Event event, List<User> users) {
+		super();
+		this.amount = amount;
+		this.jackpotsNum = jackpotsNum;
+		this.event = event;
+		this.users = users;
+	}
+
 	public Event getEvent() {
 		return event;
 	}
@@ -46,11 +59,11 @@ public class Jackpot implements Serializable {
 		this.event = event;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -67,10 +80,17 @@ public class Jackpot implements Serializable {
 	}
 	
 	public void setJackpotsNum(int jackpotsNum) {
-		jackpotsNum = jackpotsNum;
+		this.jackpotsNum = jackpotsNum;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 	
-	@ManyToMany	(mappedBy="jackpots", 
-			cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	private List<User> users = new ArrayList<>();
+	
+
 }

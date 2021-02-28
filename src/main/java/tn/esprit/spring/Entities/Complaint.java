@@ -19,14 +19,15 @@ public class Complaint implements Serializable {
 	
 	private String content;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	Order order;
+	@ManyToOne
+	private Order order;
 
 	
 
-	public Complaint(Long id, String type, String content, Order order) {
+	
+
+	public Complaint(String type, String content, Order order) {
 		super();
-		this.id = id;
 		this.type = type;
 		this.content = content;
 		this.order = order;
@@ -35,6 +36,7 @@ public class Complaint implements Serializable {
 	public Long getId() {
 		return id;
 	}
+	
 
 	public void setId(Long id) {
 		this.id = id;

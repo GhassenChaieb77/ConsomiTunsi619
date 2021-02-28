@@ -51,17 +51,25 @@ public class User implements Serializable{
     @Column(name="Gender")
     private String gender;
     
-	public User() {
-		
-	}
-	
-	
+    @ManyToMany	
+	private List<Jackpot> jackpots = new ArrayList<>();
+    
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+	private List<Order> orders = new ArrayList<>();
+    
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+	private List<Comment> comments = new ArrayList<>();
+
+
 	
 
-	public User(int id, String firstName, String lastName, Date date, tn.esprit.spring.Entities.Role role,
-			@Email String email, String password, int telephone, float balance) {
+
+
+
+	public User(String firstName, String lastName, Date date, tn.esprit.spring.Entities.Role role, @Email String email,
+			String password, int telephone, float balance, String gender, List<Jackpot> jackpots, List<Order> orders,
+			List<Comment> comments) {
 		super();
-		this.id = id;
 		FirstName = firstName;
 		LastName = lastName;
 		this.date = date;
@@ -70,7 +78,154 @@ public class User implements Serializable{
 		this.password = password;
 		this.telephone = telephone;
 		this.balance = balance;
+		this.gender = gender;
+		this.jackpots = jackpots;
+		this.orders = orders;
+		this.comments = comments;
 	}
+
+
+
+
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
+
+
+
+	public String getFirstName() {
+		return FirstName;
+	}
+
+
+
+
+
+
+
+	public void setFirstName(String firstName) {
+		FirstName = firstName;
+	}
+
+
+
+
+
+
+
+	public String getLastName() {
+		return LastName;
+	}
+
+
+
+
+
+
+
+	public void setLastName(String lastName) {
+		LastName = lastName;
+	}
+
+
+
+
+
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+
+
+
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+
+
+
+
+
+	public Role getRole() {
+		return Role;
+	}
+
+
+
+
+
+
+
+	public void setRole(Role role) {
+		Role = role;
+	}
+
+
+
+
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
 
 
 
@@ -82,9 +237,13 @@ public class User implements Serializable{
 
 
 
+
+
+
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
+
 
 
 
@@ -100,6 +259,7 @@ public class User implements Serializable{
 
 
 
+
 	public void setBalance(float balance) {
 		this.balance = balance;
 	}
@@ -107,83 +267,15 @@ public class User implements Serializable{
 
 
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getFirstName() {
-		return FirstName;
-	}
-
-	public void setFirstName(String firstName) {
-		FirstName = firstName;
-	}
-
-	public String getLastName() {
-		return LastName;
-	}
-
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public Role getRole() {
-		return Role;
-	}
-
-	public void setRole(Role role) {
-		Role = role;
-	}
 
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	} 
-	
-	@ManyToMany	
-	private List<Jackpot> jackpots = new ArrayList<>();
-    
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
-	private List<Order> orders = new ArrayList<>();
-    
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
-	private List<Comment> comments = new ArrayList<>();
 
 	public String getGender() {
 		return gender;
 	}
+
+
+
 
 
 
@@ -195,9 +287,15 @@ public class User implements Serializable{
 
 
 
+
+
+
 	public List<Jackpot> getJackpots() {
 		return jackpots;
 	}
+
+
+
 
 
 
@@ -209,9 +307,15 @@ public class User implements Serializable{
 
 
 
+
+
+
 	public List<Order> getOrders() {
 		return orders;
 	}
+
+
+
 
 
 
@@ -223,6 +327,9 @@ public class User implements Serializable{
 
 
 
+
+
+
 	public List<Comment> getComments() {
 		return comments;
 	}
@@ -230,9 +337,13 @@ public class User implements Serializable{
 
 
 
+
+
+
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
+
 	
 	
 }

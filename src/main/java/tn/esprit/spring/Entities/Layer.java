@@ -18,27 +18,25 @@ public class Layer implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="USER_ID")
-	private int id;
+	private Long id;
 	
 	@Column(name="capacity")
 	private int capacity;
-
-	@OneToOne
-	private Stock stock ;
 	
+	@OneToOne(mappedBy="layer")
+	private Category Category;
 	
-	
-	public Layer(int id, int capacity) {
+	public Layer(int capacity, tn.esprit.spring.Entities.Category category) {
 		super();
-		this.id = id;
 		this.capacity = capacity;
+		Category = category;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -49,6 +47,15 @@ public class Layer implements Serializable{
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+
+	public Category getCategory() {
+		return Category;
+	}
+
+	public void setCategory(Category category) {
+		Category = category;
+	}
+	
 	
 	
 	
