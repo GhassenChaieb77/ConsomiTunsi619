@@ -45,8 +45,8 @@ public class Product implements Serializable {
 	@ManyToOne
 	private Cart cart;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Donation> donations;
+	@ManyToOne
+	private Donation donation;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="product")
 	private List<Publicity> publicities;
@@ -59,7 +59,7 @@ public class Product implements Serializable {
 	
 	
 	public Product(String name, float price, String picture, int code, int quantity, Category category, Cart cart,
-			List<Donation> donations, List<Publicity> publicities, Subject subject, List<Stock> stocks) {
+			Donation donation, List<Publicity> publicities, Subject subject, List<Stock> stocks) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -68,7 +68,7 @@ public class Product implements Serializable {
 		this.quantity = quantity;
 		this.category = category;
 		this.cart = cart;
-		this.donations = donations;
+		this.donation = donation;
 		this.publicities = publicities;
 		this.subject = subject;
 		this.stocks = stocks;
@@ -125,12 +125,14 @@ public class Product implements Serializable {
 		this.cart = cart;
 	}
 
-	public List<Donation> getDonations() {
-		return donations;
+	
+
+	public Donation getDonation() {
+		return donation;
 	}
 
-	public void setDonations(List<Donation> donations) {
-		this.donations = donations;
+	public void setDonation(Donation donation) {
+		this.donation = donation;
 	}
 
 	public List<Publicity> getPublicities() {
