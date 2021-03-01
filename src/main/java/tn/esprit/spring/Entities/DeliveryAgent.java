@@ -1,6 +1,7 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
