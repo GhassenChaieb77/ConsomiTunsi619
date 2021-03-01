@@ -22,10 +22,13 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 
 @Entity
-@Table(name="USER")
 public class User implements Serializable{
 	
-	private static final long serialVersionUID = 4659010424724882893L;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="USER_ID")
@@ -54,10 +57,10 @@ public class User implements Serializable{
     @ManyToMany	
 	private List<Jackpot> jackpots = new ArrayList<>();
     
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
 	private List<Order> orders = new ArrayList<>();
     
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
 	private List<Comment> comments = new ArrayList<>();
 
 

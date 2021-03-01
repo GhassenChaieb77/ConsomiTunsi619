@@ -38,7 +38,7 @@ public class Jackpot implements Serializable {
 	private Event event;
 
 	@ManyToMany	(mappedBy="jackpots", 
-			cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+			cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<User> users;
 	
 	

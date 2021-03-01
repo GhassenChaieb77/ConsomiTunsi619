@@ -31,7 +31,7 @@ public class Donation implements Serializable {
 	@ManyToOne
 	private Event event ;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="donation")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="donation")
 	private List<Product> products;
 	
 	

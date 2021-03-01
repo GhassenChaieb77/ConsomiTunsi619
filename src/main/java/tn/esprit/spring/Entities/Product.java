@@ -1,11 +1,12 @@
-package tn.esprit.spring.Entities;
 
+package tn.esprit.spring.Entities;
 import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,8 +17,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Product")
 public class Product implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,7 +53,7 @@ public class Product implements Serializable {
 	@ManyToOne
 	private Donation donation;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="product")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="product",fetch=FetchType.LAZY)
 	private List<Publicity> publicities;
 	
 	@OneToOne

@@ -18,10 +18,13 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 	
 	@Entity
-	@Table(name="Stock")
 	public class Stock implements Serializable {
 			
-		private static final long serialVersionUID = 4659010424724882893L;
+	
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		@Id
 		@GeneratedValue (strategy = GenerationType.IDENTITY)
 		@Column(name="Stock_id")

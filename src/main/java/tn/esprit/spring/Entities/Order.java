@@ -20,6 +20,10 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Order implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -36,7 +40,7 @@ public class Order implements Serializable {
 	DeliveryAgent deliveryagent;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="order")
-	private List<Complaint> complaints;
+	private Set<Complaint> complaints;
 	
 	@OneToOne
 	private Bill bill;
@@ -50,7 +54,7 @@ public class Order implements Serializable {
 	
 
 	public Order(Date date, String adress, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
-			List<Complaint> complaints, Bill bill, User user, Cart cart) {
+			Set<Complaint> complaints, Bill bill, User user, Cart cart) {
 		super();
 		this.date = date;
 		this.adress = adress;
@@ -111,11 +115,11 @@ public class Order implements Serializable {
 		this.deliveryagent = deliveryagent;
 	}
 
-	public List<Complaint> getComplaints() {
+	public Set<Complaint> getComplaints() {
 		return complaints;
 	}
 
-	public void setComplaints(List<Complaint> complaints) {
+	public void setComplaints(Set<Complaint> complaints) {
 		this.complaints = complaints;
 	}
 

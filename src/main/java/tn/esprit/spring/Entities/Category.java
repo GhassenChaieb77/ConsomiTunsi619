@@ -11,12 +11,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
+
 
 @Entity
-@Table(name = "Category")
 public class Category implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
@@ -25,7 +29,7 @@ public class Category implements Serializable {
 	@Column(name="name")
 	private String name;
 	
-	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="category",fetch=FetchType.LAZY)
 	private List<Product> products;
 	
 	@OneToOne

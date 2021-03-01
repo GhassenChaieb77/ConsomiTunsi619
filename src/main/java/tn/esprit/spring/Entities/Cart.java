@@ -2,6 +2,7 @@ package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,6 +15,11 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Cart implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -23,12 +29,12 @@ public class Cart implements Serializable {
 	private float prodpricetotal;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="cart",fetch=FetchType.EAGER)
-	private List<Product> products;
+	private Set<Product> products;
 	
 	@OneToOne(mappedBy="cart")
 	private Order order;
 
-	public Cart(int quantity, float prodpricetotal, List<Product> products, Order order) {
+	public Cart(int quantity, float prodpricetotal, Set<Product> products, Order order) {
 		super();
 		this.quantity = quantity;
 		this.prodpricetotal = prodpricetotal;
@@ -60,11 +66,11 @@ public class Cart implements Serializable {
 		this.prodpricetotal = prodpricetotal;
 	}
 
-	public List<Product> getProducts() {
+	public Set<Product> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Product> products) {
+	public void setProducts(Set<Product> products) {
 		this.products = products;
 	}
 

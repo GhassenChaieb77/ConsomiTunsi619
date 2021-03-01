@@ -12,6 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 @Entity
 public class DeliveryAgent implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,7 +33,7 @@ public class DeliveryAgent implements Serializable {
 	
 	private float traveledpath;
 
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="deliveryagent")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="deliveryagent")
 	private List<Order> orders;
 	
 	

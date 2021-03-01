@@ -36,7 +36,7 @@ public class Event implements Serializable {
 	private Jackpot jackpot;
 	
 	@OneToMany(mappedBy="event", 
-			cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+			cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Donation> donations;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="event",fetch=FetchType.EAGER)
