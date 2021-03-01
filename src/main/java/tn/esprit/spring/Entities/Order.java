@@ -6,19 +6,21 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name="commande")
 public class Order implements Serializable {
 	/**
 	 * 
@@ -30,19 +32,22 @@ public class Order implements Serializable {
 	@Temporal (TemporalType.DATE)
 	private Date date;
 	
+	@Column(name="adress")
 	private String adress;
 	
+	@Column(name="totalprice")
 	private float totalprice;
 	
+	@Column(name="paymentmethod")
 	private String paymentmethod;
 	
 	@ManyToOne
 	DeliveryAgent deliveryagent;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="order")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="order")
 	private Set<Complaint> complaints;
 	
-	@OneToOne
+	@OneToOne(mappedBy="order")
 	private Bill bill;
 	
 	@ManyToOne

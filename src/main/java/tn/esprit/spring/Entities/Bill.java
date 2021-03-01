@@ -28,7 +28,7 @@ public class Bill implements Serializable {
 	
 	private float total;
 	
-	@OneToOne(mappedBy="bill")
+	@OneToOne
 	private Order order;
 
 	public Bill(String name, String adress, int quantity, float total, Order order) {
