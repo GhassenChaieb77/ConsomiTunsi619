@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Product implements Serializable {
@@ -62,7 +63,16 @@ public class Product implements Serializable {
 	@ManyToMany(cascade = CascadeType.ALL,mappedBy="products")
 	private List<Stock> stocks;
 	
-	
+	public Product (){};
+	public Product(String name, float price, String picture, int code, int quantity) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.picture = picture;
+		this.code = code;
+		this.quantity = quantity;
+		
+	} 
 	public Product(String name, float price, String picture, int code, int quantity, Category category, Cart cart,
 			Donation donation, List<Publicity> publicities, Subject subject, List<Stock> stocks) {
 		super();

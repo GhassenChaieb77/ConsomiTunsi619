@@ -35,6 +35,13 @@ public class Category implements Serializable {
 	@OneToOne
 	private Layer layer;
 
+	public Category(){};
+	
+	public Category(String name) {
+		super();
+		this.name = name;
+		
+	} 
 	
 	public Category(String name, List<Product> products, Layer layer) {
 		super();
