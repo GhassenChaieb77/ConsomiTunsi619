@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -39,8 +39,11 @@ public class Product implements Serializable {
 	@Column(name="picture")
 	private String picture;
 	
+	
 	@Column(name="code")
-	private int code;
+	@NotBlank(message = "must start with 619 and with 6 numbers")
+    @Pattern(regexp = "619[0-9]{6}")
+	private String code;
 	
 	@Column(name="quantity")
 	private int quantity;
@@ -64,7 +67,7 @@ public class Product implements Serializable {
 	private List<Stock> stocks;
 	
 	public Product (){};
-	public Product(String name, float price, String picture, int code, int quantity) {
+	public Product(String name, float price, String picture, String code, int quantity) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -73,7 +76,7 @@ public class Product implements Serializable {
 		this.quantity = quantity;
 		
 	} 
-	public Product(String name, float price, String picture, int code, int quantity, Category category, Cart cart,
+	public Product(String name, float price, String picture, String code, int quantity, Category category, Cart cart,
 			Donation donation, List<Publicity> publicities, Subject subject, List<Stock> stocks) {
 		super();
 		this.name = name;
@@ -113,10 +116,10 @@ public class Product implements Serializable {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 	public int getQuantity() {

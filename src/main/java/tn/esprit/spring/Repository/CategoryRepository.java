@@ -16,7 +16,7 @@ public interface CategoryRepository extends CrudRepository<Category, Long> {
 	@Query("Select "
 			+ "DISTINCT cat from Category cat "
 			+ "where cat.name=:name")
-	public String getCategotyByNameJPQL(@Param("name") String name);
+	public Category getCategotyByNameJPQL(@Param("name") String name);
 	
 	
 }

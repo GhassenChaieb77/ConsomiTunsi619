@@ -24,9 +24,9 @@ public class CategoryService implements ICategoryService{
 	
 
 	@Override
-	public long addCategory(Category c) {
+	public String addCategory(Category c) {
 		categoryRepo.save(c);
-		return c.getId();
+		return c.getName();
 	}
 
 	@Override
@@ -58,12 +58,6 @@ public class CategoryService implements ICategoryService{
 	}
 
 	@Override
-	public String getCategotyByName(String name) {
-
-      return categoryRepo.getCategotyByNameJPQL(name);
-	}
-
-	@Override
 	public void disaffectCategoryToProduct(long ProcId, long cateId) {
 		Category c = categoryRepo.findById(cateId).get();
 
@@ -78,5 +72,13 @@ public class CategoryService implements ICategoryService{
 			}
 		}
 		
+	}
+
+	@Override
+	public List<Product> getProductsByCategoryName(String name) {
+
+      return categoryRepo.getCategotyByNameJPQL(name).getProducts();
+
+
 	}
 }

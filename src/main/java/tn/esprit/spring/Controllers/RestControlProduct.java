@@ -51,16 +51,16 @@ public class RestControlProduct {
 		//http://localhost:8081/SpringMVC/servlet/deleteProduct/1
 	    @DeleteMapping("/deleteProduct/{idproc}") 
 		@ResponseBody 
-		public void deleteEmployeById(@PathVariable("idproc")long idproc) {
+		public void deleteProductById(@PathVariable("idproc")long idproc) {
 			iprodService.deleteProduct(idproc);
 			
 		}
 	    
-	 // http://localhost:8081/SpringMVC/servlet/UpdateProduct/2
-		@PutMapping(value = "/UpdateProduct/{id}") 
+	 // http://localhost:8081/SpringMVC/servlet/UpdateProduct
+		@PutMapping(value = "/UpdateProduct") 
 		@ResponseBody
-		public void updateProduct(@PathVariable("id") long id) {
-			iprodService.updateProduct(id);
+		public Product updateProduct(@RequestBody Product p) {
+			return iprodService.updateProduct(p);
 			
 		} 
 	    
@@ -88,12 +88,12 @@ public class RestControlProduct {
 			return iprodService.getAllProductByCategoryJPQLId(id);
 		}
 		
-		 //http://localhost:8081/SpringMVC/servlet/getProductByCategoryName/food
-		@GetMapping(value = "/getProductByCategoryName/{name}")
+		 //http://localhost:8081/SpringMVC/servlet/getCategoryByProductId/1
+		@GetMapping(value = "/getCategoryByProductId/{id}")
 	    @ResponseBody
-		public List<Product> getProductByCategoryName(@PathVariable("name") String name) {
+		public String getCategoryByProductId(@PathVariable("id") long id) {
 			
-			return iprodService.getAllProductByCategoryJPQLName(name);
+			return iprodService.getProductCategoryById(id);
 		}
 	    
 /////Category	    
@@ -104,10 +104,10 @@ public class RestControlProduct {
 	 		
 	 		@PostMapping("/addCategory")
 	 		@ResponseBody
-	 		public Category addCat(@RequestBody Category c)
+	 		public String addCategory(@RequestBody Category c)
 	 		{
-	 			icatService.addCategory(c);
-	 			return c;
+	 			return icatService.addCategory(c);
+	 			
 	 		}
 	    
 	  //http://localhost:8081/SpringMVC/servlet/getAllCategories
@@ -116,6 +116,14 @@ public class RestControlProduct {
 			public List<Category> getAllCategories() {
 				
 				return icatService.dispalyCategories();
+			}
+			
+			//http://localhost:8081/SpringMVC/servlet/deleteCategory/1
+		    @DeleteMapping("/deleteCategory/{id}") 
+			@ResponseBody 
+			public void deleteCategoryById(@PathVariable("id")long id) {
+				icatService.deleteCategory(id);
+				
 			}
 	    
 	    
@@ -131,5 +139,14 @@ public class RestControlProduct {
 		public void disaffectCategoryToProduct(@PathVariable("ProcId")long ProcId, @PathVariable("cateId")long cateId)
 		{
 			icatService.disaffectCategoryToProduct(ProcId, cateId);
+		}
+		
+
+		 //http://localhost:8081/SpringMVC/servlet/getProductByCategoryNameJPQL/food
+		@GetMapping(value = "/getProductByCategoryNameJPQL/{name}")
+	    @ResponseBody
+		public List<Product> getProductByCategoryNameJPQL(@PathVariable("name") String name) {
+			
+			return icatService.getProductsByCategoryName(name);
 		}
 }

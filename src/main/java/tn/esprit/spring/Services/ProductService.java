@@ -38,11 +38,10 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public Product updateProduct(long id) {
-		
-		return productRepo.save(productRepo.findById(id).get()) ;
-		
-	}
+    public Product updateProduct(Product p ) {
+        return productRepo.save(p);
+        
+    }
 
 	@Override
 	public String getProductNameById(long id) {
@@ -54,8 +53,8 @@ public class ProductService implements IProductService {
 	@Override
 	public String getProductCategoryById(long id) {
 		
-		productRepo.findById(id).get().getCategory().getName();
-		return null;
+		return productRepo.findById(id).get().getCategory().getName();
+		
 	}
 
 	@Override
