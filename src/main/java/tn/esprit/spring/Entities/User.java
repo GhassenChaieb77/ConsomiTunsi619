@@ -22,6 +22,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 
+
 @Entity
 public class User implements Serializable{
 	
@@ -209,24 +210,6 @@ public class User implements Serializable{
 	}
 
 
-	public User(String firstName, String lastName, Date date, tn.esprit.spring.Entities.Role role, @Email String email,
-			String password, int telephone, float balance, String gender, List<Jackpot> jackpots, List<Order> orders,
-			List<Comment> comments, Cart cart) {
-		super();
-		FirstName = firstName;
-		LastName = lastName;
-		this.date = date;
-		Role = role;
-		this.email = email;
-		this.password = password;
-		this.telephone = telephone;
-		this.balance = balance;
-		this.gender = gender;
-		this.jackpots = jackpots;
-		this.orders = orders;
-		this.comments = comments;
-		this.cart = cart;
-	}
 
 
      
