@@ -107,6 +107,11 @@ public class Comment  implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public Comment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
      
    
 }
