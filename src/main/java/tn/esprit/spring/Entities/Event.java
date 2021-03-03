@@ -25,11 +25,11 @@ public class Event implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="Name")
+
 	private String name ;
-	@Column(name="Place")
+
 	private String place ;
-	@Column(name="Participants_nbrs")
+	
 	int participants ;
 	
 	@OneToOne

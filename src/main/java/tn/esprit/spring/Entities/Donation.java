@@ -25,45 +25,53 @@ public class Donation implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-	@Column(name="QuantityProd")
 	private int quantityProd ;
 	
 	@ManyToOne
 	private Event event ;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="donation")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Product> products;
-	
-	
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getQuantityProd() {
+		return quantityProd;
+	}
+
+	public void setQuantityProd(int quantityProd) {
+		this.quantityProd = quantityProd;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
 	public Donation(int quantityProd, Event event, List<Product> products) {
 		super();
 		this.quantityProd = quantityProd;
 		this.event = event;
 		this.products = products;
 	}
-
-
-	public Event getEvent() {
-		return event;
-	}
-
 	
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public int getQuantityProd() {
-		return quantityProd;
-	}
-	
-	public void setQuantityProd(int quantityProd) {
-		quantityProd = quantityProd;
-	}
-	
+		
 
 }

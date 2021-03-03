@@ -32,13 +32,13 @@ public class Order implements Serializable {
 	@Temporal (TemporalType.DATE)
 	private Date date;
 	
-	@Column(name="adress")
-	private String adress;
+
+	private String address;
 	
-	@Column(name="totalprice")
+
 	private float totalprice;
 	
-	@Column(name="paymentmethod")
+
 	private String paymentmethod;
 	
 	@ManyToOne
@@ -55,22 +55,6 @@ public class Order implements Serializable {
 	
 	@OneToOne
 	private Cart cart;
-	
-	
-
-	public Order(Date date, String adress, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
-			Set<Complaint> complaints, Bill bill, User user, Cart cart) {
-		super();
-		this.date = date;
-		this.adress = adress;
-		this.totalprice = totalprice;
-		this.paymentmethod = paymentmethod;
-		this.deliveryagent = deliveryagent;
-		this.complaints = complaints;
-		this.bill = bill;
-		this.user = user;
-		this.cart = cart;
-	}
 
 	public Long getId() {
 		return id;
@@ -88,12 +72,12 @@ public class Order implements Serializable {
 		this.date = date;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public float getTotalprice() {
@@ -151,6 +135,21 @@ public class Order implements Serializable {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
+
+	public Order(Date date, String address, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
+			Set<Complaint> complaints, Bill bill, User user, Cart cart) {
+		super();
+		this.date = date;
+		this.address = address;
+		this.totalprice = totalprice;
+		this.paymentmethod = paymentmethod;
+		this.deliveryagent = deliveryagent;
+		this.complaints = complaints;
+		this.bill = bill;
+		this.user = user;
+		this.cart = cart;
+	}
+	
 	
 	
 }

@@ -28,19 +28,14 @@ public class Cart implements Serializable {
 	
 	private float prodpricetotal;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="cart",fetch=FetchType.EAGER)
-	private Set<Product> products;
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Product> products;
 	
 	@OneToOne(mappedBy="cart")
 	private Order order;
 
-	public Cart(int quantity, float prodpricetotal, Set<Product> products, Order order) {
-		super();
-		this.quantity = quantity;
-		this.prodpricetotal = prodpricetotal;
-		this.products = products;
-		this.order = order;
-	}
+	@OneToOne
+	private User user;
 
 	public Long getId() {
 		return id;
@@ -66,11 +61,11 @@ public class Cart implements Serializable {
 		this.prodpricetotal = prodpricetotal;
 	}
 
-	public Set<Product> getProducts() {
+	public List<Product> getProducts() {
 		return products;
 	}
 
-	public void setProducts(Set<Product> products) {
+	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 
@@ -81,6 +76,23 @@ public class Cart implements Serializable {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-	
-	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Cart(int quantity, float prodpricetotal, List<Product> products, Order order, User user) {
+		super();
+		this.quantity = quantity;
+		this.prodpricetotal = prodpricetotal;
+		this.products = products;
+		this.order = order;
+		this.user = user;
+	}
+
+
 }

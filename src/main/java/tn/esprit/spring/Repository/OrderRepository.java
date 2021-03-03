@@ -7,5 +7,6 @@ import tn.esprit.spring.Entities.*;
 
 @Repository
 public interface OrderRepository extends CrudRepository<Order, Long> {
+	
 
 }

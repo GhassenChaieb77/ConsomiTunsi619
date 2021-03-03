@@ -24,11 +24,11 @@ public class Comment  implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-	@Column(name="Comment")
+	
 	String comment; 
-	@Column(name="LikesComment")
+
 	private int likesComment ;
-	@Column(name="DislikesComment")
+
 	private int dislikesComment;
 	
 	@Temporal(TemporalType.DATE)
@@ -40,17 +40,6 @@ public class Comment  implements Serializable {
 	
 	@ManyToOne
 	private User user ;
-
-	
-	public Comment(String comment, int likesComment, int dislikesComment, Date date, Subject subject, User user) {
-		super();
-		this.comment = comment;
-		this.likesComment = likesComment;
-		this.dislikesComment = dislikesComment;
-		this.date = date;
-		this.subject = subject;
-		this.user = user;
-	}
 
 	public Long getId() {
 		return id;
@@ -107,6 +96,6 @@ public class Comment  implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-     
-   
+
+
 }

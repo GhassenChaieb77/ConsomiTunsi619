@@ -23,10 +23,10 @@ public class Publicity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+
 	public Long id;
 	
-	@Column(name="name")
+
 	public String name;
 	
 	@Temporal (TemporalType.DATE)
@@ -35,19 +35,19 @@ public class Publicity implements Serializable {
 	@Temporal (TemporalType.DATE)
 	public Date endDate;
 	
-	@Column(name="type")
+
 	public String type;
 	
-	@Column(name="finalViews")
+
 	public int finalViews;
 	
-	@Column(name="age")
+
 	public int age;
 	
-	@Column(name="sex")
+
 	public String sex;
 	
-	@Column(name="saison")
+
 	public String saison;
 	
 	@ManyToOne

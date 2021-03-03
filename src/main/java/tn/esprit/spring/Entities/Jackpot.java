@@ -28,10 +28,10 @@ public class Jackpot implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-	@Column(name="Amount")
+
 	private float amount ;
 	
-	@Column(name="JackpotsNum")
+	
 	private int jackpotsNum ;
 	
 	@OneToOne(mappedBy="jackpot",cascade = CascadeType.ALL)
