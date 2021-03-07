@@ -31,6 +31,14 @@ public class RestControlComment {
 	return list;
     }
     
+    // http://localhost:8081/SpringMVC/servlet/RecentComment
+    @GetMapping("/RecentComment")
+	@ResponseBody
+	public List<Comment> getComments1() {
+	 List<Comment> list = commentService.RecentComment();
+	return list;
+    }  
+    
  // Add comment : http://localhost:8081/SpringMVC/servlet/add-comment
 	@PostMapping("/add-comment")
 	@ResponseBody
@@ -53,7 +61,7 @@ public class RestControlComment {
 	 }
 
 	
-	/*// http://localhost:8081/SpringMVC/servlet/affecterCommentAuser/6/1
+	/*// http://localhost:8081/SpringMVC/servlet/affecterCommentAuser/1/2
     @PutMapping(value = "/affecterCommentAuser/{idcomment}/{iduser}") 
 	public void affecterCommentAuser(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
     	commentService.affecterCommentAuser(commentId, userId);

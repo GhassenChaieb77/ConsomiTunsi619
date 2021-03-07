@@ -172,6 +172,8 @@ public class Product implements Serializable {
 		this.publicities = publicities;
 		this.stocks = stocks;
 	}
+
+
 	
 	
 	

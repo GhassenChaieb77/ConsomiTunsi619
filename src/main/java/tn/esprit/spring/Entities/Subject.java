@@ -18,6 +18,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Subject implements Serializable {
 
@@ -36,15 +38,16 @@ public class Subject implements Serializable {
 
 	private int rating;
 
-	private int likes;
+	private int likes=0;
 	
-	private int dislikes;
+	private int dislikes=0;
 	@Temporal(TemporalType.DATE)
-	private Date date;
+	private Date date = new Date(System.currentTimeMillis());
 	
 	@OneToOne
 	private Product product;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="subject")
 	private List<Comment> comments;
 
@@ -131,6 +134,11 @@ public class Subject implements Serializable {
 		this.date = date;
 		this.product = product;
 		this.comments = comments;
+	}
+
+	public Subject() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	

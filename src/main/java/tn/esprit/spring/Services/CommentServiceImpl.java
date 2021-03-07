@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entities.Comment;
+import tn.esprit.spring.Entities.Subject;
 import tn.esprit.spring.Entities.User;
 import tn.esprit.spring.Repository.CommentRepository;
 import tn.esprit.spring.Repository.UserRepository;
@@ -46,6 +47,14 @@ public class CommentServiceImpl implements ICommentService{
 	public void deleteComment(String id) {
        commentRepository.deleteById(Long.parseLong(id));
        
+	}
+
+
+
+	@Override
+	public List<Comment> RecentComment() {
+		List<Comment> comments= (List<Comment>) commentRepository.RecentComment();	
+		return comments;
 	}
 
 

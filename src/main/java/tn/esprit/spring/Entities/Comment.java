@@ -24,15 +24,15 @@ public class Comment  implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-	
+	@Column(name="Comment")
 	String comment; 
-
+	@Column(name="LikesComment")
 	private int likesComment ;
-
+	@Column(name="DislikesComment")
 	private int dislikesComment;
 	
 	@Temporal(TemporalType.DATE)
-	private Date date;
+	private Date date = new Date(System.currentTimeMillis());
 	
 	
 	@ManyToOne
@@ -40,6 +40,17 @@ public class Comment  implements Serializable {
 	
 	@ManyToOne
 	private User user ;
+
+	
+	public Comment(String comment, int likesComment, int dislikesComment, Date date, Subject subject, User user) {
+		super();
+		this.comment = comment;
+		this.likesComment = likesComment;
+		this.dislikesComment = dislikesComment;
+		this.date = date;
+		this.subject = subject;
+		this.user = user;
+	}
 
 	public Long getId() {
 		return id;
@@ -97,5 +108,22 @@ public class Comment  implements Serializable {
 		this.user = user;
 	}
 
+	public Comment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	public Comment(Long id, String comment, int likesComment, int dislikesComment, Date date, Subject subject,
+			User user) {
+		super();
+		this.id = id;
+		this.comment = comment;
+		this.likesComment = likesComment;
+		this.dislikesComment = dislikesComment;
+		this.date = date;
+		this.subject = subject;
+		this.user = user;
+	}
+     
+   
 }
