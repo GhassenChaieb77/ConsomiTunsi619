@@ -994,3 +994,223 @@ org.hibernate.TypeMismatchException: Provided id of the wrong type for class tn.
 2021-03-07 18:16:12.000  INFO 1724 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-07 18:16:12.006  INFO 1724 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-07 18:16:12.020  INFO 1724 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-07 21:37:09.257  INFO 19312 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_111 on DESKTOP-S01DAAJ with PID 19312 (C:\Users\mouna\Documents\GitHub\Edalel\target\classes started by mouna in C:\Users\mouna\Documents\GitHub\Edalel)
+2021-03-07 21:37:09.261  INFO 19312 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-07 21:37:09.364  INFO 19312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-07 21:37:09.364  INFO 19312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-07 21:37:10.465  INFO 19312 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-07 21:37:10.642  INFO 19312 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 165 ms. Found 16 JPA repository interfaces.
+2021-03-07 21:37:11.121  INFO 19312 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$61f67f2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-07 21:37:11.193  INFO 19312 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-07 21:37:11.793  INFO 19312 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-07 21:37:11.809  INFO 19312 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-07 21:37:11.809  INFO 19312 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-07 21:37:11.965  INFO 19312 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-07 21:37:11.966  INFO 19312 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2601 ms
+2021-03-07 21:37:12.239  INFO 19312 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-07 21:37:12.315  INFO 19312 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-07 21:37:12.494  INFO 19312 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-07 21:37:12.663  INFO 19312 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-07 21:37:12.945  INFO 19312 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-07 21:37:12.970  INFO 19312 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-07 21:37:13.662  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Cart (class must be instantiated by Interceptor)
+2021-03-07 21:37:13.932  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Jackpot (class must be instantiated by Interceptor)
+2021-03-07 21:37:13.947  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Order (class must be instantiated by Interceptor)
+2021-03-07 21:37:13.980  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.001  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Publicity (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.013  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.DeliveryAgent (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.026  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Event (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.041  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.050  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.069  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Category (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.077  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.086  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Product (class must be instantiated by Interceptor)
+2021-03-07 21:37:14.103  INFO 19312 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Complaint (class must be instantiated by Interceptor)
+2021-03-07 21:37:18.477  INFO 19312 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-07 21:37:18.488  INFO 19312 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:37:18.514  INFO 19312 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-07 21:37:19.782  WARN 19312 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 21:37:19.985  INFO 19312 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:37:20.577  INFO 19312 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-07 21:37:20.591  INFO 19312 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 11.893 seconds (JVM running for 13.028)
+2021-03-07 21:38:38.928  INFO 19312 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-07 21:38:39.182  INFO 19312 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:38:39.185  INFO 19312 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:38:39.191  INFO 19312 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-07 21:38:39.206  INFO 19312 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-07 21:38:49.382  INFO 18628 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_111 on DESKTOP-S01DAAJ with PID 18628 (C:\Users\mouna\Documents\GitHub\Edalel\target\classes started by mouna in C:\Users\mouna\Documents\GitHub\Edalel)
+2021-03-07 21:38:49.386  INFO 18628 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-07 21:38:49.489  INFO 18628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-07 21:38:49.490  INFO 18628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-07 21:38:50.592  INFO 18628 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-07 21:38:50.768  INFO 18628 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 16 JPA repository interfaces.
+2021-03-07 21:38:51.223  INFO 18628 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c43a3706] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-07 21:38:51.285  INFO 18628 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-07 21:38:51.901  INFO 18628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-07 21:38:51.916  INFO 18628 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-07 21:38:51.916  INFO 18628 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-07 21:38:52.065  INFO 18628 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-07 21:38:52.065  INFO 18628 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2572 ms
+2021-03-07 21:38:52.348  INFO 18628 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-07 21:38:52.424  INFO 18628 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-07 21:38:52.647  INFO 18628 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-07 21:38:52.829  INFO 18628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-07 21:38:53.114  INFO 18628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-07 21:38:53.137  INFO 18628 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-07 21:38:53.847  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Cart (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.106  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Jackpot (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.122  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Order (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.168  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.188  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Publicity (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.200  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.DeliveryAgent (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.214  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Event (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.238  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.249  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.271  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Category (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.281  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.294  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Product (class must be instantiated by Interceptor)
+2021-03-07 21:38:54.308  INFO 18628 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Complaint (class must be instantiated by Interceptor)
+2021-03-07 21:38:58.499  INFO 18628 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-07 21:38:58.510  INFO 18628 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:38:58.535  INFO 18628 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-07 21:38:59.763  WARN 18628 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 21:38:59.926  INFO 18628 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:39:00.459  INFO 18628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-07 21:39:00.470  INFO 18628 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 11.648 seconds (JVM running for 12.75)
+2021-03-07 21:40:58.198  INFO 18628 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-07 21:40:58.465  INFO 18628 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:40:58.469  INFO 18628 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:40:58.475  INFO 18628 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-07 21:40:58.492  INFO 18628 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-07 21:41:06.682  INFO 13884 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_111 on DESKTOP-S01DAAJ with PID 13884 (C:\Users\mouna\Documents\GitHub\Edalel\target\classes started by mouna in C:\Users\mouna\Documents\GitHub\Edalel)
+2021-03-07 21:41:06.689  INFO 13884 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-07 21:41:06.816  INFO 13884 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-07 21:41:06.816  INFO 13884 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-07 21:41:07.898  INFO 13884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-07 21:41:08.073  INFO 13884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 16 JPA repository interfaces.
+2021-03-07 21:41:08.519  INFO 13884 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$475f1056] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-07 21:41:08.578  INFO 13884 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-07 21:41:09.161  INFO 13884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-07 21:41:09.180  INFO 13884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-07 21:41:09.180  INFO 13884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-07 21:41:09.326  INFO 13884 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-07 21:41:09.326  INFO 13884 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2509 ms
+2021-03-07 21:41:09.619  INFO 13884 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-07 21:41:09.689  INFO 13884 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-07 21:41:09.871  INFO 13884 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-07 21:41:10.031  INFO 13884 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-07 21:41:10.315  INFO 13884 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-07 21:41:10.337  INFO 13884 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-07 21:41:11.035  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Cart (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.282  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Jackpot (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.302  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Order (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.346  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.369  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Publicity (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.384  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.DeliveryAgent (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.402  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Event (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.413  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.419  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.438  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Category (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.448  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.458  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Product (class must be instantiated by Interceptor)
+2021-03-07 21:41:11.480  INFO 13884 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Complaint (class must be instantiated by Interceptor)
+2021-03-07 21:41:15.165  INFO 13884 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-07 21:41:15.178  INFO 13884 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:41:15.202  INFO 13884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-07 21:41:16.341  WARN 13884 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 21:41:16.502  INFO 13884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:41:17.014  INFO 13884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-07 21:41:17.028  INFO 13884 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 10.904 seconds (JVM running for 12.091)
+2021-03-07 21:43:09.226  INFO 13884 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-07 21:43:09.494  INFO 13884 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:43:09.496  INFO 13884 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:43:09.504  INFO 13884 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-07 21:43:09.519  INFO 13884 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-07 21:43:17.643  INFO 2144 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_111 on DESKTOP-S01DAAJ with PID 2144 (C:\Users\mouna\Documents\GitHub\Edalel\target\classes started by mouna in C:\Users\mouna\Documents\GitHub\Edalel)
+2021-03-07 21:43:17.646  INFO 2144 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-07 21:43:17.739  INFO 2144 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-07 21:43:17.739  INFO 2144 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-07 21:43:18.777  INFO 2144 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-07 21:43:18.964  INFO 2144 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 16 JPA repository interfaces.
+2021-03-07 21:43:19.425  INFO 2144 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cdaa3a65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-07 21:43:19.499  INFO 2144 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-07 21:43:20.191  INFO 2144 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-07 21:43:20.206  INFO 2144 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-07 21:43:20.207  INFO 2144 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-07 21:43:20.362  INFO 2144 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-07 21:43:20.362  INFO 2144 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2622 ms
+2021-03-07 21:43:20.640  INFO 2144 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-07 21:43:20.711  INFO 2144 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-07 21:43:20.902  INFO 2144 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-07 21:43:21.063  INFO 2144 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-07 21:43:21.332  INFO 2144 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-07 21:43:21.351  INFO 2144 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-07 21:43:22.089  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Cart (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.332  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Jackpot (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.346  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Order (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.381  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.402  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Publicity (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.420  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.DeliveryAgent (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.443  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Event (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.454  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.463  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.484  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Category (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.492  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.510  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Product (class must be instantiated by Interceptor)
+2021-03-07 21:43:22.522  INFO 2144 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Complaint (class must be instantiated by Interceptor)
+2021-03-07 21:43:26.474  INFO 2144 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-07 21:43:26.487  INFO 2144 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:43:26.510  INFO 2144 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-07 21:43:27.825  WARN 2144 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 21:43:28.076  INFO 2144 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:43:28.751  INFO 2144 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-07 21:43:28.779  INFO 2144 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 11.683 seconds (JVM running for 12.888)
+2021-03-07 21:43:57.909  INFO 2144 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-07 21:43:58.168  INFO 2144 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:43:58.170  INFO 2144 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:43:58.175  INFO 2144 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-07 21:43:58.190  INFO 2144 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-07 21:44:06.046  INFO 19036 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_111 on DESKTOP-S01DAAJ with PID 19036 (C:\Users\mouna\Documents\GitHub\Edalel\target\classes started by mouna in C:\Users\mouna\Documents\GitHub\Edalel)
+2021-03-07 21:44:06.051  INFO 19036 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-07 21:44:06.145  INFO 19036 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-07 21:44:06.145  INFO 19036 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-07 21:44:07.163  INFO 19036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-07 21:44:07.350  INFO 19036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 173 ms. Found 16 JPA repository interfaces.
+2021-03-07 21:44:07.804  INFO 19036 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$e55848f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-07 21:44:07.877  INFO 19036 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-07 21:44:08.474  INFO 19036 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-07 21:44:08.490  INFO 19036 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-07 21:44:08.490  INFO 19036 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-07 21:44:08.629  INFO 19036 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-07 21:44:08.629  INFO 19036 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2483 ms
+2021-03-07 21:44:08.901  INFO 19036 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-07 21:44:08.982  INFO 19036 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-07 21:44:09.170  INFO 19036 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-07 21:44:09.346  INFO 19036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-07 21:44:09.665  INFO 19036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-07 21:44:09.690  INFO 19036 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-07 21:44:10.415  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Cart (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.654  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Jackpot (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.667  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Order (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.704  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.728  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Publicity (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.741  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.DeliveryAgent (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.768  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Event (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.780  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.790  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.813  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Category (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.821  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.829  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Product (class must be instantiated by Interceptor)
+2021-03-07 21:44:10.842  INFO 19036 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Complaint (class must be instantiated by Interceptor)
+2021-03-07 21:44:15.007  INFO 19036 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-07 21:44:15.017  INFO 19036 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:44:15.040  INFO 19036 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-07 21:44:16.146  WARN 19036 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 21:44:16.347  INFO 19036 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:44:16.860  INFO 19036 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-07 21:44:16.874  INFO 19036 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 11.431 seconds (JVM running for 12.511)
+2021-03-07 21:46:37.264  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-07 21:46:37.519  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-07 21:46:37.522  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-07 21:46:37.528  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-07 21:46:37.545  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

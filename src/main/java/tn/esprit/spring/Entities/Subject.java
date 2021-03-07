@@ -36,7 +36,6 @@ public class Subject implements Serializable {
 
 	private String content;
 
-	private int rating;
 
 	private int likes=0;
 	
@@ -75,13 +74,6 @@ public class Subject implements Serializable {
 		this.content = content;
 	}
 
-	public int getRating() {
-		return rating;
-	}
-
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
 
 	public int getLikes() {
 		return likes;
@@ -123,12 +115,11 @@ public class Subject implements Serializable {
 		this.comments = comments;
 	}
 
-	public Subject(String title, String content, int rating, int likes, int dislikes, Date date, Product product,
+	public Subject(String title, String content, int likes, int dislikes, Date date, Product product,
 			List<Comment> comments) {
 		super();
 		this.title = title;
 		this.content = content;
-		this.rating = rating;
 		this.likes = likes;
 		this.dislikes = dislikes;
 		this.date = date;
