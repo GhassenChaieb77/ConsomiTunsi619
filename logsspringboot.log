@@ -1214,3 +1214,64 @@ org.hibernate.TypeMismatchException: Provided id of the wrong type for class tn.
 2021-03-07 21:46:37.522  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-07 21:46:37.528  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-07 21:46:37.545  INFO 19036 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-08 23:55:15.220  INFO 3448 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on LAPTOP-KKQ6P8V9 with PID 3448 (C:\Final Pi\Edalel\target\classes started by 21622 in C:\Final Pi\Edalel)
+2021-03-08 23:55:15.223  INFO 3448 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-08 23:55:15.277  INFO 3448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-08 23:55:15.278  INFO 3448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-08 23:55:15.812  INFO 3448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-08 23:55:15.894  INFO 3448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 18 JPA repository interfaces.
+2021-03-08 23:55:16.143  INFO 3448 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$faf5bb15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-08 23:55:16.183  INFO 3448 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-08 23:55:16.470  INFO 3448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-08 23:55:16.478  INFO 3448 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-08 23:55:16.479  INFO 3448 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-08 23:55:16.539  INFO 3448 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-08 23:55:16.539  INFO 3448 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1261 ms
+2021-03-08 23:55:16.687  INFO 3448 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-08 23:55:16.728  INFO 3448 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-08 23:55:16.832  INFO 3448 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-08 23:55:16.919  INFO 3448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-08 23:55:17.083  INFO 3448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-08 23:55:17.096  INFO 3448 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-08 23:55:17.630  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-08 23:55:17.670  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-08 23:55:17.674  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-08 23:55:17.689  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-08 23:55:18.547  INFO 3448 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-08 23:55:18.553  INFO 3448 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-08 23:55:18.565  INFO 3448 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-08 23:55:19.440  WARN 3448 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 23:55:19.532  INFO 3448 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-08 23:55:19.876  INFO 3448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-08 23:55:19.884  INFO 3448 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 4.958 seconds (JVM running for 5.637)
+2021-03-08 23:58:05.816  INFO 3448 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-08 23:58:05.817  INFO 3448 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-08 23:58:05.819  INFO 3448 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-08 23:58:05.826  INFO 3448 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-08 23:58:05.987  INFO 3448 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on LAPTOP-KKQ6P8V9 with PID 3448 (C:\Final Pi\Edalel\target\classes started by 21622 in C:\Final Pi\Edalel)
+2021-03-08 23:58:05.987  INFO 3448 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-03-08 23:58:06.156  INFO 3448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-08 23:58:06.202  INFO 3448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 18 JPA repository interfaces.
+2021-03-08 23:58:06.249  INFO 3448 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$faf5bb15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-08 23:58:06.251  INFO 3448 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-08 23:58:06.316  INFO 3448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-08 23:58:06.317  INFO 3448 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-08 23:58:06.317  INFO 3448 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-08 23:58:06.327  INFO 3448 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-08 23:58:06.327  INFO 3448 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 338 ms
+2021-03-08 23:58:06.357  INFO 3448 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-08 23:58:06.361  INFO 3448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-03-08 23:58:06.364  INFO 3448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-03-08 23:58:06.365  INFO 3448 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-08 23:58:06.455  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Donation (class must be instantiated by Interceptor)
+2021-03-08 23:58:06.488  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Layer (class must be instantiated by Interceptor)
+2021-03-08 23:58:06.490  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Stock (class must be instantiated by Interceptor)
+2021-03-08 23:58:06.501  INFO 3448 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.esprit.spring.Entities.Bill (class must be instantiated by Interceptor)
+2021-03-08 23:58:08.354  INFO 3448 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-08 23:58:08.354  INFO 3448 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-08 23:58:08.359  INFO 3448 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-08 23:58:08.495  WARN 3448 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 23:58:08.521  INFO 3448 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-08 23:58:08.668  INFO 3448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-03-08 23:58:08.672  INFO 3448 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 2.716 seconds (JVM running for 174.426)
+2021-03-08 23:58:08.674  INFO 3448 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
