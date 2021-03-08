@@ -12,10 +12,7 @@ import tn.esprit.spring.Entities.*;
 @Repository
 public interface SubjectRepository extends CrudRepository<Subject, Long> {
 
-<<<<<<< HEAD
 	
-=======
->>>>>>> 3d9d8420ff92872147ddccc45a9078ed9f78bbb3
 	/*@Query("Select s.likes "
 			+ "from Subject s "
 		    + "join  s.Comment c "

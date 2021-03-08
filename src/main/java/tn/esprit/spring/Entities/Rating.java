@@ -43,7 +43,6 @@ public class Rating implements Serializable {
 		this.rating = rating;
 	}
 
-<<<<<<< HEAD
 	public Rating(int rating, User user, Subject subject) {
 		super();
 		this.rating = rating;
@@ -51,8 +50,6 @@ public class Rating implements Serializable {
 		this.subject = subject;
 	}
 
-=======
->>>>>>> 3d9d8420ff92872147ddccc45a9078ed9f78bbb3
 	public Long getId() {
 		return id;
 	}
