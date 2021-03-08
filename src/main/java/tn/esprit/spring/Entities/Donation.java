@@ -10,9 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity 
 public class Donation implements Serializable {
@@ -25,53 +26,66 @@ public class Donation implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-	private int quantityProd ;
+	@Column(name="libelle")
+	private String libelle ;
 	
 	@ManyToOne
 	private Event event ;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
-	private List<Product> products;
-
-	public Long getId() {
-		return id;
+	//@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="donation")
+	//private List<Product> products;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Order order;
+	
+	public Donation(String libelle, Event event, Order order) {
+		super();
+		this.libelle = libelle;
+		this.event = event;
+		this.order = order ; 
+		//this.products = products;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public int getQuantityProd() {
-		return quantityProd;
-	}
-
-	public void setQuantityProd(int quantityProd) {
-		this.quantityProd = quantityProd;
-	}
 
 	public Event getEvent() {
 		return event;
 	}
 
+	
 	public void setEvent(Event event) {
 		this.event = event;
 	}
 
-	public List<Product> getProducts() {
-		return products;
-	}
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
-	public Donation(int quantityProd, Event event, List<Product> products) {
-		super();
-		this.quantityProd = quantityProd;
-		this.event = event;
-		this.products = products;
+	public Long getId() {
+		return id;
 	}
 	
-		
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+
+	public Order getOrder() {
+		return order;
+	}
+
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+	
+	
+	
 
 }

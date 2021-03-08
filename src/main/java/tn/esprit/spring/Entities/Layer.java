@@ -1,14 +1,14 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Layer implements Serializable{
@@ -27,8 +27,9 @@ public class Layer implements Serializable{
 
 	private int capacity;
 	
-	@OneToOne
-	private Category category;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Product> products;
+	
 
 	public Long getId() {
 		return id;
@@ -46,18 +47,11 @@ public class Layer implements Serializable{
 		this.capacity = capacity;
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+	
 
 	public Layer(int capacity, Category category) {
 		super();
 		this.capacity = capacity;
-		this.category = category;
 	}
 	
 	  

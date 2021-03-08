@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Cart implements Serializable {
 	/**
@@ -24,18 +26,15 @@ public class Cart implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private int quantity;
-	
 	private float prodpricetotal;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
-	private List<Product> products;
 	
-	@OneToOne(mappedBy="cart")
-	private Order order;
-
 	@OneToOne
 	private User user;
+	
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="cart")
+    private List<OrderLine> OrderLines ;
 
 	public Long getId() {
 		return id;
@@ -45,13 +44,6 @@ public class Cart implements Serializable {
 		this.id = id;
 	}
 
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
 
 	public float getProdpricetotal() {
 		return prodpricetotal;
@@ -61,21 +53,8 @@ public class Cart implements Serializable {
 		this.prodpricetotal = prodpricetotal;
 	}
 
-	public List<Product> getProducts() {
-		return products;
-	}
+	
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
-	}
 
 	public User getUser() {
 		return user;
@@ -85,14 +64,32 @@ public class Cart implements Serializable {
 		this.user = user;
 	}
 
-	public Cart(int quantity, float prodpricetotal, List<Product> products, Order order, User user) {
-		super();
-		this.quantity = quantity;
-		this.prodpricetotal = prodpricetotal;
-		this.products = products;
-		this.order = order;
-		this.user = user;
+    
+
+	public List<OrderLine> getOrderLines() {
+		return OrderLines;
 	}
+
+	public void setOrderLines(List<OrderLine> orderLines) {
+		OrderLines = orderLines;
+	}
+	
+	
+
+	public Cart(Long id, float prodpricetotal,  User user, List<OrderLine> orderLines) {
+		super();
+		this.id = id;
+		this.prodpricetotal = prodpricetotal;
+	
+		this.user = user;
+		OrderLines = orderLines;
+	}
+
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+ 
 
 
 }

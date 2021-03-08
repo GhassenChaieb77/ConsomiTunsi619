@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
+
+
 @Entity 
 public class Event implements Serializable {
 
@@ -25,15 +27,16 @@ public class Event implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	@Column(name="Name")
 	private String name ;
-
+	@Column(name="Place")
 	private String place ;
-	
+	@Column(name="Participants_nbrs")
 	int participants ;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Jackpot jackpot;
+	
 	
 	@OneToMany(mappedBy="event", 
 			cascade = CascadeType.ALL, fetch=FetchType.LAZY)
@@ -43,19 +46,31 @@ public class Event implements Serializable {
 	private List<Publicity> publicities;
 	
 	
-	public Event(String name, String place, int participants, Jackpot jackpot, List<Donation> donations,
-			List<Publicity> publicities) {
+	public Event(){
+		
+	} 
+	
+	
+	public Event(String name, String place, int participants) {
 		super();
 		this.name = name;
 		this.place = place;
 		this.participants = participants;
-		this.jackpot = jackpot;
-		this.donations = donations;
-		this.publicities = publicities;
+		
 	}
 
 	
 	
+
+	public Event(Long id, String name, String place, int participants, Jackpot jackpot) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.place = place;
+		this.participants = participants;
+		this.jackpot = jackpot;
+	}
+
 
 	public Long getId() {
 		return id;

@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,22 +41,21 @@ public class Order implements Serializable {
 	private float totalprice;
 	
 
-	private String paymentmethod;
+	@Enumerated(EnumType.STRING)
+	private PaymentMethod paymentmethod;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	DeliveryAgent deliveryagent;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="order")
-	private Set<Complaint> complaints;
 	
 	@OneToOne(mappedBy="order")
 	private Bill bill;
 	
-	@ManyToOne
-	private User user ;
-	
 	@OneToOne
-	private Cart cart;
+	private Donation donation ;
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	private Set<OrderLine> orderline;
 
 	public Long getId() {
 		return id;
@@ -88,14 +89,7 @@ public class Order implements Serializable {
 		this.totalprice = totalprice;
 	}
 
-	public String getPaymentmethod() {
-		return paymentmethod;
-	}
-
-	public void setPaymentmethod(String paymentmethod) {
-		this.paymentmethod = paymentmethod;
-	}
-
+    
 	public DeliveryAgent getDeliveryagent() {
 		return deliveryagent;
 	}
@@ -104,13 +98,6 @@ public class Order implements Serializable {
 		this.deliveryagent = deliveryagent;
 	}
 
-	public Set<Complaint> getComplaints() {
-		return complaints;
-	}
-
-	public void setComplaints(Set<Complaint> complaints) {
-		this.complaints = complaints;
-	}
 
 	public Bill getBill() {
 		return bill;
@@ -120,36 +107,55 @@ public class Order implements Serializable {
 		this.bill = bill;
 	}
 
-	public User getUser() {
-		return user;
+
+	public Set<OrderLine> getOrderline() {
+		return orderline;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setOrderline(Set<OrderLine> orderline) {
+		this.orderline = orderline;
 	}
 
-	public Cart getCart() {
-		return cart;
+	public PaymentMethod getPaymentmethod() {
+		return paymentmethod;
 	}
 
-	public void setCart(Cart cart) {
-		this.cart = cart;
+	public void setPaymentmethod(PaymentMethod paymentmethod) {
+		this.paymentmethod = paymentmethod;
 	}
 
-	public Order(Date date, String address, float totalprice, String paymentmethod, DeliveryAgent deliveryagent,
-			Set<Complaint> complaints, Bill bill, User user, Cart cart) {
+	public Donation getDonation() {
+		return donation;
+	}
+
+	public void setDonation(Donation donation) {
+		this.donation = donation;
+	}
+
+	public Order() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Order(Long id, Date date, String address, float totalprice, PaymentMethod paymentmethod,
+			DeliveryAgent deliveryagent, Bill bill, Donation donation,
+			Set<OrderLine> orderline) {
+		super();
+		this.id = id;
 		this.date = date;
 		this.address = address;
 		this.totalprice = totalprice;
 		this.paymentmethod = paymentmethod;
 		this.deliveryagent = deliveryagent;
-		this.complaints = complaints;
 		this.bill = bill;
-		this.user = user;
-		this.cart = cart;
+		this.donation = donation;
+		this.orderline = orderline;
 	}
+
 	
+  
+
+    
 	
 	
 }

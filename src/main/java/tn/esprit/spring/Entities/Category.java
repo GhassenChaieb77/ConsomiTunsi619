@@ -3,6 +3,7 @@ package tn.esprit.spring.Entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -29,11 +32,11 @@ public class Category implements Serializable {
 
 	private String name;
 	
-	@OneToMany(mappedBy="category",fetch=FetchType.LAZY)
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Product> products;
 	
-	@OneToOne(mappedBy="category")
-	private Layer layer;
+	
 
 	public Long getId() {
 		return id;
@@ -59,19 +62,20 @@ public class Category implements Serializable {
 		this.products = products;
 	}
 
-	public Layer getLayer() {
-		return layer;
-	}
+	
+	
+	public Category(){}
+	
+	public Category(String name ) {
+		super();
+		this.name = name;
 
-	public void setLayer(Layer layer) {
-		this.layer = layer;
 	}
 
 	public Category(String name, List<Product> products, Layer layer) {
 		super();
 		this.name = name;
 		this.products = products;
-		this.layer = layer;
 	}
 
 	

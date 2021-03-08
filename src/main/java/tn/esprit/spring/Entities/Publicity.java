@@ -56,6 +56,19 @@ public class Publicity implements Serializable {
 	@ManyToOne
 	private Event event;
 	
+	public Publicity(){}
+	
+	public Publicity(String name, Date startDate, Date endDate, String type,int age, String sex,
+			String saison) {
+		super();
+		this.name = name;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.type = type;
+		this.age = age;
+		this.sex = sex;
+		this.saison = saison;
+	}
 	
 	public Publicity(String name, Date startDate, Date endDate, String type, int finalViews, int age, String sex,
 			String saison, Product product, Event event) {

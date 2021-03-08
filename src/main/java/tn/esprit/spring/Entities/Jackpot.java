@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -28,27 +30,29 @@ public class Jackpot implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-
+	@Column(name="Amount")
 	private float amount ;
 	
-	
+	@Column(name="JackpotsNum")
 	private int jackpotsNum ;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy="jackpot",cascade = CascadeType.ALL)
 	private Event event;
 
-	@ManyToMany	(mappedBy="jackpots", 
-			cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-	private List<User> users;
+	//@ManyToMany	(mappedBy="jackpots", 
+			//cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	//private List<User> users;
 	
 	
+	public Jackpot(){} 
 	
-	public Jackpot(float amount, int jackpotsNum, Event event, List<User> users) {
+	public Jackpot(float amount, int jackpotsNum, Event event) {
 		super();
 		this.amount = amount;
 		this.jackpotsNum = jackpotsNum;
 		this.event = event;
-		this.users = users;
+		//this.users = users;
 	}
 
 	public Event getEvent() {
@@ -83,14 +87,5 @@ public class Jackpot implements Serializable {
 		this.jackpotsNum = jackpotsNum;
 	}
 
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-	
-	
-
+		
 }

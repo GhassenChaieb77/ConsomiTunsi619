@@ -29,7 +29,7 @@ public interface ProductRepository extends CrudRepository<Product, Long>
 				+ "where proc.category.name=:name ")
 	    public List<Product> getAllProductByCategoryname(@Param("name") String name);
 	 
-	 @Query("Select name,price,picture,code,quantity FROM Product")
+	 @Query("Select p.code , p.name , p.price , p.picture , p.quantity , p.category.name FROM Product p")
 	    public List<Product> getAllProduct();
 	 
 	 

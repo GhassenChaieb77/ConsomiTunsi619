@@ -15,6 +15,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product implements Serializable {
@@ -38,27 +42,28 @@ public class Product implements Serializable {
 	
 	private String picture;
 	
+	private float sale;
 	
-	private int code;
+	
+	@Pattern(regexp = "619[0-9]{6}" , message = "must start with 619 and with 6 numbers")
+	private String code;
 	
 
 	private int quantity;
 	
-	@ManyToOne
-	private Category category;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy="product")
 	private Subject subject;
 	
-	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="product",fetch=FetchType.LAZY)
 	private List<Publicity> publicities;
 	
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Category category;
 	
-	@ManyToMany(cascade = CascadeType.ALL,mappedBy="products")
-	private List<Stock> stocks;
-
-
 	public Long getId() {
 		return id;
 	}
@@ -99,12 +104,12 @@ public class Product implements Serializable {
 	}
 
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -119,14 +124,7 @@ public class Product implements Serializable {
 	}
 
 
-	public Category getCategory() {
-		return category;
-	}
 
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
 
 
 	public Subject getSubject() {
@@ -149,17 +147,10 @@ public class Product implements Serializable {
 	}
 
 
-	public List<Stock> getStocks() {
-		return stocks;
-	}
+	
 
 
-	public void setStocks(List<Stock> stocks) {
-		this.stocks = stocks;
-	}
-
-
-	public Product(String name, float price, String picture, int code, int quantity, Category category, Subject subject,
+	public Product(String name, float price, String picture, String code, int quantity, Category category, Subject subject,
 			List<Publicity> publicities, List<Stock> stocks) {
 		super();
 		this.name = name;
@@ -167,14 +158,42 @@ public class Product implements Serializable {
 		this.picture = picture;
 		this.code = code;
 		this.quantity = quantity;
-		this.category = category;
 		this.subject = subject;
 		this.publicities = publicities;
-		this.stocks = stocks;
+		this.category=category;
 	}
 
 
 	
+	public Product(String name, float price, String picture, String code, int quantity) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.picture = picture;
+		this.code = code;
+		this.quantity = quantity;
+	}
+	public Product(){}
+
+
+	public float getSale() {
+		return sale;
+	}
+
+
+	public void setSale(float sale) {
+		this.sale = sale;
+	}
+
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
 	
 }

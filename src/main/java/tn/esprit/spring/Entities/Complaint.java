@@ -24,7 +24,7 @@ public class Complaint implements Serializable {
 	
 	private String content;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Order order;
 
 	public Long getId() {
@@ -65,7 +65,10 @@ public class Complaint implements Serializable {
 		this.content = content;
 		this.order = order;
 	}
-
+	public Complaint()
+	{
+	 
+	}
 	
 		
 	

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -35,14 +36,16 @@ import javax.validation.constraints.Email;
 	    private int OutletQt;
 		
 	    private float PurchasePrice;
+	    
 		@Temporal (TemporalType.DATE)
 		private Date OperationDate;
+		
 		@Temporal (TemporalType.DATE)
 		private Date PurchaseDate;
 		
 		
 		
-		@ManyToMany(cascade = CascadeType.ALL)
+		@OneToMany(cascade = CascadeType.ALL)
 		private List<Product> products;
 
 

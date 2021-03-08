@@ -34,8 +34,7 @@ public class DeliveryAgent implements Serializable {
 	
 	private float traveledpath;
 
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="deliveryagent")
-	private List<Order> orders;
+	
 
 	public Long getId() {
 		return id;
@@ -93,16 +92,10 @@ public class DeliveryAgent implements Serializable {
 		this.traveledpath = traveledpath;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
-	}
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
 
 	public DeliveryAgent(String firstname, String lastname, boolean isavailable, Long phonenumber, String position,
-			float traveledpath, List<Order> orders) {
+			float traveledpath) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -110,7 +103,11 @@ public class DeliveryAgent implements Serializable {
 		this.phonenumber = phonenumber;
 		this.position = position;
 		this.traveledpath = traveledpath;
-		this.orders = orders;
+	
+	}
+
+	public DeliveryAgent() {
+	
 	}
 	
 			
