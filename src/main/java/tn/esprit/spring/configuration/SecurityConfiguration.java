@@ -83,7 +83,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("SpringMVC/servlet/layer/**").permitAll()
 		.antMatchers("SpringMVC/servlet/Stock/**").permitAll()
 		.antMatchers("SpringMVC/servlet/subject/**").permitAll()
-		.antMatchers("SpringMVC/servlet/comment/**").permitAll()
+		.antMatchers("SpringMVC/servlet/product/**").permitAll()
+		.antMatchers("SpringMVC/servlet/category/**").permitAll()
+		.antMatchers("SpringMVC/servlet/reduction/**").permitAll()
+		.antMatchers("SpringMVC/servlet/publicity/**").permitAll()
+
 
         .anyRequest().authenticated()
         .and()
