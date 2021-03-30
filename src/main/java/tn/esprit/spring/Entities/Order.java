@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -14,12 +16,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -37,37 +42,40 @@ public class Order implements Serializable {
 	private Date date;
 	
 
+  	private String firstName;
+	
+	private String lastName;
+	private int phoneNumber;
 	private String address;
 	
 
 	private float totalprice;
 	
 
-	@Enumerated(EnumType.STRING)
-	private PaymentMethod paymentmethod;
 	
-	@JsonIgnore
+	private String paymentmethod;
+	
 	@ManyToOne(cascade=CascadeType.ALL)
 	DeliveryAgent deliveryagent;
 	
-	@JsonIgnore
+
 	@OneToOne(mappedBy="order")
 	private Bill bill;
 	
-	
-	@JsonIgnore
+
 	@OneToOne
 	private Donation donation ;
 	
-
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Cart cart;
+	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private User user;
 	
-	
+	@ManyToOne
+	private Coupon coupon;
 
-	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
-	private Set<OrderLine> orderline;
+ 
 
 	public Long getId() {
 		return id;
@@ -120,19 +128,37 @@ public class Order implements Serializable {
 	}
 
 
-	public Set<OrderLine> getOrderline() {
-		return orderline;
+/*	public List<OrderLine> getOrderlines() {
+		return orderlines;
 	}
 
-	public void setOrderline(Set<OrderLine> orderline) {
-		this.orderline = orderline;
+	public void setOrderLines(List<OrderLine> orderlines) {
+		this.orderlines = orderlines;
+	}*/
+
+
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", date=" + date + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", phoneNumber=" + phoneNumber + ", address=" + address + ", totalprice=" + totalprice
+				+ ", paymentmethod=" + paymentmethod + ", deliveryagent=" + deliveryagent + ", bill=" + bill
+				+ ", donation=" + donation + ", cart=" + cart + ", user=" + user + ", coupon=" + coupon + "]";
 	}
 
-	public PaymentMethod getPaymentmethod() {
+	public String getPaymentmethod() {
 		return paymentmethod;
 	}
 
-	public void setPaymentmethod(PaymentMethod paymentmethod) {
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+	public void setPaymentmethod(String paymentmethod) {
 		this.paymentmethod = paymentmethod;
 	}
 
@@ -149,23 +175,68 @@ public class Order implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(Long id, Date date, String address, float totalprice, PaymentMethod paymentmethod,
-			DeliveryAgent deliveryagent, Bill bill, Donation donation,
-			Set<OrderLine> orderline) {
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Coupon getCoupon() {
+		return coupon;
+	}
+
+	public void setCoupon(Coupon coupon) {
+		this.coupon = coupon;
+	}
+
+	public Order(Long id, Date date, String firstName, String lastName, int phoneNumber, String address,
+			float totalprice, String paymentmethod, DeliveryAgent deliveryagent, Bill bill, Donation donation,
+			Cart cart, User user, Coupon coupon) {
 		super();
 		this.id = id;
 		this.date = date;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.totalprice = totalprice;
 		this.paymentmethod = paymentmethod;
 		this.deliveryagent = deliveryagent;
 		this.bill = bill;
 		this.donation = donation;
-		this.orderline = orderline;
+		this.cart = cart;
+		this.user = user;
+		this.coupon = coupon;
 	}
 
 	
-  
+
 
     
 	

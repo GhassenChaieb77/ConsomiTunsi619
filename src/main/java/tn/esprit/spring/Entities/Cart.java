@@ -26,14 +26,18 @@ public class Cart implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+
+
+	
 	private float prodpricetotal;
+	
 	
 	@JsonIgnore
 	@OneToOne
 	private User user;
 	
 	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="cart")
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER,mappedBy="cart", orphanRemoval=true)
     private List<OrderLine> OrderLines ;
 
 	public Long getId() {
@@ -71,7 +75,11 @@ public class Cart implements Serializable {
 	}
 
 	public void setOrderLines(List<OrderLine> orderLines) {
-		OrderLines = orderLines;
+		//OrderLines = orderLines;
+	    this.OrderLines.clear();
+		 if (orderLines != null) {
+		        this.OrderLines.addAll(orderLines);
+		    }
 	}
 	
 	

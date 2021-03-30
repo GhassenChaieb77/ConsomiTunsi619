@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -59,7 +60,6 @@ public class User implements Serializable{
 	private String resetToken;
 
     
-
     @ManyToMany	
 	private List<Jackpot> jackpots = new ArrayList<>();
     
@@ -68,7 +68,11 @@ public class User implements Serializable{
     
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
 	private List<Comment> comments = new ArrayList<>();
-
+	
+	
+	//@JsonIgnore
+	@OneToOne(mappedBy="user")
+	private Cart cart;
 
 	
 public User()
@@ -77,18 +81,6 @@ public User()
 }
 	
 
-
-    /*@JsonIgnore
-    @ManyToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
-	private List<Jackpot> jackpots = new ArrayList<>();
-    
-    @JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
-	private List<Comment> comments = new ArrayList<>();
-
-	@JsonIgnore
-	@OneToOne(mappedBy="user")
-	private Cart cart;*/
 
 
 	public User(String firstName, String lastName, Date date, tn.esprit.spring.Entities.Role role, @Email String email,
@@ -385,6 +377,45 @@ public User()
 
 
 
+
+
+
+
+	public User(long id, String firstName, String lastName, Date date, tn.esprit.spring.Entities.Role role,
+			@Email String email, String password, int telephone, float balance, String gender, String resetToken,
+			List<Jackpot> jackpots, List<Order> orders, List<Comment> comments, Cart cart) {
+		super();
+		this.id = id;
+		FirstName = firstName;
+		LastName = lastName;
+		this.date = date;
+		Role = role;
+		this.email = email;
+		this.password = password;
+		this.telephone = telephone;
+		this.balance = balance;
+		this.gender = gender;
+		this.resetToken = resetToken;
+		this.jackpots = jackpots;
+		this.orders = orders;
+		this.comments = comments;
+		this.cart = cart;
+		
+	}
+
+
+
+
+	public Cart getCart() {
+		return cart;
+	}
+
+
+
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 
 
 
