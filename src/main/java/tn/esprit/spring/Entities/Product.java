@@ -58,7 +58,7 @@ public class Product implements Serializable {
 	private Subject subject;
 	
 	@JsonIgnore
-	@ManyToMany
+	@OneToMany()
 	private List<Publicity> publicities;
 	
 	@JsonIgnore
