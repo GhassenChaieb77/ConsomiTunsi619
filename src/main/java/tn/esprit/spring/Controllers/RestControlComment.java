@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.spring.Entities.Comment;
 import tn.esprit.spring.Entities.Subject;
+import tn.esprit.spring.Repository.CommentRepository;
 import tn.esprit.spring.Services.ICommentService;
 
 
 
 @RestController
+@RequestMapping("/comment")
 public class RestControlComment {
 
 	@Autowired
@@ -31,13 +34,13 @@ public class RestControlComment {
 	return list;
     }
     
-    // http://localhost:8081/SpringMVC/servlet/RecentComment
-    @GetMapping("/RecentComment")
+    /*// http://localhost:8081/SpringMVC/servlet/RecentComment/2
+    @GetMapping("/RecentComment/{subject-id}")
 	@ResponseBody
-	public List<Comment> getComments1() {
-	 List<Comment> list = commentService.RecentComment();
+	public List<Comment> getComments1(@PathVariable("subject-id") int subjectId) {
+	 List<Comment> list = commentService.RecentComment(subjectId);
 	return list;
-    }  
+    }  */
     
  // Add comment : http://localhost:8081/SpringMVC/servlet/add-comment
 	@PostMapping("/add-comment")
@@ -59,12 +62,50 @@ public class RestControlComment {
 	public Comment modifyComment(@RequestBody Comment comment) {
 	 return commentService.updateComment(comment);
 	 }
-
+	// http://localhost:8081/SpringMVC/servlet/updatelikescomment/1/1
+    @PutMapping(value = "/updatelikescomment/{idcomment}/{iduser}") 
+	public void updatelikescomment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
+    	commentService.updatelikescomment(commentId, userId);
+	}
+    
+	// http://localhost:8081/SpringMVC/servlet/updatedislikescomment/1/1
+    @PutMapping(value = "/updatedislikescomment/{idcomment}/{iduser}") 
+	public void updatedislikescomment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
+    	commentService.updatedislikescomment(commentId, userId);
+	}
+    
+ // http://localhost:8081/SpringMVC/servlet/deleteDislikesComment/1/1
+    @PutMapping(value = "/deleteDislikesComment/{idcomment}/{iduser}") 
+	public void deleteDislikesComment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
+    	commentService.deleteDislikesComment(commentId, userId);
+	}
+    // http://localhost:8081/SpringMVC/servlet/deletelikesComment/1/1
+    @PutMapping(value = "/deletelikesComment/{idcomment}/{iduser}") 
+	public void deletelikesComment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
+    	commentService.deletelikesComment(commentId, userId);
+	}
+    
 	
-	/*// http://localhost:8081/SpringMVC/servlet/affecterCommentAuser/1/2
+	// http://localhost:8081/SpringMVC/servlet/affecterCommentAuser/1/2
     @PutMapping(value = "/affecterCommentAuser/{idcomment}/{iduser}") 
 	public void affecterCommentAuser(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
     	commentService.affecterCommentAuser(commentId, userId);
-	}*/
+	}
+    
+    // URL : http://localhost:8081/SpringMVC/servlet/RecentComment/1
+    @GetMapping(value = "RecentComment/{idsubject}")
+    @ResponseBody
+	public List<String> RecentComment(@PathVariable("idsubject") long subjectId) {
+
+		return commentService.RecentComment(subjectId);
+	}
+    
+    // URL : http://localhost:8081/SpringMVC/servlet/persComment/1
+    @GetMapping(value = "persComment/{idsubject}")
+    @ResponseBody
+	public List<String> persComment(@PathVariable("idsubject") long subjectId) {
+
+		return commentService.persComment(subjectId);
+	}
 	
 }

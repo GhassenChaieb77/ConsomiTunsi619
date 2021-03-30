@@ -53,8 +53,12 @@ public class Product implements Serializable {
 	
 	
 	@JsonIgnore
-	@OneToOne(mappedBy="product")
-	private Subject subject;
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="product")
+	private List<Subject> subjects;
+	
+	/*@OneToOne(mappedBy="product",fetch=FetchType.LAZY)
+	private Subject subjects;*/
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="product",fetch=FetchType.LAZY)
@@ -127,14 +131,7 @@ public class Product implements Serializable {
 
 
 
-	public Subject getSubject() {
-		return subject;
-	}
 
-
-	public void setSubject(Subject subject) {
-		this.subject = subject;
-	}
 
 
 	public List<Publicity> getPublicities() {
@@ -150,21 +147,18 @@ public class Product implements Serializable {
 	
 
 
-	public Product(String name, float price, String picture, String code, int quantity, Category category, Subject subject,
-			List<Publicity> publicities, List<Stock> stocks) {
-		super();
-		this.name = name;
-		this.price = price;
-		this.picture = picture;
-		this.code = code;
-		this.quantity = quantity;
-		this.subject = subject;
-		this.publicities = publicities;
-		this.category=category;
-	}
+	
 
 
 	
+
+
+
+
+
+	
+
+
 	public Product(String name, float price, String picture, String code, int quantity) {
 		super();
 		this.name = name;
@@ -192,6 +186,33 @@ public class Product implements Serializable {
 
 
 	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
+
+
+	public Product(Long id, String name, float price, String picture, float sale,
+			@Pattern(regexp = "619[0-9]{6}", message = "must start with 619 and with 6 numbers") String code,
+			int quantity, List<Subject> subjects, List<Publicity> publicities, Category category) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.picture = picture;
+		this.sale = sale;
+		this.code = code;
+		this.quantity = quantity;
+		this.subjects = subjects;
+		this.publicities = publicities;
 		this.category = category;
 	}
 	

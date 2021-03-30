@@ -54,6 +54,10 @@ public class Order implements Serializable {
 	@OneToOne
 	private Donation donation ;
 	
+	@ManyToOne(cascade=CascadeType.ALL)
+	private User user;
+	
+	
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	private Set<OrderLine> orderline;
 

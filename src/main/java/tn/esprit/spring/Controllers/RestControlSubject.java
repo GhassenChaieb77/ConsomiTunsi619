@@ -1,30 +1,42 @@
 package tn.esprit.spring.Controllers;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Entities.Product;
 import tn.esprit.spring.Entities.Subject;
+import tn.esprit.spring.Entities.User;
+import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.Services.IProductService;
 import tn.esprit.spring.Services.ISubjectService;
 
 
+
 @RestController
+@RequestMapping("/subject")
 public class RestControlSubject {
 
 	@Autowired
 	ISubjectService subjectService;
 	@Autowired
 	IProductService productService;
+	
+	
+
 	
 	
 // http://localhost:8081/SpringMVC/servlet/retrieve-all-subjects
@@ -35,11 +47,13 @@ public class RestControlSubject {
 		return list;
         }
         
+  
+        
      // http://localhost:8081/SpringMVC/servlet/SubjectAlaUne
         @GetMapping("/SubjectAlaUne")
 		@ResponseBody
-		public List<Subject> getSubjects1() {
-		 List<Subject> list = subjectService.SubjectAlaUne();
+		public List<String> getSubjects1() {
+		 List<String> list = subjectService.SubjectAlaUne();
 		return list;
         }  
         
@@ -77,6 +91,38 @@ public class RestControlSubject {
     	public List<String> getAllCommentsContentsBySubject(@PathVariable("idsubject") int subjectId) {
     		return subjectService.getAllCommentsContentsBySubject(subjectId);
     	} 
+        
+        
+    	// http://localhost:8081/SpringMVC/servlet/getAllProductBySubject/1
+        @GetMapping(value = "getAllProductBySubject/{productId}")
+        @ResponseBody
+    	public List<Subject> getAllProductBySubject(@PathVariable("productId") long productId) {
+    		return subjectService.getAllProductBySubject(productId);
+    	}
+        
+       	// http://localhost:8081/SpringMVC/servlet/subByTitle/1/mouna
+        @GetMapping(value = "subByTitle/{productId}/{title}")
+        @ResponseBody
+    	public List<Subject> subByTitle(@PathVariable("productId") long productId,@PathVariable("title") String title) {
+    		return subjectService.subByTitle(productId, title);
+    	}  
+        
+        
+      	// http://localhost:8081/SpringMVC/servlet/subsearch/1/1/mouna
+        @GetMapping(value = "subsearch/{productId}/{userId}/{title}")
+        @ResponseBody
+    	public List<Subject> subsearch(@PathVariable("productId") long productId,@PathVariable("userId") long userId,@PathVariable("title") String title) {
+    		return subjectService.subsearch(productId, userId, title);
+    	}  
+        
+     	// http://localhost:8081/SpringMVC/servlet/AllSubforuser/1/
+        @GetMapping(value = "AllSubforuser/{userId}/")
+        @ResponseBody
+    	public List<Subject> AllSubforuser(@PathVariable("userId") long userId) {
+    		return subjectService.AllSubforuser(userId);
+    	}
+  
+        
      // http://localhost:8081/SpringMVC/servlet/deleteSubjectById/1
         @DeleteMapping("/deleteSubjectById/{idsubject}") 
     	@ResponseBody 
@@ -107,22 +153,98 @@ public class RestControlSubject {
     	{
     	   subjectService.affecterSubjectAProduct(subjectId, productId);
     	}        
+             
 
+    	/// http://localhost:8081/SpringMVC/servlet/deleteSubjectRedandant/1
+   	@PutMapping("/deleteSubjectRedandant/{idproduct}")
+   	 public void deleteSubjectRedandant(@PathVariable("idproduct")long productId) {
+   	 subjectService.deleteSubjectRedandant(productId);
+   	 }
     	
-     	// http://localhost:8081/SpringMVC/servlet/deleteSubjectRedandant/
-    	@DeleteMapping("/deleteSubjectRedandant/{subject-id}")
-    	@ResponseBody
-    	 public void deleteSubjectRedandant(@PathVariable("subject-id") String subjectId) {
-    	 subjectService.deleteSubjectRedandant(subjectId);
-    	 }
+     	
     	
      	// http://localhost:8081/SpringMVC/servlet/deleteSubjectSansInteraction/
-    	@DeleteMapping("/deleteSubjectSansInteraction/{subject-id}")
-    	@ResponseBody
-    	 public void deleteSubjectSansInteraction(@PathVariable("subject-id") String subjectId) {
-    	 subjectService.deleteSubjectSansInteraction(subjectId);
+    	@PutMapping("/deleteSubjectSansInteraction")
+    	 public void deleteSubjectSansInteraction() {
+    	 subjectService.deleteSubjectSansInteraction();
     	 }
+    
+    	
+    	// http://localhost:8081/SpringMVC/servlet/deleteSubjectSansComment/
+        @PutMapping(value = "/deleteSubjectSansComment") 
+    	public void deleteSubjectSansComment( ) {
+        	subjectService.deleteSubjectSansComment( );
+    	}
+    	
+        
     	
     	
+    	
+    	// http://localhost:8081/SpringMVC/servlet/updatelikes/1/1
+        @PutMapping(value = "/updatelikes/{idsubject}/{iduser}") 
+    	public Subject updatelikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
+        	return subjectService.updatelikes(subjectId, userId);
+        	
+        
+    	}
+        
+    	
+        // http://localhost:8081/SpringMVC/servlet/updateDislikes/1/1
+        @PutMapping(value = "/updateDislikes/{idsubject}/{iduser}") 
+    	public void updateDislikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
+        	 subjectService.updateDislikes(subjectId, userId);
+    	}
+     
+        
+    
+        
+     // http://localhost:8081/SpringMVC/servlet/deleteDislikes/1/1
+        @PutMapping(value = "/deleteDislikes/{idsubject}/{iduser}") 
+    	public void deleteDislikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
+        	subjectService.deleteDislikes(subjectId, userId);
+    	}
+        // http://localhost:8081/SpringMVC/servlet/deletelikes/1/1
+        @PutMapping(value = "/deletelikes/{idsubject}/{iduser}") 
+    	public void deletelikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
+        	subjectService.deletelikes(subjectId, userId);
+    	}
+        
+   
+     // http://localhost:8081/SpringMVC/servlet/updateRating/
+        @PutMapping(value = "/updateRating") 
+    	public void updateRating( ) {
+        	subjectService.updateRating( );
+    	}
+        
+    	// http://localhost:8081/SpringMVC/servlet/top/1
+        @GetMapping(value = "top3/{idproduct}")
+        @ResponseBody
+    	public List<Subject> top(@PathVariable("idproduct") long productId) {
+    		//return subjectService.top(productId);
+        	List<Subject> list = subjectService.top(productId);
+    			return list;
+    		
+    	} 
+        
+     // http://localhost:8081/SpringMVC/servlet/nbavis/1
+        @GetMapping(value = "nbavis/{idsubject}")
+        @ResponseBody
+    	public float nbavis(@PathVariable("idsubject") long subjectId) {
+        	float avis = subjectService.nbavis(subjectId);
+    			return avis;} 
+        
+     // http://localhost:8081/SpringMVC/servlet/nbcomment/1
+        @GetMapping(value = "nbcomment/{idsubject}")
+        @ResponseBody
+    	public int nbcomment(@PathVariable("idsubject") long subjectId) {
+        	int nbcomment = subjectService.nbcomment(subjectId);
+    			return nbcomment;} 
+        
+        // http://localhost:8081/SpringMVC/servlet/nbsubjectproduct/1
+        @GetMapping(value = "nbsubjectproduct/{idproduct}")
+        @ResponseBody
+    	public int nbsubjectproduct(@PathVariable("idproduct") long productId) {
+        	int nbsubjectproduct = subjectService.nbsubjectproduct(productId);
+    			return nbsubjectproduct;}
 
 }
