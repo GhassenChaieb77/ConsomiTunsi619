@@ -11,9 +11,11 @@ public interface ICategoryService {
 	public List<Category> dispalyCategories();
 	public void deleteCategory(long id );
 	public Category updateCategory(Category c);
+	
 	public void affectCategoryToProduct(long ProcId, long cateId);
-	public void disaffectCategoryToProduct(long ProcId, long cateId);
+	public void disaffectCategoryToProduct(long ProcId);
 	public List<Product> getProductsByCategoryName(String name);
+	//public List<Product> reductionByCategory(String name , int x);
 	
 	
 }

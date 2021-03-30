@@ -58,14 +58,15 @@ public class User implements Serializable{
  
     private String gender;
     
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Jackpot> jackpots = new ArrayList<>();
     
-    
+    @JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
 	private List<Comment> comments = new ArrayList<>();
 
-	
+	@JsonIgnore
 	@OneToOne(mappedBy="user")
 	private Cart cart;
 

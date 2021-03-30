@@ -1,6 +1,8 @@
 
 package tn.esprit.spring.Entities;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -42,10 +44,9 @@ public class Product implements Serializable {
 	
 	private String picture;
 	
-	private float sale;
 	
 	
-	@Pattern(regexp = "619[0-9]{6}" , message = "must start with 619 and with 6 numbers")
+	//@Pattern(regexp = "619[0-9]{6}" , message = "must start with 619 and with 6 numbers")
 	private String code;
 	
 
@@ -57,12 +58,18 @@ public class Product implements Serializable {
 	private Subject subject;
 	
 	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="product",fetch=FetchType.LAZY)
+	@ManyToMany
 	private List<Publicity> publicities;
+	
+	@JsonIgnore
+	@OneToMany()
+	public List<Reduction> reductions;
 	
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Category category;
+	public Category category;
+	
+	
 	
 	public Long getId() {
 		return id;
@@ -124,9 +131,6 @@ public class Product implements Serializable {
 	}
 
 
-
-
-
 	public Subject getSubject() {
 		return subject;
 	}
@@ -176,7 +180,7 @@ public class Product implements Serializable {
 	public Product(){}
 
 
-	public float getSale() {
+	/*public float getSale() {
 		return sale;
 	}
 
@@ -184,7 +188,7 @@ public class Product implements Serializable {
 	public void setSale(float sale) {
 		this.sale = sale;
 	}
-
+*/
 
 	public Category getCategory() {
 		return category;
@@ -194,6 +198,31 @@ public class Product implements Serializable {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
+
+	public List<Reduction> getReductions() {
+		return reductions;
+	}
+
+
+	public void setReductions(List<Reduction> reductions) {
+		this.reductions = reductions;
+	}
+
+
+
+
+/*
+	public LocalDate getDatesale() {
+		return datesale;
+	}
+
+
+	public void setDatesale(LocalDate datesale) {
+		this.datesale = datesale;
+	}
+*/
+
+
 	
 }

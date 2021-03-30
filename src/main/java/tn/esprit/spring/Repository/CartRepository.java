@@ -58,10 +58,24 @@ public interface CartRepository extends CrudRepository<Cart, Long>  {
 // List Product of a cart
 
 	
-	 @Query("select DISTINCT p from Product p "
-             + "inner join Cart c "
-             + "where c.id=:cart_id")
-	public List<Product> getCartProducts(Long cart_id);
+	 @Query("Select "
+				+ "DISTINCT p from OrderLine p "
+				+ "join p.cart c ")
+	public List<OrderLine> getOrderlines();
+	 
+	 @Query("Select DISTINCT p from Order p ")
+	public List<Order> getOrders();
+	 	 
+	 
+	 @Query("select DISTINCT c from Cart c ")
+	public List<Cart> getProducts();
+	  
+	 
+	 @Query("SELECT count(p.product.id) FROM OrderLine p "
+	 		+ "where p.product.name=:name ")
+	 public int countusers(@Param("name")String name);
+	 
+	 
 
 
 	

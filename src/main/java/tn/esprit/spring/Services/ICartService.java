@@ -18,4 +18,6 @@ public interface ICartService {
 	public List<Cart> getProductTotalPrice(Long cart_id,Long prod_id) ;
 	
    */
+	public List<Product> getCartProducts();
+	public List<User> getUsers();
 }

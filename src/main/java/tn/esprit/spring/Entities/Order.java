@@ -21,6 +21,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="commande")
 public class Order implements Serializable {
@@ -44,16 +46,20 @@ public class Order implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private PaymentMethod paymentmethod;
 	
+	@JsonIgnore
 	@ManyToOne(cascade=CascadeType.ALL)
 	DeliveryAgent deliveryagent;
 	
-	
+	@JsonIgnore
 	@OneToOne(mappedBy="order")
 	private Bill bill;
 	
+	
+	@JsonIgnore
 	@OneToOne
 	private Donation donation ;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	private Set<OrderLine> orderline;
 
