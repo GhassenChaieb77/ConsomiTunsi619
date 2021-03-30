@@ -1,9 +1,12 @@
 package tn.esprit.spring.Services;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import tn.esprit.spring.Entities.Category;
 import tn.esprit.spring.Entities.Product;
@@ -21,6 +24,8 @@ public class CategoryService implements ICategoryService{
 	
 	@Autowired
 	ProductService productser;
+	
+
 	
 
 	@Override
@@ -58,19 +63,14 @@ public class CategoryService implements ICategoryService{
 	}
 
 	@Override
-	public void disaffectCategoryToProduct(long ProcId, long cateId) {
-		Category c = categoryRepo.findById(cateId).get();
-
-		int nb = c.getProducts().size();
-		for(int index = 0; index < nb; index++)
-		{
-			if(c.getProducts().get(index).getId() == ProcId)
-			{
-				c.getProducts().remove(index);
-				productRepo.save(productRepo.findById((long) index).get());
-				break;
-			}
-		}
+	public void disaffectCategoryToProduct(long ProcId) {
+	
+		Category c = productRepo.findById(ProcId).get().getCategory();
+		
+		c.getProducts().remove(ProcId);
+		productRepo.findById(ProcId).get().setCategory(null);
+		productRepo.save(productRepo.findById(ProcId).get());
+	
 		
 	}
 
@@ -81,4 +81,22 @@ public class CategoryService implements ICategoryService{
 
 
 	}
+
+	/*@Override
+	public List<Product> reductionByCategory(String name, int x) {
+		List<Product> l = categoryRepo.getCategotyByNameJPQL(name).getProducts();
+		int nb = l.size();
+		for (int index = 0; index < nb; index++)
+		{
+			
+			l.get(index).setSale((l.get(index).getPrice() - ((l.get(index).getPrice()*x)/100)));
+			productRepo.save(l.get(index));
+			
+			
+		}
+		return l;
+		
+	}
+*/
+	
 }

@@ -28,11 +28,11 @@ public class Cart implements Serializable {
 	
 	private float prodpricetotal;
 	
-	
+	@JsonIgnore
 	@OneToOne
 	private User user;
 	
-	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="cart")
     private List<OrderLine> OrderLines ;
 

@@ -1,6 +1,8 @@
 
 package tn.esprit.spring.Entities;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -42,31 +44,31 @@ public class Product implements Serializable {
 	
 	private String picture;
 	
-	private float sale;
 	
 	
-	@Pattern(regexp = "619[0-9]{6}" , message = "must start with 619 and with 6 numbers")
+	//@Pattern(regexp = "619[0-9]{6}" , message = "must start with 619 and with 6 numbers")
 	private String code;
 	
 
 	private int quantity;
 	
-	
 	@JsonIgnore
-	
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="product")
-	private List<Subject> subjects;
-	
-	/*@OneToOne(mappedBy="product",fetch=FetchType.LAZY)
-	private Subject subjects;*/
+	private List<Subject> subjects; 
 	
 	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="product",fetch=FetchType.LAZY)
+	@OneToMany()
 	private List<Publicity> publicities;
+	
+	@JsonIgnore
+	@OneToMany()
+	public List<Reduction> reductions;
 	
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Category category;
+	public Category category;
+	
+	
 	
 	public Long getId() {
 		return id;
@@ -131,9 +133,6 @@ public class Product implements Serializable {
 
 
 
-
-
-
 	public List<Publicity> getPublicities() {
 		return publicities;
 	}
@@ -151,41 +150,18 @@ public class Product implements Serializable {
 
 
 	
-
-
-
-
-
-	
-
-
-	public Product(String name, float price, String picture, String code, int quantity) {
+	public Product(Long id, String name, float price, String picture, String code, int quantity, List<Subject> subjects,
+			List<Publicity> publicities, List<Reduction> reductions, Category category) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.picture = picture;
 		this.code = code;
 		this.quantity = quantity;
-	}
-	public Product(){}
-
-
-	public float getSale() {
-		return sale;
-	}
-
-
-	public void setSale(float sale) {
-		this.sale = sale;
-	}
-
-
-	public Category getCategory() {
-		return category;
-	}
-
-
-	public void setCategory(Category category) {
+		this.subjects = subjects;
+		this.publicities = publicities;
+		this.reductions = reductions;
 		this.category = category;
 	}
 
@@ -200,21 +176,48 @@ public class Product implements Serializable {
 	}
 
 
-	public Product(Long id, String name, float price, String picture, float sale,
-			@Pattern(regexp = "619[0-9]{6}", message = "must start with 619 and with 6 numbers") String code,
-			int quantity, List<Subject> subjects, List<Publicity> publicities, Category category) {
+	public Product(String name, float price, String picture, String code, int quantity) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.picture = picture;
-		this.sale = sale;
 		this.code = code;
 		this.quantity = quantity;
-		this.subjects = subjects;
-		this.publicities = publicities;
+	}
+	public Product(){}
+
+
+	/*public float getSale() {
+		return sale;
+	}
+
+
+	public void setSale(float sale) {
+		this.sale = sale;
+	}
+*/
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
+
+	public List<Reduction> getReductions() {
+		return reductions;
+	}
+
+
+	public void setReductions(List<Reduction> reductions) {
+		this.reductions = reductions;
+	}
+
+
+
+
 	
 }

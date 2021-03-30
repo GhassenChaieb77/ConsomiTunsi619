@@ -1,14 +1,20 @@
 package tn.esprit.spring.Services;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.type.LocalDateTimeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entities.Cart;
+import tn.esprit.spring.Entities.OrderLine;
 import tn.esprit.spring.Entities.Product;
+import tn.esprit.spring.Entities.Publicity;
+import tn.esprit.spring.Entities.User;
 import tn.esprit.spring.Repository.CartRepository;
 import tn.esprit.spring.Repository.OrderRepository;
 import tn.esprit.spring.Repository.ProductRepository;
@@ -94,12 +100,53 @@ public class CartServiceImp implements ICartService {
 		//cartRepository.removeCartItemByUser(user_id, cart_id);
 		
 	}
-
-	@Override
-	public List<Product> getCartProducts(long user_id) {
-		// TODO Auto-generated method stub
-		Cart UserCart = cartRepository.getCartByUserId(user_id) ;
-		return UserCart.getProducts();
-	} 
 */
+	
+	
+	@Autowired
+	CartRepository cartRepo;  
+	
+	@Override
+	public List<Product> getCartProducts() {
+
+		List<Product> p = new ArrayList<Product>();
+		List<OrderLine> l=cartRepo.getOrderlines();
+	    int nb= l.size();
+		for (int i=0;i<nb;i++)
+		{
+			
+			List<Publicity> pub =l.get(i).getProduct().getPublicities();
+			int nombre=pub.size();
+			
+			for(int k=0;k<nombre;k++)
+			{
+				 Date d=l.get(i).getCart().getUser().getDate(); 
+				 int year=d.getYear()+1900;  
+			
+				if(pub.get(k).getSex().equals(l.get(i).getCart().getUser().getGender()) && pub.get(k).getAge()==(2021-year))
+				{				
+						if(p.contains(pub.get(k).getProduct()))
+						{
+							p.remove(pub.get(k).getProduct());
+						}								
+						p.add(l.get(i).getProduct());          						
+				}		
+			}
+		}	
+		return p;	
+	} 
+
+	
+	@Override
+	public List<User> getUsers() {
+
+		List<User> p = new ArrayList<User>();
+		List<OrderLine> l=cartRepo.getOrderlines();
+		int nb= l.size();
+		for (int i=0;i<nb;i++)
+		{
+			p.add(l.get(i).getCart().getUser());
+		}
+		return p;
+}
 }

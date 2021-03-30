@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class OrderLine implements Serializable {
 	/**
@@ -23,10 +25,12 @@ public class OrderLine implements Serializable {
 	
 	
 	private int quantity;
-
+ 
+	@JsonIgnore
     @ManyToOne
     private Cart cart ;
     
+   
     @ManyToOne(cascade=CascadeType.REFRESH)
     private Product product ;
 

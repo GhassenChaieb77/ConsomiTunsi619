@@ -34,7 +34,7 @@ public class Category implements Serializable {
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<Product> products;
+	public List<Product> products;
 	
 	
 

@@ -2,12 +2,14 @@ package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -37,10 +39,7 @@ public class Publicity implements Serializable {
 	
 
 	public String type;
-	
 
-	public int finalViews;
-	
 
 	public int age;
 	
@@ -51,7 +50,7 @@ public class Publicity implements Serializable {
 	public String saison;
 	
 	@ManyToOne
-	Product product;
+	private Product product;
 	
 	@ManyToOne
 	private Event event;
@@ -70,14 +69,13 @@ public class Publicity implements Serializable {
 		this.saison = saison;
 	}
 	
-	public Publicity(String name, Date startDate, Date endDate, String type, int finalViews, int age, String sex,
+	public Publicity(String name, Date startDate, Date endDate, String type,int age, String sex,
 			String saison, Product product, Event event) {
 		super();
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.type = type;
-		this.finalViews = finalViews;
 		this.age = age;
 		this.sex = sex;
 		this.saison = saison;
@@ -115,12 +113,7 @@ public class Publicity implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getFinalViews() {
-		return finalViews;
-	}
-	public void setFinalViews(int finalViews) {
-		this.finalViews = finalViews;
-	}
+
 	public int getAge() {
 		return age;
 	}
@@ -148,9 +141,11 @@ public class Publicity implements Serializable {
 		this.product = product;
 	}
 
+	
 	public Event getEvent() {
 		return event;
 	}
+
 
 	public void setEvent(Event event) {
 		this.event = event;
