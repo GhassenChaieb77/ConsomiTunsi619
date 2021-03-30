@@ -22,8 +22,8 @@ import tn.esprit.spring.Repository.UserRepository;
 
 
 
-@Service
-public class CartServiceImp implements ICartService {
+//@Service
+public class CartServiceImp {
 
 /*	@Autowired
 	CartRepository cartRepository ;
@@ -102,7 +102,7 @@ public class CartServiceImp implements ICartService {
 	}
 */
 	
-	
+/*	
 	@Autowired
 	CartRepository cartRepo;  
 	
@@ -148,5 +148,5 @@ public class CartServiceImp implements ICartService {
 			p.add(l.get(i).getCart().getUser());
 		}
 		return p;
-}
+}*/
 }

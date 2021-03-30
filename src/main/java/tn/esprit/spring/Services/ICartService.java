@@ -19,7 +19,7 @@ public interface ICartService {
 
 	public List<Product> getCartProducts();
 
-
-
+	public List<User> getUsers();
+ 
 
 }

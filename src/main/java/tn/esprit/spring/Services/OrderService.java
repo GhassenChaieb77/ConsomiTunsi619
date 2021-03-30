@@ -29,6 +29,9 @@ import tn.esprit.spring.Repository.UserRepository;
 public class OrderService implements IOrderService {
 
 	@Autowired
+	OrderRepository orderrepository;
+	
+	@Autowired
 	UserRepository userRepository ;
 	@Autowired
 	BillRepository billRepository ;
@@ -423,9 +426,17 @@ public class OrderService implements IOrderService {
 		
 		}
 	}
-	
-	
-	
-	
 
+
+
+
+	@Override
+	public Order getorder(long id) {
+		return orderrepository.getorderbyid(id);
+	}
+	
+	
+	
+	
+	
 }

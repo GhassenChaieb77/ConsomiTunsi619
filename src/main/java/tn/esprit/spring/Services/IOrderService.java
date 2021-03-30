@@ -20,6 +20,5 @@ public interface IOrderService {
 	public String getCouponCode(Long user_id);
 	public Order CouponDiscount(Long user_id,Long order_id);
 	public void checkoutOnlinewithCoupon(Long user_id,Long order_id,float amount);
-
-  
+	public Order getorder(long id);
 }

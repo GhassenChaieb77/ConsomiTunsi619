@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import java.util.List;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,9 +33,12 @@ public class DeliveryAgent implements Serializable {
 	
 	private String position;
 	
-	private float traveledpath;
+	private double traveledpath;
 
+	@OneToMany(mappedBy="deliveryagent",cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Order> orders;
 	
+	private double balance;
 
 	public Long getId() {
 		return id;
@@ -84,15 +88,15 @@ public class DeliveryAgent implements Serializable {
 		this.position = position;
 	}
 
-	public float getTraveledpath() {
+	public double getTraveledpath() {
 		return traveledpath;
 	}
 
-	public void setTraveledpath(float traveledpath) {
+	public void setTraveledpath(double traveledpath) {
 		this.traveledpath = traveledpath;
 	}
 
-
+	
 
 	public DeliveryAgent(String firstname, String lastname, boolean isavailable, Long phonenumber, String position,
 			float traveledpath) {
@@ -108,6 +112,29 @@ public class DeliveryAgent implements Serializable {
 
 	public DeliveryAgent() {
 	
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "DeliveryAgent [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", isavailable="
+				+ isavailable + ", phonenumber=" + phonenumber + ", position=" + position + ", traveledpath="
+				+ traveledpath + ", orders=" + orders + ", balance=" + balance + "]";
 	}
 	
 			

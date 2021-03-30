@@ -10,6 +10,7 @@ import tn.esprit.spring.Entities.Cart;
 import tn.esprit.spring.Entities.OrderLine;
 import tn.esprit.spring.Entities.Product;
 import tn.esprit.spring.Entities.User;
+import tn.esprit.spring.Services.CartService;
 import tn.esprit.spring.Services.CartServiceImp;
 
 
@@ -17,7 +18,7 @@ import tn.esprit.spring.Services.CartServiceImp;
 public class CartController {
 
 	@Autowired
-	CartServiceImp cartService ;
+	CartService cartService ;
 /*	
 	@RequestMapping("getCart/{user_id}")  
 	public Cart getCartByUserId(@PathVariable("user_id") long user_id) {

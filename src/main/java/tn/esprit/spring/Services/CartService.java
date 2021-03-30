@@ -172,6 +172,21 @@ public class CartService implements ICartService {
 		return p;	
 	}
 
+		
+	
+		
+	@Override
+	public List<User> getUsers() {
+
+		List<User> p = new ArrayList<User>();
+		List<OrderLine> l=cartRepository.getOrderlines();
+		int nb= l.size();
+		for (int i=0;i<nb;i++)
+		{
+			p.add(l.get(i).getCart().getUser());
+		}
+		return p;
+}
 
 
 }
