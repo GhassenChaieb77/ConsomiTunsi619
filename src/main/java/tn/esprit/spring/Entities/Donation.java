@@ -1,6 +1,7 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity 
 public class Donation implements Serializable {
@@ -29,18 +32,25 @@ public class Donation implements Serializable {
 	@Column(name="libelle")
 	private String libelle ;
 	
-	@ManyToOne
-	private Event event ;
+	
+	@Temporal(TemporalType.DATE)
+	private Date date = new Date(System.currentTimeMillis());
+	
+	@ManyToOne (cascade = CascadeType.ALL)
+	private Event event ; 
 	
 	//@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="donation")
 	//private List<Product> products;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Order order;
+	private Order order ; 
 	
-	public Donation(String libelle, Event event, Order order) {
+	public Donation(){ super(); }
+	
+	public Donation(String libelle, Date date , Event event, Order order) {
 		super();
 		this.libelle = libelle;
+		this.date = date; 
 		this.event = event;
 		this.order = order ; 
 		//this.products = products;

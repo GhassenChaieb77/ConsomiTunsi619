@@ -1,7 +1,10 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,6 +16,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -33,34 +39,72 @@ public class Event implements Serializable {
 	private String place ;
 	@Column(name="Participants_nbrs")
 	int participants ;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Jackpot jackpot;
-	
-	
+	@Column(name="date")
+	Date date; 
+	@OneToOne(cascade = CascadeType.ALL ) //, orphanRemoval = true
+	private Jackpot jackpot ; 
+	@Column(name="don")
+	private float don=10 ;
+	@JsonIgnore 
 	@OneToMany(mappedBy="event", 
 			cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Donation> donations;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="event",fetch=FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="event",fetch=FetchType.LAZY)
 	private List<Publicity> publicities;
 	
 	
 	public Event(){
+		this.don=10;
+	} 
+	
+	
+	
+	public Event(Long id , String name, String place, int participants, float don) {
+		super();
+		this.id = id ; 
+		this.name = name;
+		this.place = place;
+		this.participants = participants;
+		this.don=don; 
 		
 	} 
 	
 	
-	public Event(String name, String place, int participants) {
+	public Event(Long id , String name, String place, int participants, String date) throws ParseException {
 		super();
+		this.id = id ; 
 		this.name = name;
 		this.place = place;
 		this.participants = participants;
+		this.date=new SimpleDateFormat("yyyy-MM-dd").parse(date); 
 		
+	}
+	
+	public Event(Long id , String name, String place, int participants, String date, float don) throws ParseException {
+		super();
+		this.id = id ; 
+		this.name = name;
+		this.place = place;
+		this.participants = participants;
+		this.date=new SimpleDateFormat("yyyy-MM-dd").parse(date); 
+		this.don=don; 
 	}
 
 	
-	
+	//this.date=new SimpleDateFormat("yyyy-MM-dd").parse(date)
+
+	public float getDon() {
+		return don;
+	}
+
+
+
+	public void setDon(int don) {
+		this.don = don;
+	}
+
+
 
 	public Event(Long id, String name, String place, int participants, Jackpot jackpot) {
 		super();
@@ -127,6 +171,28 @@ public class Event implements Serializable {
 	public void setPublicities(List<Publicity> publicities) {
 		this.publicities = publicities;
 	}
+	
+	
 
-    
+    public Date getDate() {
+		return date;
+	}
+
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+
+	public void ajouterParti(){
+    	participants= participants +1 ; 
+    }
+	
+	 public void ajouterDon(float s){
+	    	don = don + s ; 
+	    }
 }
+
+

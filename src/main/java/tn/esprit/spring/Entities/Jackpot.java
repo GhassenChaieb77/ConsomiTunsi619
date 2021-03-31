@@ -86,6 +86,10 @@ public class Jackpot implements Serializable {
 	public void setJackpotsNum(int jackpotsNum) {
 		this.jackpotsNum = jackpotsNum;
 	}
+	
+	 public void ajouterAmount(float s){
+	    	amount= amount +s ; 
+	    }
 
 		
 }
