@@ -27,7 +27,7 @@ public class OrderLine implements Serializable {
 	private int quantity;
 
 	@JsonIgnore
-    @ManyToOne(cascade=CascadeType.REMOVE)
+    @ManyToOne
     private Cart cart ;
     
 

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -41,27 +42,35 @@ public class RestControlOrder {
 	IOrderLineService iorderLineService;
 	@Autowired
 	IOrderService iorderService;
+
+	@Autowired
+	ICartService icartService;
 	@Autowired
 	IBillService ibillService;
 	@Autowired
 	UserRepository userRepository ;
 
+	
+	@Autowired
+	UserServiceImp userService ;
+	
 	@Autowired
 	OrderRepository orderRepo ;
+	
 	
 	@Autowired
 	CartRepository cartRepository;
 	
-	@PostMapping("/order/{user_id}/{Adresse}/{methode}")
+	@PostMapping("/confirmorder/{Adresse}/{methode}")
 	//{"Adresse":"Nabel" }
 		@ResponseBody
-		public ResponseEntity<Order> Ordring(@PathVariable("user_id")Long user_id,@PathVariable("Adresse")String Adresse, @PathVariable("methode")String methode )
+		public ResponseEntity<Order> Ordring(@PathVariable("Adresse")String Adresse, @PathVariable("methode")String methode )
 		{
-		 try{  Cart cart = cartRepository.getCartByUserId(user_id);
+		 try{  Cart cart = icartService.getCartByUserId();
 		 if (cart.getProdpricetotal() != 0)
 			{
 			 
-				 return ResponseEntity.ok(iorderService.CreateOrder(user_id,Adresse,methode)) ;
+				 return ResponseEntity.ok(iorderService.CreateOrder(Adresse,methode)) ;
 			 }
 		 
 		 return ResponseEntity.ok(null) ;}
@@ -76,10 +85,10 @@ public class RestControlOrder {
 		
 		}
 	
-	@GetMapping(value = "/getOrdersByUser/{user_id}")
-	public List<Order> getOrdersByUserId(@PathVariable("user_id") Long user_id) {
+	@GetMapping(value = "/getOrdersByUser")
+	public List<Order> getOrdersByUserId() {
 		
-		return iorderService.getOrdersByUser(user_id); 
+		return iorderService.getOrdersByUser(); 
 	}
 	
 	@GetMapping(value = "/getOrdersByYear/{year}")
@@ -106,19 +115,21 @@ public class RestControlOrder {
 	
 	    
 	
-	    @RequestMapping(value="/payoffline/{user_id}/{order_id}",method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	    @RequestMapping(value="/payoffline/{order_id}",method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 		@ResponseBody
-		public Order Checkout(@PathVariable("user_id")Long user_id,@PathVariable("order_id")Long order_id)
+		public Order Checkout(@PathVariable("order_id")Long order_id)
 		{
-			return iorderService.checkoutOff(user_id,order_id) ;
+			return iorderService.checkoutOff(order_id) ;
 		
 		}
 	    
-	    @RequestMapping(value="/PayOnline/{user_id}/{order_id}/{amount}",method=RequestMethod.POST)
+	    @RequestMapping(value="/PayOnline/{order_id}/{amount}",method=RequestMethod.POST)
 		@ResponseBody
-		public ResponseEntity<String> CheckOutOnline(@PathVariable("user_id")Long user_id,@PathVariable("order_id")Long order_id,@PathVariable("amount") float amount)
+		public ResponseEntity<String> CheckOutOnline(@PathVariable("order_id")Long order_id,@PathVariable("amount") float amount)
 		{
-	    	User us= userRepository.findById(user_id).get();
+	    	
+	    	 User us = userService.getUserInfo();
+	    //	User us= userRepository.findById(user_id).get();
     		float UserAmount = us.getBalance() ;
     		
     		Order or = orderRepo.findById(order_id).get();
@@ -129,7 +140,7 @@ public class RestControlOrder {
 	    		try {
 	    			if(amount<or.getTotalprice()) {
 		    					
-    				 iorderService.checkoutOnline(user_id, order_id, amount) ;	
+    				 iorderService.checkoutOnline(order_id, amount) ;	
     				 
     				 return ResponseEntity
 		    	            .status(HttpStatus.ACCEPTED)
@@ -137,7 +148,7 @@ public class RestControlOrder {
 	    			}
 	    			
 	    			else{	
-	    				iorderService.checkoutOnline(user_id, order_id, amount) ;		  		
+	    				iorderService.checkoutOnline(order_id, amount) ;		  		
 		                 return ResponseEntity.ok(or.toString());
 		            	}
 	    			}
@@ -155,18 +166,19 @@ public class RestControlOrder {
     	            .body("You don't have enough money!");}
 	    }
 	    
-	    @GetMapping(value = "/getCouponCode/{user_id}")
-	    public String getCouponCode(@PathVariable("user_id")Long user_id) {
-	    	return iorderService.getCouponCode(user_id);
+	    @GetMapping(value = "/getCouponCode")
+	    public String getCouponCode() {
+	    	return iorderService.getCouponCode();
 	    }
 	    
 	    
 	    
-	    @RequestMapping(value="/PayOnlineWithCoupons/{user_id}/{order_id}/{amount}",method=RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+	    @RequestMapping(value="/PayOnlineWithCoupons/{order_id}/{amount}",method=RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
 		@ResponseBody
-		public ResponseEntity<String>  checkoutOnlinewithCoupon(@PathVariable("user_id")Long user_id,@PathVariable("order_id")Long order_id,@PathVariable("amount") float amount)
+		public ResponseEntity<String>  checkoutOnlinewithCoupon(@PathVariable("order_id")Long order_id,@PathVariable("amount") float amount)
 		{
-	    	User us= userRepository.findById(user_id).get();
+	    	 User us = userService.getUserInfo();
+	    	//User us= userRepository.findById(user_id).get();
     		float UserAmount = us.getBalance() ;
     		Order or = orderRepo.findById(order_id).get();	
 	    	if(UserAmount>= amount){
@@ -174,14 +186,15 @@ public class RestControlOrder {
 	    		
 	    			if(amount<or.getTotalprice()) {
 		    					
-    				 iorderService.checkoutOnline(user_id, order_id, amount) ;	
+    				 iorderService.checkoutOnlinewithCoupon(order_id, amount) ;	
     				 return ResponseEntity
 		    	            .status(HttpStatus.ACCEPTED)
-		    	            .body("You still have to pay "+or.getTotalprice());	  		
+		    	            .body("You still have to pay "+or.getTotalprice());	  	
+    				
 	    			}
 	    			
 	    			else{	
-	    				iorderService.checkoutOnline(user_id, order_id, amount) ;	
+	    				iorderService.checkoutOnlinewithCoupon(order_id, amount) ;	
 	    				if(or.getCoupon()==null)
 		    			{return ResponseEntity
 			    	            .status(HttpStatus.FORBIDDEN)
@@ -204,9 +217,9 @@ public class RestControlOrder {
 	    }
 	    
 	   
-	    @PutMapping(value = "/CouponDiscount/{user_id}/{order_id}")
-	    public Order CouponDiscount(@PathVariable("user_id")Long user_id,@PathVariable("order_id")Long order_id){
-	    	return iorderService.CouponDiscount(user_id,order_id);
+	    @PutMapping(value = "/CouponDiscount/{order_id}")
+	    public Order CouponDiscount(@PathVariable("order_id")Long order_id){
+	    	return iorderService.CouponDiscount(order_id);
 	    }
 	 
 	    
@@ -219,13 +232,16 @@ public class RestControlOrder {
 	        String currentDateTime = dateFormatter.format(new Date());
 	         
 	        String headerKey = "Content-Disposition";
-	        String headerValue = "attachment; filename=bill_" + currentDateTime + ".pdf";
+	        String headerValue = "attachment; filename=bill.pdf";
 	        response.setHeader(headerKey, headerValue);
-	         
+	       
+	        List<Bill> listbills =iorderService.getUserBill() ;
 	        
-	         
-	      //  UserPDFExporter exporter = new UserPDFExporter();
-	      //  exporter.export(response);
+
+	    	 BillPDFExporter exporter = new BillPDFExporter(listbills);
+	    	 exporter.export(response);
+
+		
 	         
 	    }
 	   

@@ -52,16 +52,20 @@ public class OrderService implements IOrderService {
 	
 	@Autowired
 	ICartService icartservice;
+	
+	@Autowired
+	UserServiceImp userService ;
 	//PaymentMethod pm = null ;
 	@Override
 	@Transactional
-	public Order CreateOrder(Long user_id,String Adresse,String methode) {
+	public Order CreateOrder(String Adresse,String methode) {
 		
 
-	
-		Cart cart = cartRepository.getCartByUserId(user_id);
+	    User user = userService.getUserInfo();
+		Cart cart = cartRepository.getCartByUserId(user.getId());
 		//Order or = orderRepo.getOrderByUser(user_id);
-		User user = userRepository.findById(user_id).get();
+		//User user = userRepository.findById(user_id).get();
+		
 		
 		  Order order = new Order();
 		// TODO Auto-generated method stub
@@ -77,9 +81,24 @@ public class OrderService implements IOrderService {
 		 order.setPaymentmethod(methode);
          order.setCart(cart);
          order.setUser(user);
-
+         orderRepo.save(order) ;
 		 cart.setProdpricetotal(OLService.GetPriceTotal());
 		 cartRepository.save(cart) ;
+			if(order.getBill()==null){
+				float priceOrig = order.getTotalprice();
+
+		         int QtFinal = 0;
+	        Bill bill= ibillService.CreateAndAffectBillToOrder(order.getId(),user.getId());
+	   		for (int i = 0; i < cart.getOrderLines().size(); i++) {
+	   		    QtFinal  =+order.getCart().getOrderLines().get(i).getQuantity();
+	   		   
+	   		}
+	   			bill.setQuantity(QtFinal );
+	   	    	bill.setTotal(priceOrig);
+	   	
+	         billRepository.save(bill);
+			 order.setBill(bill);
+	}
 		 orderRepo.save(order) ;   
 		
 		
@@ -93,38 +112,24 @@ public class OrderService implements IOrderService {
 
 
 	@Override
-	public List<Order> getOrdersByUser(Long user_id) {
+	public List<Order> getOrdersByUser() {
 		// TODO Auto-generated method stub
-		return orderRepo.getOrderByUser(user_id)	;			}
+		User user = userService.getUserInfo();
+		return orderRepo.getOrderByUser(user.getId())	;			}
 
 
 
 	@Override
-	public Order checkoutOff(Long user_id,Long order_id) {
+	public Order checkoutOff(Long order_id) {
 		// TODO Auto-generated method stub
-		Cart cart = cartRepository.getCartByUserId(user_id);
+		User user = userService.getUserInfo();
+		Cart cart = cartRepository.getCartByUserId(user.getId());
 		Order or = orderRepo.findById(order_id).get();
-		float priceOrig = or.getTotalprice();
-		  
-		//	float UserAmount = us.getBalance() ;
-			
-			  int QtFinal = 0;
+		
 				 
 		if(or.getPaymentmethod().equals("offline"))
 		{       
 			
-			 if(or.getBill()==null){
-			     Bill bill= ibillService.CreateAndAffectBillToOrder(or.getId(),user_id);
-			   		for (int i = 0; i < cart.getOrderLines().size(); i++) {
-			   		    QtFinal  =+or.getCart().getOrderLines().get(i).getQuantity();
-			   		   
-			   		}
-			   			bill.setQuantity(QtFinal );
-			   	    	bill.setTotal(priceOrig);
-			   	
-			         billRepository.save(bill);
-					 or.setBill(bill);
-			}
 			 orderRepo.save(or);
 			 Long CurrentCartId= cart.getId();	
 		     icartservice.RemoveOrderLinesFromCart(CurrentCartId);
@@ -157,11 +162,12 @@ public class OrderService implements IOrderService {
 
 
 	@Override
-	public Order AddOrderLine(Long user_id) {
+	public Order AddOrderLine() {
 		// TODO Auto-generated method stub
-		Cart cart = cartRepository.getCartByUserId(user_id);
+		User user = userService.getUserInfo();
+		Cart cart = cartRepository.getCartByUserId(user.getId());
 	//	OrderLine ol = orderlineRepo.findAllById(arg0)
-		Order or = orderRepo.findById(user_id).get();
+		Order or = orderRepo.findById(user.getId()).get();
 		return or;
 	}
 
@@ -179,11 +185,12 @@ public class OrderService implements IOrderService {
 
 
 	@Override
-	public void checkoutOnline(Long user_id,Long order_id,float amount) {
+	public void checkoutOnline(Long order_id,float amount) {
 		// TODO Auto-generated method stub
-		Cart cart = cartRepository.getCartByUserId(user_id);
+		User us = userService.getUserInfo();
+		Cart cart = cartRepository.getCartByUserId(us.getId());
 		Order or = orderRepo.findById(order_id).get();	
-		User us= userRepository.findById(user_id).get();
+	
 		float priceOrig = or.getTotalprice();
 		  
 	//	float UserAmount = us.getBalance() ;
@@ -195,18 +202,8 @@ public class OrderService implements IOrderService {
 			  {
 			     us.setBalance(us.getBalance()-amount);
 			     userRepository.save(us);
-			     if(or.getBill()==null){
-				     Bill bill= ibillService.CreateAndAffectBillToOrder(or.getId(),user_id);
-				   		for (int i = 0; i < cart.getOrderLines().size(); i++) {
-				   		    QtFinal  =+or.getCart().getOrderLines().get(i).getQuantity();
-				   		   
-				   		}
-				   			bill.setQuantity(QtFinal );
-				   	    	bill.setTotal(priceOrig);
-				   	
-				         billRepository.save(bill);
-						 or.setBill(bill);
-				}
+			     
+
 				 orderRepo.save(or);
 				 Long CurrentCartId= cart.getId();	
 			     icartservice.RemoveOrderLinesFromCart(CurrentCartId);
@@ -222,26 +219,15 @@ public class OrderService implements IOrderService {
 				  us.setBalance(us.getBalance()-amount);
 				  userRepository.save(us);
 				  System.out.println("You still have to pay"+ RestPayment);
-				  checkoutOnline(user_id,order_id,amount);
+				  checkoutOnline(order_id,amount);
 				
 		    	  }
 			  else
 				  if (amount> or.getTotalprice()&& or.getTotalprice()!=0){
-					  Bill bill= ibillService.CreateAndAffectBillToOrder(or.getId(),user_id);
+					 // Bill bill= ibillService.CreateAndAffectBillToOrder(or.getId(),us.getId());
 				    float RestAmount= amount-priceOrig ;
 			     	us.setBalance((us.getBalance()-amount)+RestAmount);
-				    userRepository.save(us);
-				    if(or.getBill()==null){
-				   		for (int i = 0; i < cart.getOrderLines().size(); i++) {
-				   		    QtFinal  =+or.getCart().getOrderLines().get(i).getQuantity();
-				   		   
-				   		}
-				   			bill.setQuantity(QtFinal );
-				   	    	bill.setTotal(priceOrig);
-				   	
-				           billRepository.save(bill);
-						 or.setBill(bill); 
-				    }
+			
 					 orderRepo.save(or);
 					 Long CurrentCartId= cart.getId();	
 				     icartservice.RemoveOrderLinesFromCart(CurrentCartId);
@@ -260,9 +246,10 @@ public class OrderService implements IOrderService {
 	
 	//get coupons 
 	@Override
-	public String getCouponCode(Long user_id) {
+	public String getCouponCode() {
 		// TODO Auto-generated method stub
-		List<Order> UserOrders = orderRepo.getOrderByUser(user_id);
+		User user = userService.getUserInfo();
+		List<Order> UserOrders = orderRepo.getOrderByUser(user.getId());
 		List<Coupon> coupons = new ArrayList<>();
 		couponRepository.findAll().forEach(coupons::add);
 		Date today = new Date(System.currentTimeMillis());
@@ -299,9 +286,11 @@ public class OrderService implements IOrderService {
 	
     //Prepare discounts
 	@Override
-	public Order CouponDiscount(Long user_id,Long order_id) {
+	public Order CouponDiscount(Long order_id) {
 		// TODO Auto-generated method stub
-	 List<Order> UserOrders = orderRepo.getOrderByUser(user_id);
+	
+		User user = userService.getUserInfo();
+	 List<Order> UserOrders = orderRepo.getOrderByUser(user.getId());
 	 
 	 final Iterator<Order> itr = UserOrders.iterator();
 	    //synchronized (UserOrders) {
@@ -312,8 +301,8 @@ public class OrderService implements IOrderService {
 	 Order or=  lastElement ;
 	 List<Coupon> coupons = new ArrayList<>();
 	 couponRepository.findAll().forEach(coupons::add);
-	 if (getCouponCode(user_id)!=null)
-	 { if (getCouponCode(user_id).equals("promo50")){
+	 if (getCouponCode()!=null)
+	 { if (getCouponCode().equals("promo50")){
 			
 				float discount = (float) (or.getTotalprice()*0.5);
 				float NewPrice= or.getTotalprice()-discount ;
@@ -326,7 +315,7 @@ public class OrderService implements IOrderService {
 				orderRepo.save(or);
 				
 			}
-		 else if (getCouponCode(user_id).equals("promo20")){
+		 else if (getCouponCode().equals("promo20")){
 				
 				float discount = (float) (or.getTotalprice()*0.2);
 				float NewPrice= or.getTotalprice()-discount ;
@@ -357,12 +346,13 @@ public class OrderService implements IOrderService {
 
 
 	@Override
-	public void checkoutOnlinewithCoupon(Long user_id, Long order_id, float amount) {
+	public void checkoutOnlinewithCoupon(Long order_id, float amount) {
 		// TODO Auto-generated method stub
-		Cart cart = cartRepository.getCartByUserId(user_id);
+		User user = userService.getUserInfo();
+		Cart cart = cartRepository.getCartByUserId(user.getId());
 		Order or = orderRepo.findById(order_id).get();	
-		User us= userRepository.findById(user_id).get();
-		float UserAmount = us.getBalance() ;
+		//User us= userRepository.findById(user_id).get();
+		float UserAmount = user.getBalance() ;
 		Coupon c = couponRepository.findById(or.getCoupon().getId()).get();
 		List<Coupon> coupons = new ArrayList<>();
 		couponRepository.findAll().forEach(coupons::add);
@@ -370,13 +360,13 @@ public class OrderService implements IOrderService {
 				//CouponPay(user_id, order_id, amount);}
 		
 		//Coupon cp = couponRepository.findById(or.getCoupon().getId()).get();
-		if(cp.isValid()&& getCouponCode(user_id)!=null) {
-			CouponDiscount(user_id,order_id);
+		if(cp.isValid()&& getCouponCode()!=null) {
+			CouponDiscount(order_id);
 			 
 			  if(amount==or.getTotalprice()&& or.getTotalprice()!=0)
 			  {
-			     us.setBalance(us.getBalance()-amount);
-			     userRepository.save(us);
+			     user.setBalance(user.getBalance()-amount);
+			     userRepository.save(user);
 				 Long CurrentCartId= cart.getId();	
 				 icartservice.RemoveOrderLinesFromCart(CurrentCartId);
 				 //Cart NewC = icartservice.addCart(user_id);
@@ -392,17 +382,17 @@ public class OrderService implements IOrderService {
 				  float RestPayment= or.getTotalprice()-amount ;
 				  or.setTotalprice(RestPayment); 
 				  orderRepo.save(or);
-				  us.setBalance(us.getBalance()-amount);
-				  userRepository.save(us);
+				  user.setBalance(user.getBalance()-amount);
+				  userRepository.save(user);
 				  System.out.println("You still have to pay"+ RestPayment);
-				  checkoutOnlinewithCoupon(user_id,order_id,amount);
+				  checkoutOnlinewithCoupon(order_id,amount);
 				  
 		    	  }
 			  else
 				  if (amount> or.getTotalprice()&& or.getTotalprice()!=0){
 				    float RestAmount= amount-or.getTotalprice() ;
-			     	us.setBalance((us.getBalance()-amount)+RestAmount);
-				    userRepository.save(us);
+			     	user.setBalance((user.getBalance()-amount)+RestAmount);
+				    userRepository.save(user);
 					Long CurrentCartId= cart.getId();	
 					icartservice.RemoveOrderLinesFromCart(CurrentCartId);
 					//Cart NewC = icartservice.addCart(user_id);
@@ -417,13 +407,29 @@ public class OrderService implements IOrderService {
 		
 		
 		else {
-			 			  checkoutOnline(user_id,order_id,amount);
+			 			  checkoutOnline(order_id,amount);
 			
 		}
 		
 		}
 	}
+
+
+
+
+	@Override
+	public List<Bill> getUserBill()
+	{
+		User user = userService.getUserInfo();
+	//	Cart cart = cartRepository.getCartByUserId(user.getId());
+		
+		List<Bill> bills = orderRepo.getUserBill(user.getId());
+		 return bills ;
+		
+	}
 	
+	
+
 	
 	
 	

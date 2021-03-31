@@ -52,10 +52,10 @@ public class RestControlCart {
 			return icartService.RemoveOrderLinesFromCart(cart_id);
 		}
 		
-		@GetMapping(value = "/getCart/{user_id}")
-		public Cart getCartByUserId(@PathVariable("user_id") Long user_id) {
+		@GetMapping(value = "/getCart")
+		public Cart getCartByUserId() {
 			
-			return icartService.getCartByUserId(user_id); 
+			return icartService.getCartByUserId(); 
 		}
 		
 		

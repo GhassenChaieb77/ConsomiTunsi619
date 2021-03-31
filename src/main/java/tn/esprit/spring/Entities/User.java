@@ -24,6 +24,8 @@ import javax.validation.constraints.Email;
 
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 public class User implements Serializable{
@@ -70,7 +72,7 @@ public class User implements Serializable{
 	private List<Comment> comments = new ArrayList<>();
 	
 	
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToOne(mappedBy="user")
 	private Cart cart;
 

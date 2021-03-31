@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entities.Bill;
+import tn.esprit.spring.Entities.BillPDFExporter;
 import tn.esprit.spring.Entities.Cart;
 import tn.esprit.spring.Entities.Order;
 import tn.esprit.spring.Entities.OrderLine;
@@ -48,9 +49,10 @@ public class BillService implements IBillService{
 			
 		
         billRepository.save(bill);
-      //  or.setBill(bill);
+        //  or.setBill(bill);
 		//orderRepository.save(or);
-		
+       // BillPDFExporter exporter = new BillPDFExporter() ;
+		//exporter.export(bill);
       
 		return bill;
 		

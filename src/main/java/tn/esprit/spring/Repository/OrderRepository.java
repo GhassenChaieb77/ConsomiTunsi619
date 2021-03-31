@@ -33,6 +33,12 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
 				+ "where month(date)=:month ")
 	 public List<Order> getOrderByMonth(@Param("month")int month);
 	 
+	 
+	 @Query("Select "
+				+ "DISTINCT o.bill from Order o "			 
+				+ "where o.user.id=:user_id ")
+	 public List<Bill> getUserBill(@Param("user_id") Long user_id) ;
+	 
 
 	 
 }
