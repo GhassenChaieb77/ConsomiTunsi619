@@ -2,12 +2,14 @@ package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -23,10 +25,10 @@ public class Publicity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+
 	public Long id;
 	
-	@Column(name="name")
+
 	public String name;
 	
 	@Temporal (TemporalType.DATE)
@@ -35,36 +37,45 @@ public class Publicity implements Serializable {
 	@Temporal (TemporalType.DATE)
 	public Date endDate;
 	
-	@Column(name="type")
+
 	public String type;
-	
-	@Column(name="finalViews")
-	public int finalViews;
-	
-	@Column(name="age")
+
+
 	public int age;
 	
-	@Column(name="sex")
+
 	public String sex;
 	
-	@Column(name="saison")
+
 	public String saison;
 	
 	@ManyToOne
-	Product product;
+	private Product product;
 	
 	@ManyToOne
 	private Event event;
 	
+	public Publicity(){}
 	
-	public Publicity(String name, Date startDate, Date endDate, String type, int finalViews, int age, String sex,
+	public Publicity(String name, Date startDate, Date endDate, String type,int age, String sex,
+			String saison) {
+		super();
+		this.name = name;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.type = type;
+		this.age = age;
+		this.sex = sex;
+		this.saison = saison;
+	}
+	
+	public Publicity(String name, Date startDate, Date endDate, String type,int age, String sex,
 			String saison, Product product, Event event) {
 		super();
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.type = type;
-		this.finalViews = finalViews;
 		this.age = age;
 		this.sex = sex;
 		this.saison = saison;
@@ -102,12 +113,7 @@ public class Publicity implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getFinalViews() {
-		return finalViews;
-	}
-	public void setFinalViews(int finalViews) {
-		this.finalViews = finalViews;
-	}
+
 	public int getAge() {
 		return age;
 	}
@@ -135,9 +141,11 @@ public class Publicity implements Serializable {
 		this.product = product;
 	}
 
+	
 	public Event getEvent() {
 		return event;
 	}
+
 
 	public void setEvent(Event event) {
 		this.event = event;

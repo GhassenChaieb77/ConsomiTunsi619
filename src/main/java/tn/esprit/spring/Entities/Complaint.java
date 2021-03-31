@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Complaint implements Serializable {
 	/**
@@ -24,24 +26,22 @@ public class Complaint implements Serializable {
 	
 	private String content;
 	
-	@ManyToOne
-	private Order order;
-
+	private String response;
 	
-
-	
-
-	public Complaint(String type, String content, Order order) {
-		super();
-		this.type = type;
-		this.content = content;
-		this.order = order;
+	public String getResponse() {
+		return response;
 	}
+
+	public void setResponse(String response) {
+		this.response = response;
+	}
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Order order;
 
 	public Long getId() {
 		return id;
 	}
-	
 
 	public void setId(Long id) {
 		this.id = id;
@@ -70,6 +70,18 @@ public class Complaint implements Serializable {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+
+	public Complaint(String type, String content, Order order) {
+		super();
+		this.type = type;
+		this.content = content;
+		this.order = order;
+	}
+	public Complaint()
+	{
+	 
+	}
 	
+		
 	
 }

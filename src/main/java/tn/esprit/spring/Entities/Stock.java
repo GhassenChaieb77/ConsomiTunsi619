@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,16 +29,16 @@ import javax.validation.constraints.Email;
 		private static final long serialVersionUID = 1L;
 		@Id
 		@GeneratedValue (strategy = GenerationType.IDENTITY)
-		@Column(name="Stock_id")
+		
 		private Long id;
-		@Column(name="EntryQt")
+		
 	    private int EntryQt;
-		@Column(name="OutletQt")
-	    private int OutletQt;
-		@Column(name="PurchasePrice")
+			
 	    private float PurchasePrice;
+	    
 		@Temporal (TemporalType.DATE)
 		private Date OperationDate;
+		
 		@Temporal (TemporalType.DATE)
 		private Date PurchaseDate;
 		
@@ -45,23 +47,9 @@ import javax.validation.constraints.Email;
 		@ManyToMany(cascade = CascadeType.ALL)
 		private List<Product> products;
 
-
-
-		
-
-
-		public Stock(int entryQt, int outletQt, float purchasePrice, Date operationDate, Date purchaseDate,
-				List<Product> products) {
-			super();
-			this.EntryQt = entryQt;
-			this.OutletQt = outletQt;
-			this.PurchasePrice = purchasePrice;
-			this.OperationDate = operationDate;
-			this.PurchaseDate = purchaseDate;
-			this.products = products;
+public Stock() {
+			
 		}
-
-
 
 		public Long getId() {
 			return id;
@@ -87,16 +75,7 @@ import javax.validation.constraints.Email;
 
 
 
-		public int getOutletQt() {
-			return OutletQt;
-		}
-
-
-
-		public void setOutletQt(int outletQt) {
-			OutletQt = outletQt;
-		}
-
+	
 
 
 		public float getPurchasePrice() {
@@ -144,7 +123,25 @@ import javax.validation.constraints.Email;
 		public void setProducts(List<Product> products) {
 			this.products = products;
 		}
+
+
+
+		public Stock(int entryQt, float purchasePrice, Date operationDate, Date purchaseDate)
+		{
+			EntryQt = entryQt;
+			PurchasePrice = purchasePrice;
+			OperationDate = operationDate;
+			PurchaseDate = purchaseDate;
+		}
+
+
+
 		
+			
+		
+		
+
+
 		
 				
 		

@@ -1,6 +1,8 @@
 
 package tn.esprit.spring.Entities;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,6 +17,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product implements Serializable {
@@ -26,144 +32,192 @@ public class Product implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	
 	private Long id;
 	
-	@Column(name="name")
+	
 	private String name;
 	
-	@Column(name="price")
+
 	private float price;
 	
-	@Column(name="picture")
+	
 	private String picture;
 	
-	@Column(name="code")
-	private int code;
 	
-	@Column(name="quantity")
+	
+	//@Pattern(regexp = "619[0-9]{6}" , message = "must start with 619 and with 6 numbers")
+	private String code;
+	
+
 	private int quantity;
 	
-	@ManyToOne
-	private Category category;
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="product")
+	private List<Subject> subjects; 
 	
-	@ManyToOne
-	private Cart cart;
-	
-	@ManyToOne
-	private Donation donation;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="product",fetch=FetchType.LAZY)
+	@JsonIgnore
+	@OneToMany()
 	private List<Publicity> publicities;
 	
-	@OneToOne
-	private Subject subject;
+	@JsonIgnore
+	@OneToMany()
+	public List<Reduction> reductions;
 	
-	@ManyToMany(cascade = CascadeType.ALL,mappedBy="products")
-	private List<Stock> stocks;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	public Category category;
 	
 	
-	public Product(String name, float price, String picture, int code, int quantity, Category category, Cart cart,
-			Donation donation, List<Publicity> publicities, Subject subject, List<Stock> stocks) {
+	
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public float getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+
+	public String getPicture() {
+		return picture;
+	}
+
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+
+	public String getCode() {
+		return code;
+	}
+
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+
+
+
+
+	public List<Publicity> getPublicities() {
+		return publicities;
+	}
+
+
+	public void setPublicities(List<Publicity> publicities) {
+		this.publicities = publicities;
+	}
+
+
+	
+
+
+	
+
+
+	
+	public Product(Long id, String name, float price, String picture, String code, int quantity, List<Subject> subjects,
+			List<Publicity> publicities, List<Reduction> reductions, Category category) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.picture = picture;
+		this.code = code;
+		this.quantity = quantity;
+		this.subjects = subjects;
+		this.publicities = publicities;
+		this.reductions = reductions;
+		this.category = category;
+	}
+
+
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
+
+
+	public Product(String name, float price, String picture, String code, int quantity) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.picture = picture;
 		this.code = code;
 		this.quantity = quantity;
-		this.category = category;
-		this.cart = cart;
-		this.donation = donation;
-		this.publicities = publicities;
-		this.subject = subject;
-		this.stocks = stocks;
 	}
-	
-	public Long getId() {
-		return id;
+	public Product(){}
+
+
+	/*public float getSale() {
+		return sale;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+
+	public void setSale(float sale) {
+		this.sale = sale;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public float getPrice() {
-		return price;
-	}
-	public void setPrice(float price) {
-		this.price = price;
-	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-	public int getCode() {
-		return code;
-	}
-	public void setCode(int code) {
-		this.code = code;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+*/
+
 	public Category getCategory() {
 		return category;
 	}
+
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
 
-	public Cart getCart() {
-		return cart;
+
+	public List<Reduction> getReductions() {
+		return reductions;
 	}
 
-	public void setCart(Cart cart) {
-		this.cart = cart;
+
+	public void setReductions(List<Reduction> reductions) {
+		this.reductions = reductions;
 	}
 
-	
 
-	public Donation getDonation() {
-		return donation;
-	}
 
-	public void setDonation(Donation donation) {
-		this.donation = donation;
-	}
 
-	public List<Publicity> getPublicities() {
-		return publicities;
-	}
-
-	public void setPublicities(List<Publicity> publicities) {
-		this.publicities = publicities;
-	}
-
-	public Subject getSubject() {
-		return subject;
-	}
-
-	public void setSubject(Subject subject) {
-		this.subject = subject;
-	}
-
-	public List<Stock> getStocks() {
-		return stocks;
-	}
-
-	public void setStocks(List<Stock> stocks) {
-		this.stocks = stocks;
-	}
-	
-	
 	
 }

@@ -1,6 +1,7 @@
 package tn.esprit.spring.Entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,9 +11,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity 
 public class Donation implements Serializable {
@@ -25,22 +29,31 @@ public class Donation implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id ;
 	
-	@Column(name="QuantityProd")
-	private int quantityProd ;
-	
-	@ManyToOne
-	private Event event ;
-	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="donation")
-	private List<Product> products;
+	@Column(name="libelle")
+	private String libelle ;
 	
 	
+	@Temporal(TemporalType.DATE)
+	private Date date = new Date(System.currentTimeMillis());
 	
-	public Donation(int quantityProd, Event event, List<Product> products) {
+	@ManyToOne (cascade = CascadeType.ALL)
+	private Event event ; 
+	
+	//@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="donation")
+	//private List<Product> products;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Order order ; 
+	
+	public Donation(){ super(); }
+	
+	public Donation(String libelle, Date date , Event event, Order order) {
 		super();
-		this.quantityProd = quantityProd;
+		this.libelle = libelle;
+		this.date = date; 
 		this.event = event;
-		this.products = products;
+		this.order = order ; 
+		//this.products = products;
 	}
 
 
@@ -49,6 +62,11 @@ public class Donation implements Serializable {
 	}
 
 	
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+
 	public Long getId() {
 		return id;
 	}
@@ -56,14 +74,28 @@ public class Donation implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	public int getQuantityProd() {
-		return quantityProd;
+
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+
+	public Order getOrder() {
+		return order;
+	}
+
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 	
-	public void setQuantityProd(int quantityProd) {
-		quantityProd = quantityProd;
-	}
+	
 	
 
 }

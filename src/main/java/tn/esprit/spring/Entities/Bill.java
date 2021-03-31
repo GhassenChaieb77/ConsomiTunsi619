@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Bill implements Serializable {
 	/**
@@ -28,6 +30,7 @@ public class Bill implements Serializable {
 	
 	private float total;
 	
+	@JsonIgnore
 	@OneToOne
 	private Order order;
 
@@ -38,6 +41,10 @@ public class Bill implements Serializable {
 		this.quantity = quantity;
 		this.total = total;
 		this.order = order;
+	}
+
+	public Bill() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
