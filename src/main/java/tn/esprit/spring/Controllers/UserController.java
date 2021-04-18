@@ -1,9 +1,11 @@
 package tn.esprit.spring.Controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.validation.Valid;
 
 import org.assertj.core.internal.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +31,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.configuration.JwtUtils;
+import tn.esprit.configuration.LoginRequest;
+import tn.esprit.configuration.MyUserDetails;
+import tn.esprit.spring.Entities.Supplier;
+import tn.esprit.spring.Entities.Tokens;
 import tn.esprit.spring.Entities.User;
+import tn.esprit.spring.Repository.SupplierRepository;
+import tn.esprit.spring.Repository.TokenReopsitory;
 import tn.esprit.spring.Repository.UserRepository;
+import tn.esprit.spring.Services.SupplierServiceImpa;
 //import tn.esprit.spring.Services.SupplierServiceImpa;
 import tn.esprit.spring.Services.UserServiceImp;
 
@@ -35,10 +50,16 @@ public class UserController {
 	
 	  @Autowired
 	  UserServiceImp up;
-	  /*@Autowired
-	  SupplierServiceImpa test;*/
-
-	
+	  @Autowired
+	  SupplierRepository test;
+	  @Autowired
+	  UserRepository ur;
+	  @Autowired
+		JwtUtils jwtUtils;
+		@Autowired
+		TokenReopsitory tokenReopsitory;
+		@Autowired
+		AuthenticationManager authenticationManager;
 	@PostMapping("/add")
 	  public void createTutorial(@RequestBody User u) {
 	     up.saveUser(u);
@@ -54,17 +75,10 @@ public class UserController {
 	 return list;
 
 }
-	 
-	 
-	 @GetMapping("/login")
-	 @ResponseBody
-	 public String login(@RequestBody User userDetails) {
 
-		 
-		 return up.authenticate(userDetails.getEmail(), userDetails.getPassword());
-
-}
 	 
+	
+
 	 
 	 
 	  @DeleteMapping("/Delete/{id}")
@@ -121,14 +135,68 @@ return "done";
  @ResponseBody
 	  public String showResetPasswordForm(@PathVariable("token") String token, @RequestBody String password) {
 	      User customer = up.getByResetPasswordToken(token);
-	       System.err.println(customer.getEmail());
-	      if (customer == null) {
-	          return "Invalid Token";
-	      }
-	      else {
+	      if (customer != null) {
+	    	  
 	    	  up.updatePassword(customer,password);
-	      return "You have successfully changed your password";
-	      }
+		      return "You have successfully changed your password";	     
+		      }
+	      
+	      return "wrong token";
+
 	  }
 	  
+	  
+	  @GetMapping("/retrieve-all-supp")
+		 @ResponseBody
+		 public List<Supplier> getsupp() {
+		
+		 
+		 return  (List<Supplier>) test.findAll();
+
+	}
+	  
+	  @PostMapping("/addsup")
+	  public void create(@RequestBody Supplier s) {
+		  test.save(s);
+	  }
+	  
+	  
+	  @DeleteMapping("/Deletesup/{id}")
+	  public void delete(@PathVariable("id") long id) {
+	      test.deleteById(id);
+	     
+	
+	  }
+	  
+	  
+	  
+	  @PostMapping("/signin")
+		public String authenticateUser(@RequestBody LoginRequest loginRequest) {
+			User u=ur.findByEmail(loginRequest.getUsername());
+			Authentication 
+			 authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+			String jwt = jwtUtils.generateJwtToken(authentication);
+
+		//	MyUserDetails userDetails =  (MyUserDetails )authentication.getPrincipal();
+			///List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
+					//.collect(Collectors.toList());
+			//User user=ur.findById(userDetails.getId()).get();
+			Tokens t = new Tokens();
+			t.setName(jwt);
+			t.setUserId(u.getId());
+			tokenReopsitory.save(t);
+			//JwtResponse jt	= new JwtResponse(jwt, u.getId(), u.getEmail(), u.getRole().toString());
+
+			return "token " + t.getName();
+	}
+	
+	
+	  
+	
+	  
+	  
+	  
+		
 }

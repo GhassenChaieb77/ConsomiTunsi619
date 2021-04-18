@@ -10,6 +10,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -29,10 +31,12 @@ public class UserServiceImp implements UserService  {
 	 UserRepository rr;
     @Autowired
     private  JavaMailSender sender;
-	
+    
+
     @Autowired
 	EmailConfigSubject emailconfig;
-	
+    
+    private AuthenticationManager authenticationManager;
 	@Override
 	public void saveUser(User u) {
 		System.err.println("Work3");
@@ -112,36 +116,17 @@ public class UserServiceImp implements UserService  {
 }
 
 
-	public String authenticate(String login, String password) {
-		User u=rr.findByEmail(login );
+	public String authenticate(String login, String password) throws Exception  {
+		  try {
+	            authenticationManager.authenticate(
+	                    new UsernamePasswordAuthenticationToken(login, password)
+	            );
+	        } catch (Exception ex) {
+
+	        }
+	        return login;
+	    }
 		
-	if( u != null)
-	{
-	if(new BCryptPasswordEncoder().matches(password, u.getPassword()))
-	{
-		
-		if (u.getRole().toString()== "ADMIN")
-		{
-			return "admin";
-		}
-		
-		return "user";
-	}
-		  
-		 
-		 
-	else
-	{
-		return "check password ";
-	}
-		 
-		 
-	}
-	
-	
-	return "check email";
-	
-	}
 
 
 	public  String updateResetPasswordToken(String token, String email) throws MessagingException   {

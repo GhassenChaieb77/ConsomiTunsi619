@@ -24,7 +24,7 @@ public class LayerServiceImp implements LayerService {
 	@Autowired
 	CategoryRepository c;
 	@Autowired
-	ProductRepository p;
+	ProductRepository po;
 	 List<Product> list= new ArrayList<>();
 	
 	@Override
@@ -82,7 +82,7 @@ public class LayerServiceImp implements LayerService {
 	public void setprod(long id,long id2)
 	{
 		Layer l=r.findById(id);
-		Product pr = p.findById(id2).get();
+		Product pr = po.findById(id2).get();
 		list.add(pr);
 		l.setProducts(list);
 		r.save(l);
@@ -95,14 +95,14 @@ public class LayerServiceImp implements LayerService {
 	{
 		int n=0;
 		Category c1=c.findById(id).get();
-		List<Product> p =c1.getProducts();
+
+		List<Product> p =po.getAllProductByCategory(id);
 		Layer l=r.findByCategoryId(id);
 		List<Product> p2= l.getProducts();
 		if(l.getCapacityNow()<l.getCapacity()) {
 			for(Product s : p)
-			{ 
+			{ ;
 				if(!p2.contains(s))
-					
 						{ 
 					if(s.getQuantity()!=0 && s.getQuantity() <l.getCapacity())
 						{

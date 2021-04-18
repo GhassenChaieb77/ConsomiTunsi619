@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.Entities.Stock;
 import tn.esprit.spring.Entities.Supplier;
 import tn.esprit.spring.Entities.User;
 import tn.esprit.spring.Repository.SupplierRepository;
@@ -36,7 +37,6 @@ public class SupplierServiceImpa implements SupplierService {
 
 	@Override
 	public List<Supplier> getAlluser() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

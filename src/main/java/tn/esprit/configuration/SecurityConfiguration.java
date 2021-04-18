@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -33,6 +35,11 @@ import tn.esprit.spring.Services.UserServiceImp;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(
+		// securedEnabled = true,
+		// jsr250Enabled = true,
+		prePostEnabled = true)
+
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	
@@ -41,7 +48,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 
 	
+	@Autowired
+	private AuthEntryPointJwt unauthorizedHandler;
 
+	@Bean
+	public AuthTokenFilter authenticationJwtTokenFilter() {
+		return new AuthTokenFilter();
+	}
 	
 	
 	@Bean
@@ -56,56 +69,39 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	     
 	    
 	     
-	    @Bean
-	    public DaoAuthenticationProvider authenticationProvider() {
-	        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-	        authProvider.setUserDetailsService(userDetailsService());
-	        authProvider.setPasswordEncoder(passwordEncoder());
-	         
-	        return authProvider;
-	    }
+	  
 	 
-	    @Override
-	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	        auth.authenticationProvider(authenticationProvider());
-	    }
+	   
 
 
+		@Override
+		public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+			authenticationManagerBuilder.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+		}
+
+		@Bean
+		@Override
+		public AuthenticationManager authenticationManagerBean() throws Exception {
+			return super.authenticationManagerBean();
+		}
+
+		
+
+	    
 	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-		.csrf().disable();
-		http.
-		 authorizeRequests()
-		.antMatchers("SpringMVC/servlet/user/**").permitAll()
-		.antMatchers("SpringMVC/servlet/layer/**").permitAll()
-		.antMatchers("SpringMVC/servlet/Stock/**").permitAll()
-		.antMatchers("SpringMVC/servlet/subject/**").permitAll()
-		.antMatchers("SpringMVC/servlet/product/**").permitAll()
-		.antMatchers("SpringMVC/servlet/category/**").permitAll()
-		.antMatchers("SpringMVC/servlet/reduction/**").permitAll()
-		.antMatchers("SpringMVC/servlet/publicity/**").permitAll()
-		.antMatchers("SpringMVC/servlet/cart/**").permitAll()
-		.antMatchers("SpringMVC/servlet/orderLine/**").permitAll()
-		.antMatchers("SpringMVC/servlet/order/**").permitAll()
-		.antMatchers("SpringMVC/servlet/deliveryagent/**").permitAll()
-		.antMatchers("SpringMVC/servlet/complaint/**").permitAll()
-		.antMatchers("SpringMVC/servlet/charity/**").permitAll()
+		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+		.antMatchers("SpringMVC/servlet/user/signin").permitAll();
+http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+}
 
-
-        .anyRequest().authenticated()
-        .and()
-        .httpBasic()
-		.and()
-		.csrf().disable().formLogin();
-		
-		
 	        
 	}
 	
-}
+
 	
 
 

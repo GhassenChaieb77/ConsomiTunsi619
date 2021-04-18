@@ -24,6 +24,8 @@ import javax.validation.constraints.Email;
 
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 public class User implements Serializable{
@@ -59,13 +61,13 @@ public class User implements Serializable{
 	@Column(name = "reset_token")
 	private String resetToken;
 
-    
+	@JsonIgnore
     @ManyToMany	
 	private List<Jackpot> jackpots = new ArrayList<>();
-    
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
 	private List<Order> orders = new ArrayList<>();
-    
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY, mappedBy="user")
 	private List<Comment> comments = new ArrayList<>();
 	

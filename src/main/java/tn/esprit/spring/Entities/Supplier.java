@@ -13,18 +13,22 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Supplier implements Serializable {
 		@Id
+		@GeneratedValue (strategy = GenerationType.IDENTITY)
 		private Long id;
 		
-		@GeneratedValue (strategy = GenerationType.IDENTITY)
 		private String name;
 		
 		@Column(name="Email",nullable = false,unique = true)
 		@Email
 	    private String email;
 		
+		
+		@JsonIgnore
 		@ManyToMany(cascade = CascadeType.ALL)
 		private List<Stock> stocks;
 
@@ -32,6 +36,14 @@ public class Supplier implements Serializable {
 public Supplier() {
 			
 		}
+
+		public Long getId() {
+	return id;
+}
+
+public void setId(Long id) {
+	this.id = id;
+}
 
 		public String getName() {
 			return name;

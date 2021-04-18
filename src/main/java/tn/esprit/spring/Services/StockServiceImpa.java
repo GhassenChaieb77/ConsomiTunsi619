@@ -87,20 +87,26 @@ public class StockServiceImpa implements StockService {
 		List<Product> p = ps.getAllProduct();
 		
 		Supplier s1=s.findById(id);
+		List <Supplier> ls=(List<Supplier>) s.findAll();
+		
 		for (int i = 0; i < p.size(); i++) 
 		{
 			if (p.get(i).getQuantity()==0)
 			{
         
+				for (Supplier sp :ls)
+				{
 				MimeMessage message = (MimeMessage) sender.createMimeMessage();
 		        MimeMessageHelper helper = new MimeMessageHelper((javax.mail.internet.MimeMessage) message);
 
-		        helper.setTo("4d5380d665-ad7b6e@inbox.mailtrap.io");
-				helper.setText("we need more ");
-				helper.setSubject("We are out of stock");
+		        helper.setTo(sp.getEmail());
+				helper.setText("we need more "+p.get(i).getName());
+				helper.setSubject("We are out of stock" + sp.getName());
 		        sender.send((javax.mail.internet.MimeMessage) message);
-		        System.err.println("test");
-		      p.get(i).setQuantity(500);
+		        
+				}
+		        
+		      p.get(i).setQuantity((int)id);
 		      p1.save(p.get(i));
 		      
 		        LocalDateTime localDateTime = LocalDateTime.now();
@@ -110,7 +116,7 @@ public class StockServiceImpa implements StockService {
 		        Instant instant = zonedDateTime.toInstant();
 
 		        Date date = Date.from(instant);
-       Stock s=new Stock(500,500*p.get(i).getPrice(),date,date);
+       Stock s=new Stock((int)id,(int)id*p.get(i).getPrice(),date,date);
        s.setProducts(p);
        stockrepository.save(s);
 			

@@ -5,6 +5,8 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import net.minidev.json.annotate.JsonIgnore;
 import tn.esprit.spring.Entities.User;
 
 
@@ -12,6 +14,15 @@ public class MyUserDetails implements UserDetails {
 	
 
 	private User user;
+	
+	private Long id;
+
+
+	private String email;
+
+	@JsonIgnore
+	private String password;
+	
 
 	public MyUserDetails(User user) {
         this.user = user;
@@ -23,7 +34,26 @@ public class MyUserDetails implements UserDetails {
         return Arrays.asList(authority);
     }
  
-    @Override
+    
+    
+    
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
     public String getPassword() {
         return user.getPassword();
     }

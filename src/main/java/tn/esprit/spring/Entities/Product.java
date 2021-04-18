@@ -57,15 +57,15 @@ public class Product implements Serializable {
 	private List<Subject> subjects; 
 	
 	@JsonIgnore
-	@OneToMany()
-	private List<Publicity> publicities;
+    @OneToMany(mappedBy="product")
+    private List<Publicity> publicities;
 	
 	@JsonIgnore
 	@OneToMany()
 	public List<Reduction> reductions;
 	
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	public Category category;
 	
 	

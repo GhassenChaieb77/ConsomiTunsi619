@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.spring.Entities.Layer;
 import tn.esprit.spring.Entities.Product;
 import tn.esprit.spring.Services.LayerServiceImp;
+import tn.esprit.spring.Services.SupplierServiceImpa;
 
 @RestController
 @RequestMapping("/layer")
@@ -25,6 +26,8 @@ public class LayerController {
 	
 	  @Autowired
 	  LayerServiceImp up;
+	  @Autowired
+	  SupplierServiceImpa m;
 	
 	@PostMapping("/add")
 	  public void createTutorial(@RequestBody Layer u) {
@@ -91,6 +94,12 @@ public class LayerController {
 	  {
           up.AutoLayer(LayerID);
 	  }
+	  
+	  @GetMapping("/best")
+		 @ResponseBody
+		 public String best() {
+		 return m.best();
+		}
 	  
 
 }
