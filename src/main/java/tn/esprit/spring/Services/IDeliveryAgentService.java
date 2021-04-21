@@ -48,5 +48,5 @@ public interface IDeliveryAgentService {
 	
 	public double getfarestorderandaffectdistance(DeliveryAgent da)throws Exception;
 	
-	public String sendsmstouser(Order o);
+	public String sendsmstouser(Order o,String firstname,String lastname,long phone);
 }

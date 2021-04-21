@@ -55,6 +55,7 @@ public class Order implements Serializable {
 	
 	private String paymentmethod;
 	
+	@JsonIgnore
 	@ManyToOne(cascade=CascadeType.ALL)
 	DeliveryAgent deliveryagent;
 	

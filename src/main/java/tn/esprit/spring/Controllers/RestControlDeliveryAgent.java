@@ -3,6 +3,7 @@ package tn.esprit.spring.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -70,10 +71,10 @@ public class RestControlDeliveryAgent {
 	 //deliveryaganetService.sendsmstouser(orderservice.getorder(Long.parseLong(id)));
 	 
 	}
-	@GetMapping("/distance")
+	@GetMapping("/distance/{adress1}/{adress2}")
 	@ResponseBody
-	public double distance() throws Exception {
-	return deliveryaganetService.distancebetweenadresses("kelibia","sfax");
+	public double distance(@PathVariable("adress1") String adress1,@PathVariable("adress2") String adress2) throws Exception {
+	return deliveryaganetService.distancebetweenadresses(adress1,adress2);
 	}
 	@GetMapping("/closest/{id}")
 	@ResponseBody
@@ -90,9 +91,14 @@ public class RestControlDeliveryAgent {
 	public double calculatefrais(@PathVariable("id")String id) throws Exception {
 	return deliveryaganetService.calculatefraislivraison(orderservice.getorder(Long.parseLong(id)));
 	}
-	@GetMapping("/sms/{id}")
+	/*@GetMapping("/sms/{id}")
 	@ResponseBody
 	public String sendsms(@PathVariable("id")String id) throws Exception {
 	return deliveryaganetService.sendsmstouser(orderservice.getorder(Long.parseLong(id)));
+	}*/
+	@GetMapping("/getbyid/{id}")
+	@ResponseBody
+	public DeliveryAgent getbyid(@PathVariable("id")String id) throws Exception {
+	return deliveryaganetService.getdeliveryagent(Long.parseLong(id));
 	}
 }

@@ -132,10 +132,9 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 		String url = "http://api.positionstack.com/v1/forward"
 				+ "?access_key=fa925d046424591ae5c55c34b8b1d4fd"
 				+"&country=TN"
-				+ "&limit=1&query="+adress;
+				+"&limit=1&query="+adress;
 	     URL obj = new URL(url);
 	     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-	     Thread.sleep(25);
 	     // optional default is GET
 	     con.setRequestMethod("GET");
 	     //add request header
@@ -163,7 +162,7 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 	     }
 	     catch(JSONException ex)
 	     {
-	    	 getlongfromadress(adress);
+	    	 System.out.println("API Response was null");
 	     }
 	     return 0;
 	}
@@ -173,7 +172,7 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 		String url = "http://api.positionstack.com/v1/forward"
 				+ "?access_key=fa925d046424591ae5c55c34b8b1d4fd"
 				+"&country=TN"
-				+ "&limit=1&query="+adress;
+				+"&limit=1&query="+adress;
 	     URL obj = new URL(url);
 	     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 	     Thread.sleep(25);
@@ -204,7 +203,7 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 	     }
 	     catch(JSONException ex)
 	     {
-	    	 getlatfromadress(adress);
+	    	 System.out.println("API Response was null");
 	     }
 	     return 0;
 	}
@@ -221,7 +220,8 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 		double newlong1 = Math.toRadians(lon1); 
 		double newlat2 = Math.toRadians(lat2); 
 		double newlong2 = Math.toRadians(lon2); 
-	      
+	      while(lat1!=0 && lat2!=0 && lon1!=0 && lon2!=0)
+	      {
 	    // Haversine Formula 
 	     double dlong = newlong2 - newlong1; 
 	     double dlat = newlat2 - newlat1; 
@@ -241,6 +241,8 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 	    ans = ans * r; 
 	  
 	    return ans; 
+	    }
+	      return distancebetweenadresses(adress1, adress2);
 	}
 		
 	@Override
@@ -275,7 +277,8 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 			{
 					deliveryagantrepo.affectDeliveryAgenttoorder(da.getId(), order.getId());
 					deliveryagantrepo.updateDeliveryAgentAvailabilityById(false,da.getId());
-					sendsmstouser(order);
+					Order or=orderrepo.getorderbyid(order.getId());
+					sendsmstouser(or,da.getFirstname(),da.getLastname(),da.getPhonenumber());
 					//sendsmstouser(orderrepo.getorderbyid(order.getId()));			
 					getfarestorderandaffectdistance(da);
 					return "affected full";
@@ -283,8 +286,8 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 			else if(da.getOrders().size()<=1)
 			{
 				deliveryagantrepo.affectDeliveryAgenttoorder(da.getId(), order.getId());
-				
-				sendsmstouser(order);
+				Order or=orderrepo.getorderbyid(order.getId());
+				sendsmstouser(or,da.getFirstname(),da.getLastname(),da.getPhonenumber());
 				//sendsmstouser(orderrepo.getorderbyid(order.getId()));
 				return "affected not full";
 			}
@@ -337,13 +340,13 @@ public class DeliveryAgentServiceImpl implements IDeliveryAgentService {
 	}
 
 	@Override
-	public String sendsmstouser(Order o) {
+	public String sendsmstouser(Order o,String f,String l,long a) {
 		
-		Twilio.init("AC0b6824a932917c38425c42a5b4e6f445","9e8cce44dbb8c320612f9e22e4b5d866");
+		Twilio.init("AC0b6824a932917c38425c42a5b4e6f445","a174aae925ce9c6e3309a4d8429ad1f9");
         Message message = Message.creator(
                 new com.twilio.type.PhoneNumber("+21656096624"),
                 new com.twilio.type.PhoneNumber("+12342310318"),
-                "your order is being shipped by ghassen chaieb you can get in touch with him by contacting : 22112233")
+                "your order is being shipped by "+f+l+" you can get in touch with him by contacting : "+a)
             .create();
 		return message.getSid();
         

@@ -4,9 +4,6 @@ import java.sql.Date;
 import java.util.List;
 
 import tn.esprit.spring.Entities.Complaint;
-import tn.esprit.spring.Entities.Product;
-import tn.esprit.spring.Entities.User;
-import tn.esprit.spring.Entities.Order;
 
 public interface IComplaintService {
 	
