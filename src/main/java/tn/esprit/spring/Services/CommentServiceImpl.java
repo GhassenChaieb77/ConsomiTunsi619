@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import tn.esprit.spring.Entities.Comment;
+import tn.esprit.spring.Entities.Product;
 import tn.esprit.spring.Entities.SauvegardeLDComment;
 import tn.esprit.spring.Entities.SauvegardeLDSubject;
 import tn.esprit.spring.Entities.Subject;
@@ -41,11 +42,11 @@ public class CommentServiceImpl implements ICommentService{
 	}
 	
 
-
 	@Override
 	public Comment addComment(Comment c) {
+        User user= u.getUserInfo();
         String comm="";
-		List <String> interdit= Arrays.asList("mouna","love"); 
+		List <String> interdit= Arrays.asList("owww","love"); 
         for (int i= 0; i < interdit.size(); i++)
         {	
         	
@@ -55,9 +56,11 @@ public class CommentServiceImpl implements ICommentService{
 		    for (int j= 0; j < nb ; j++)
 		    	{comm= comm+"*";}
 			 c.setComment(c.getComment().replace(interdit.get(i), comm));
+		c.setUser(user);
         commentRepository.save(c);
         }
         else 
+        	c.setUser(user);
         commentRepository.save(c);
 		}
 		return c;
@@ -85,7 +88,7 @@ public class CommentServiceImpl implements ICommentService{
 
 	@Override
 	@Transactional
-	public Comment updatelikescomment(int commentId, int userId) {
+	public Comment updatelikescomment(int commentId) {
 		Comment comment = commentRepository.findById((long) commentId).get();
         User user= u.getUserInfo();
 		if (user.getId() == (comment.getUser().getId()))
@@ -125,7 +128,7 @@ public class CommentServiceImpl implements ICommentService{
         
         commentRepository.save(comment);
 	    SauvegardeLDComment suc= new SauvegardeLDComment();
-	    suc.setUserLDcomment((long)userId);
+	    suc.setUserLDcomment((long)user.getId());
 	    suc.setUsercomment((long)commentId);
 	    SauvegardeLDCommentrepository.save(suc);
 	 
@@ -139,7 +142,7 @@ public class CommentServiceImpl implements ICommentService{
 
 	@Override
 	@Transactional
-	public Comment updatedislikescomment(int commentId, int userId) {
+	public Comment updatedislikescomment(int commentId) {
 		Comment comment = commentRepository.findById((long) commentId).get();
         User user= u.getUserInfo();
 
@@ -162,7 +165,7 @@ public class CommentServiceImpl implements ICommentService{
      
         commentRepository.save(comment);
 	    SauvegardeLDComment suc= new SauvegardeLDComment();
-	    suc.setUserLDcomment((long)userId);
+	    suc.setUserLDcomment((long)user.getId());
 	    suc.setUsercomment((long)commentId);
 	    SauvegardeLDCommentrepository.save(suc);
 		return comment;
@@ -180,7 +183,7 @@ public class CommentServiceImpl implements ICommentService{
 
 
 	@Override
-	public void affecterCommentAuser(int commentId, int userId) {
+	public void affecterCommentAuser(int commentId) {
 		//User user = userRepository.findById((long) userId).get();
         User user= u.getUserInfo();
 
@@ -204,7 +207,8 @@ public class CommentServiceImpl implements ICommentService{
 
 
 	@Override
-	public void deleteDislikesComment(int commentId, int userId) {
+	@Transactional
+	public Comment deleteDislikesComment(int commentId) {
 		Comment comment = commentRepository.findById((long) commentId).get();
         User user= u.getUserInfo();
 		List<Long> likeusers = (List<Long>) SauvegardeLDCommentrepository.userlikes();
@@ -212,18 +216,20 @@ public class CommentServiceImpl implements ICommentService{
 		if (likeusers.contains(user.getId()) && (commentlikes.contains(comment.getId())))
 		{
 			int nb = comment.getDislikesComment();
-			int a= nb-1;
+			int a= nb - 1;
 			comment.setDislikesComment(a);
 			commentRepository.save(comment);
-	        SauvegardeLDCommentrepository.DeleteSauv((long)likeusers.get(userId), (long)commentlikes.get(commentId));
+	        SauvegardeLDCommentrepository.DeleteCommentsauv(commentId);
 			
-		}			
+		}	
+		return comment;
 	}
 
 
 
 	@Override
-	public void deletelikesComment(int commentId, int userId) {
+	@Transactional
+	public Comment deletelikesComment(int commentId) {
 		Comment comment = commentRepository.findById((long) commentId).get();
         User user= u.getUserInfo();
 		List<Long> likeusers = (List<Long>) SauvegardeLDCommentrepository.userlikes();
@@ -231,14 +237,34 @@ public class CommentServiceImpl implements ICommentService{
 		if (likeusers.contains(user.getId()) && (commentlikes.contains(comment.getId())))
 		{
 			int nb = comment.getLikesComment();
-			int a= nb-1;
+			int a= nb - 1;
 			comment.setLikesComment(a);
-	       
-
 			commentRepository.save(comment);
-	        SauvegardeLDCommentrepository.DeleteSauv((long)likeusers.get(userId), (long)commentlikes.get(commentId));
+	        SauvegardeLDCommentrepository.DeleteCommentsauv(commentId);;
 			
-		}			
+		}	
+		return comment;
+	}
+
+
+
+	@Override
+	public void disaffectCommentAuser(long commentId) {
+        User user= u.getUserInfo();
+		
+		user.getComments().remove(commentId);
+		commentRepository.findById(commentId).get().setUser(null);
+		commentRepository.save(commentRepository.findById(commentId).get());		
+	}
+
+
+	@Override
+	public void disaffectCommentASubject(long commentId) {
+		 Subject s = commentRepository.findById(commentId).get().getSubject();
+			
+			s.getComments().remove(commentId);
+			commentRepository.findById(commentId).get().setSubject(null);
+			commentRepository.save(commentRepository.findById(commentId).get());				
 	}
 
 }

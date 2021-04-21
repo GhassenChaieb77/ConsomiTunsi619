@@ -39,7 +39,7 @@ public class RestControlSubject {
 
 	
 	
-// http://localhost:8081/SpringMVC/servlet/retrieve-all-subjects
+// http://localhost:8081/SpringMVC/servlet/subject/retrieve-all-subjects
         @GetMapping("/retrieve-all-subjects")
 		@ResponseBody
 		public List<Subject> getSubjects() {
@@ -49,11 +49,11 @@ public class RestControlSubject {
         
   
         
-     // http://localhost:8081/SpringMVC/servlet/SubjectAlaUne
-        @GetMapping("/SubjectAlaUne")
+     // http://localhost:8081/SpringMVC/servlet/SubjectAlaUne/2
+        @GetMapping("/SubjectAlaUne/{productId}")
 		@ResponseBody
-		public List<String> getSubjects1() {
-		 List<String> list = subjectService.SubjectAlaUne();
+		public List<String> getSubjects1(@PathVariable("productId") long productId) {
+		 List<String> list = subjectService.SubjectAlaUne(productId);
 		return list;
         }  
         
@@ -84,6 +84,13 @@ public class RestControlSubject {
     	public void affecterCommentASubject(@PathVariable("idcomment")int commentId, @PathVariable("idsubject")int subjectId) {
         	subjectService.affecterCommentASubject(commentId, subjectId);
     	}
+ 
+        
+        // http://localhost:8081/SpringMVC/servlet/disaffectSubjectAProduct/1
+        @PutMapping(value = "/disaffectSubjectAProduct/{idsubject}") 
+    	public void disaffectSubjectAProduct( @PathVariable("idsubject")int subjectId) {
+        	subjectService.disaffectSubjectAProduct(subjectId);
+    	}
         
     	// http://localhost:8081/SpringMVC/servlet/getAllCommentsContentsBySubject/1
         @GetMapping(value = "getAllCommentsContentsBySubject/{idsubject}")
@@ -108,18 +115,18 @@ public class RestControlSubject {
     	}  
         
         
-      	// http://localhost:8081/SpringMVC/servlet/subsearch/1/1/mouna
-        @GetMapping(value = "subsearch/{productId}/{userId}/{title}")
+      	// http://localhost:8081/SpringMVC/servlet/subsearch/1/mouna
+        @GetMapping(value = "subsearch/{productId}/{title}")
         @ResponseBody
-    	public List<Subject> subsearch(@PathVariable("productId") long productId,@PathVariable("userId") long userId,@PathVariable("title") String title) {
-    		return subjectService.subsearch(productId, userId, title);
+    	public List<Subject> subsearch(@PathVariable("productId") long productId,@PathVariable("title") String title) {
+    		return subjectService.subsearch(productId, title);
     	}  
         
-     	// http://localhost:8081/SpringMVC/servlet/AllSubforuser/1/
-        @GetMapping(value = "AllSubforuser/{userId}/")
+     	// http://localhost:8081/SpringMVC/servlet/AllSubforuser/
+        @GetMapping(value = "AllSubforuser/")
         @ResponseBody
-    	public List<Subject> AllSubforuser(@PathVariable("userId") long userId) {
-    		return subjectService.AllSubforuser(userId);
+    	public List<Subject> AllSubforuser() {
+    		return subjectService.AllSubforuser();
     	}
   
         
@@ -158,55 +165,55 @@ public class RestControlSubject {
     	/// http://localhost:8081/SpringMVC/servlet/deleteSubjectRedandant/1
    	@PutMapping("/deleteSubjectRedandant/{idproduct}")
    	 public void deleteSubjectRedandant(@PathVariable("idproduct")long productId) {
-   	 subjectService.deleteSubjectRedandant(productId);
+   	  subjectService.deleteSubjectRedandant(productId);
    	 }
     	
      	
     	
      	// http://localhost:8081/SpringMVC/servlet/deleteSubjectSansInteraction/
     	@PutMapping("/deleteSubjectSansInteraction")
-    	 public void deleteSubjectSansInteraction() {
-    	 subjectService.deleteSubjectSansInteraction();
+    	 public List<Subject> deleteSubjectSansInteraction() {
+    	return subjectService.deleteSubjectSansInteraction();
     	 }
     
     	
     	// http://localhost:8081/SpringMVC/servlet/deleteSubjectSansComment/
         @PutMapping(value = "/deleteSubjectSansComment") 
-    	public void deleteSubjectSansComment( ) {
-        	subjectService.deleteSubjectSansComment( );
+    	public List<Subject> deleteSubjectSansComment( ) {
+        	return	subjectService.deleteSubjectSansComment( );
     	}
     	
         
     	
     	
     	
-    	// http://localhost:8081/SpringMVC/servlet/updatelikes/1/1
-        @PutMapping(value = "/updatelikes/{idsubject}/{iduser}") 
-    	public Subject updatelikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
-        	return subjectService.updatelikes(subjectId, userId);
+    	// http://localhost:8081/SpringMVC/servlet/updatelikes/1/
+        @PutMapping(value = "/updatelikes/{idsubject}/") 
+    	public Subject updatelikes(@PathVariable("idsubject")int subjectId) {
+        	return subjectService.updatelikes(subjectId);
         	
         
     	}
         
     	
-        // http://localhost:8081/SpringMVC/servlet/updateDislikes/1/1
-        @PutMapping(value = "/updateDislikes/{idsubject}/{iduser}") 
-    	public void updateDislikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
-        	 subjectService.updateDislikes(subjectId, userId);
+        // http://localhost:8081/SpringMVC/servlet/updateDislikes/1
+        @PutMapping(value = "/updateDislikes/{idsubject}") 
+    	public Subject updateDislikes(@PathVariable("idsubject")int subjectId) {
+        	return subjectService.updateDislikes(subjectId);
     	}
      
         
     
         
-     // http://localhost:8081/SpringMVC/servlet/deleteDislikes/1/1
-        @PutMapping(value = "/deleteDislikes/{idsubject}/{iduser}") 
-    	public void deleteDislikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
-        	subjectService.deleteDislikes(subjectId, userId);
+     // http://localhost:8081/SpringMVC/servlet/deleteDislikes/1
+        @PutMapping(value = "/deleteDislikes/{idsubject}") 
+    	public Subject deleteDislikes(@PathVariable("idsubject")int subjectId) {
+        	return subjectService.deleteDislikes(subjectId);
     	}
-        // http://localhost:8081/SpringMVC/servlet/deletelikes/1/1
-        @PutMapping(value = "/deletelikes/{idsubject}/{iduser}") 
-    	public void deletelikes(@PathVariable("idsubject")int subjectId, @PathVariable("iduser")int userId) {
-        	subjectService.deletelikes(subjectId, userId);
+        // http://localhost:8081/SpringMVC/servlet/deletelikes/1
+        @PutMapping(value = "/deletelikes/{idsubject}") 
+    	public Subject deletelikes(@PathVariable("idsubject")int subjectId) {
+        	return subjectService.deletelikes(subjectId);
     	}
         
    

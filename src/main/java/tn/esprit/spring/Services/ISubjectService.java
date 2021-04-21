@@ -19,24 +19,25 @@ public interface ISubjectService {
 	List<Subject> getAllProductBySubject(long productId);
 	public void deleteSubjectById(int subjectId);
 	public void deletecommentById(int commentId);
-	public void deleteSubjectRedandant(long productId); 
-	public void deleteSubjectSansInteraction(); 
-	public  void deleteSubjectSansComment( ); 
+	public List<Subject> deleteSubjectRedandant(long productId); 
+	public List<Subject> deleteSubjectSansInteraction(); 
+	public  List<Subject> deleteSubjectSansComment( ); 
 	public Subject getSubjectById(int subjectId);
 	public void affecterSubjectAProduct(int subjectId, int productId);
-	public List<String> SubjectAlaUne();
-	public Subject updatelikes(int subjectId, int userId);
-	public Subject updateDislikes(int subjectId, int userId);
-	public void deleteDislikes(int subjectId, int userId);
-	public void deletelikes(int subjectId, int userId);
+	public void disaffectSubjectAProduct(long subjectId) ;
+	public List<String> SubjectAlaUne(long productId);
+	public Subject updatelikes(int subjectId);
+	public Subject updateDislikes(int subjectId);
+	public Subject deleteDislikes(int subjectId);
+	public Subject deletelikes(int subjectId);
     public List<Subject> updateRating(); 
 	public List<Subject> top(long productId);
 	public float nbavis(long subjectId);
 	public int nbcomment(long subjectId);
 	public int nbsubjectproduct(long productId);
 	public List<Subject> subByTitle(long productId,String title);
-	public List<Subject> subsearch(long productId,long userId,String title);
-	public List<Subject> AllSubforuser(long userId);
+	public List<Subject> subsearch(long productId,String title);
+	public List<Subject> AllSubforuser();
 
 
 	

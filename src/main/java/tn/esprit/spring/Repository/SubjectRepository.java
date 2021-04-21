@@ -22,8 +22,9 @@ public interface SubjectRepository extends CrudRepository<Subject, Long> {
 	
     @Query("select s.title, s.content, s.date, s.likes, s.dislikes "
 			+"from Subject s "
+			+"where s.product.id=:id "
 			+"order by date DESC ")
-	public List<String> SubjectAlaUne();
+	public List<String> SubjectAlaUne(@Param("id") long product);
     
     
     @Query("select DISTINCT s "

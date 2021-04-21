@@ -62,35 +62,43 @@ public class RestControlComment {
 	public Comment modifyComment(@RequestBody Comment comment) {
 	 return commentService.updateComment(comment);
 	 }
-	// http://localhost:8081/SpringMVC/servlet/updatelikescomment/1/1
-    @PutMapping(value = "/updatelikescomment/{idcomment}/{iduser}") 
-	public void updatelikescomment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
-    	commentService.updatelikescomment(commentId, userId);
+	// http://localhost:8081/SpringMVC/servlet/updatelikescomment/1/
+    @PutMapping(value = "/updatelikescomment/{idcomment}/") 
+	public Comment updatelikescomment(@PathVariable("idcomment")int commentId) {
+    	return commentService.updatelikescomment(commentId);
 	}
     
-	// http://localhost:8081/SpringMVC/servlet/updatedislikescomment/1/1
-    @PutMapping(value = "/updatedislikescomment/{idcomment}/{iduser}") 
-	public void updatedislikescomment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
-    	commentService.updatedislikescomment(commentId, userId);
+	// http://localhost:8081/SpringMVC/servlet/updatedislikescomment/1/
+    @PutMapping(value = "/updatedislikescomment/{idcomment}/") 
+	public Comment updatedislikescomment(@PathVariable("idcomment")int commentId) {
+    	return commentService.updatedislikescomment(commentId);
 	}
     
- // http://localhost:8081/SpringMVC/servlet/deleteDislikesComment/1/1
-    @PutMapping(value = "/deleteDislikesComment/{idcomment}/{iduser}") 
-	public void deleteDislikesComment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
-    	commentService.deleteDislikesComment(commentId, userId);
+ // http://localhost:8081/SpringMVC/servlet/deleteDislikesComment/1/
+    @PutMapping(value = "/deleteDislikesComment/{idcomment}/") 
+	public Comment deleteDislikesComment(@PathVariable("idcomment")int commentId) {
+    	return commentService.deleteDislikesComment(commentId);
 	}
-    // http://localhost:8081/SpringMVC/servlet/deletelikesComment/1/1
-    @PutMapping(value = "/deletelikesComment/{idcomment}/{iduser}") 
-	public void deletelikesComment(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
-    	commentService.deletelikesComment(commentId, userId);
+    // http://localhost:8081/SpringMVC/servlet/deletelikesComment/1/
+    @PutMapping(value = "/deletelikesComment/{idcomment}/") 
+	public Comment deletelikesComment(@PathVariable("idcomment")int commentId) {
+    	return commentService.deletelikesComment(commentId);
 	}
     
 	
-	// http://localhost:8081/SpringMVC/servlet/affecterCommentAuser/1/2
-    @PutMapping(value = "/affecterCommentAuser/{idcomment}/{iduser}") 
-	public void affecterCommentAuser(@PathVariable("idcomment")int commentId, @PathVariable("iduser")int userId) {
-    	commentService.affecterCommentAuser(commentId, userId);
+	// http://localhost:8081/SpringMVC/servlet/affecterCommentAuser/1/
+    @PutMapping(value = "/affecterCommentAuser/{idcomment}/") 
+	public void affecterCommentAuser(@PathVariable("idcomment")int commentId) {
+    	commentService.affecterCommentAuser(commentId);
 	}
+    
+    // http://localhost:8081/SpringMVC/servlet/disaffectCommentAuser/1
+    @PutMapping(value = "/disaffectCommentAuser/{idcomment}") 
+	public void disaffectSubjectAProduct( @PathVariable("idcomment")int commentId) {
+    	commentService.disaffectCommentAuser(commentId);
+	}
+    
+    
     
     // URL : http://localhost:8081/SpringMVC/servlet/RecentComment/1
     @GetMapping(value = "RecentComment/{idsubject}")
@@ -107,5 +115,10 @@ public class RestControlComment {
 
 		return commentService.persComment(subjectId);
 	}
-	
+    
+    // http://localhost:8081/SpringMVC/servlet/disaffectCommentASubject/1
+    @PutMapping(value = "/disaffectCommentASubject/{idcomment}") 
+	public void disaffectCommentASubject( @PathVariable("idcomment")int commentId) {
+    	commentService.disaffectCommentASubject(commentId);
+	}
 }

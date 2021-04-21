@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import tn.esprit.spring.Entities.Subject;
 import tn.esprit.spring.Entities.User;
+import tn.esprit.spring.Entities.Category;
 import tn.esprit.spring.Entities.Comment;
 import tn.esprit.spring.Entities.Product;
 import tn.esprit.spring.Entities.SauvegardeLDSubject;
@@ -79,6 +80,9 @@ public class SubjectServiceImpl implements ISubjectService {
 		commentRepository.save(comment);
 	}
 
+	
+	
+	
 	@Override
 	public List<String> getAllCommentsContentsBySubject(int subjectId) {
 		Subject subjectEntity = subjectRepository.findById((long) subjectId).get();
@@ -117,7 +121,7 @@ public class SubjectServiceImpl implements ISubjectService {
 	}
 
 	@Override
-	public void deleteSubjectRedandant(long productId) {
+	public List<Subject> deleteSubjectRedandant(long productId) {
 		// Product product = productRepository.findById(productId).get();
 		List<Subject> subjects = (List<Subject>) subjectRepository.allsubbyprduct(productId);
 		int nb = subjects.size();
@@ -157,16 +161,18 @@ public class SubjectServiceImpl implements ISubjectService {
 			}
 			i++;
 		} while (i < nb - 1);
-	}
-
-	@Override
-	public List<String> SubjectAlaUne() {
-		List<String> subjects = (List<String>) subjectRepository.SubjectAlaUne();
+		
 		return subjects;
 	}
 
 	@Override
-	public void deleteSubjectSansInteraction() {
+	public List<String> SubjectAlaUne(long productId) {
+		List<String> subjects = (List<String>) subjectRepository.SubjectAlaUne(productId);
+		return subjects;
+	}
+
+	@Override
+	public List<Subject> deleteSubjectSansInteraction() {
 		Date d = new Date(System.currentTimeMillis());
 		List<Subject> subjects = (List<Subject>) subjectRepository.findAll();
 		int nb = subjects.size();
@@ -181,10 +187,12 @@ public class SubjectServiceImpl implements ISubjectService {
 					&& ((subjects.get(i).getLikes()) == 0.0) && ((subjects.get(i).getDislikes()) == 0.0)) {
 				subjectRepository.deleteById(subjects.get(i).getId());
 			}
+		return subjects;
 	}
 
 	@Override
-	public Subject updatelikes(int subjectId, int userId) {
+	@Transactional
+	public Subject updatelikes(int subjectId) {
 		Subject subject = subjectRepository.findById((long) subjectId).get();
         User user= u.getUserInfo();
 		List<Long> likeusers = (List<Long>) SauvegardeLDSubjectrepository.userlikes();
@@ -199,10 +207,11 @@ public class SubjectServiceImpl implements ISubjectService {
 			subject.setRating(newrating);
 			subjectRepository.save(subject);
 			SauvegardeLDSubject su = new SauvegardeLDSubject();
-			su.setUserLDsubject((long) userId);
+			su.setUserLDsubject((long) user.getId());
 			su.setUsersubject((long) subjectId);
 			SauvegardeLDSubjectrepository.save(su);
 		}
+		
 		// create mail sender
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost(this.emailconfig.getHost());
@@ -225,7 +234,7 @@ public class SubjectServiceImpl implements ISubjectService {
 
 	@Override
 	@Transactional
-	public Subject updateDislikes(int subjectId, int userId) {
+	public Subject updateDislikes(int subjectId) {
 		Subject subject = subjectRepository.findById((long) subjectId).get();
         User user= u.getUserInfo();
 		List<Long> likeusers = (List<Long>) SauvegardeLDSubjectrepository.userlikes();
@@ -242,7 +251,7 @@ public class SubjectServiceImpl implements ISubjectService {
 			}
 			subjectRepository.save(subject);
 			SauvegardeLDSubject su = new SauvegardeLDSubject();
-			su.setUserLDsubject((long) userId);
+			su.setUserLDsubject((long) user.getId());
 			su.setUsersubject((long) subjectId);
 			SauvegardeLDSubjectrepository.save(su);
 		}
@@ -251,50 +260,61 @@ public class SubjectServiceImpl implements ISubjectService {
 
 	@Override
 	@Transactional
-	public void deleteDislikes(int subjectId, int userId) {
+	public Subject deleteDislikes(int subjectId) {
 		Subject subject = subjectRepository.findById((long) subjectId).get();
-        User user= u.getUserInfo();
+        long user= u.getUserInfo().getId();
 		List<Long> likeusers = (List<Long>) SauvegardeLDSubjectrepository.userlikes();
 		List<Long> subjectlikes = (List<Long>) SauvegardeLDSubjectrepository.subjectlikes();
-		if (likeusers.contains(user.getId()) && (subjectlikes.contains(subject.getId()))) {
+		if (likeusers.contains(user) && (subjectlikes.contains(subject.getId()))) {
 			float nb = subject.getDislikes();
 			float a = nb - 1;
 			subject.setDislikes(a);
+			subjectRepository.save(subject);
+
 			if (subject.getLikes() > 0) {
 				float newrating = subject.getLikes() / (subject.getLikes() + subject.getDislikes()) * 5;
 				subject.setRating(newrating);
+				subjectRepository.save(subject);
+
 			}
 
-			subjectRepository.save(subject);
-			SauvegardeLDSubjectrepository.DeleteSauv((long) likeusers.get(userId), (long) subjectlikes.get(subjectId));
+			SauvegardeLDSubjectrepository.DeleteSubjectsauv(subjectId);
 
 		}
+		
+		return subject;
 	}
 
 	@Override
-	public void deletelikes(int subjectId, int userId) {
+	@Transactional
+	public Subject deletelikes(int subjectId) {
 		Subject subject = subjectRepository.findById((long) subjectId).get();
-        User user= u.getUserInfo();
+        long user= u.getUserInfo().getId();
 		List<Long> likeusers = (List<Long>) SauvegardeLDSubjectrepository.userlikes();
 		List<Long> subjectlikes = (List<Long>) SauvegardeLDSubjectrepository.subjectlikes();
-		if (likeusers.contains(user.getId()) && (subjectlikes.contains(subject.getId()))) {
+		if (likeusers.contains(user) && (subjectlikes.contains(subject.getId()))) {
 			float nb = subject.getLikes();
 			float a = nb - 1;
 			subject.setLikes(a);
+			subjectRepository.save(subject);
+
 			if (subject.getLikes() > 0) {
 				float newrating = subject.getLikes() / (subject.getLikes() + subject.getDislikes()) * 5;
 				subject.setRating(newrating);
+				subjectRepository.save(subject);
+
 			}
 
-			subjectRepository.save(subject);
-			SauvegardeLDSubjectrepository.DeleteSauv((long) likeusers.get(userId), (long) subjectlikes.get(subjectId));
-
+			SauvegardeLDSubjectrepository.DeleteSubjectsauv(subjectId);
 		}
+		
+		return subject;
 	}
-	@Scheduled(fixedRate = 6000)
+	
+	//@Scheduled(fixedRate = 3000)
 	@Override
 	@Transactional
-	public void deleteSubjectSansComment() {
+	public List<Subject> deleteSubjectSansComment() {
 		Date d = new Date(System.currentTimeMillis());
 		List<Subject> subjects = (List<Subject>) subjectRepository.findAll();
 
@@ -313,6 +333,7 @@ public class SubjectServiceImpl implements ISubjectService {
 			}
 
 		}
+		return subjects;
 	}
 
 	@Override
@@ -385,18 +406,20 @@ public class SubjectServiceImpl implements ISubjectService {
 	}
 
 	@Override
-	public List<Subject> subsearch(long productId, long userId, String title) {
+	public List<Subject> subsearch(long productId, String title) {
+        User user= u.getUserInfo();
 		List<Subject> subjects = (List<Subject>) subjectRepository.subBYTitle(productId, title);
 		SaveSearch s = new SaveSearch();
 		s.setTitlesub(title);
-		s.setUserid(userId);
+		s.setUserid(user.getId());
 		saveSearchRepository.save(s);
 		return subjects;
 	}
 
 	@Override
-	public List<Subject> AllSubforuser(long userId) {
-		List<SaveSearch> search = saveSearchRepository.searchBYuser(userId);
+	public List<Subject> AllSubforuser() {
+		 User user= u.getUserInfo();
+		List<SaveSearch> search = saveSearchRepository.searchBYuser(user.getId());
 		List<Subject> subcible = new ArrayList<>();
 		List<Subject> subs = (List<Subject>) subjectRepository.findAll();
 
@@ -426,5 +449,14 @@ public class SubjectServiceImpl implements ISubjectService {
 		
 		
 		return subcible;
+	}
+
+	@Override
+	public void disaffectSubjectAProduct(long subjectId) {
+       Product p = subjectRepository.findById(subjectId).get().getProduct();
+		
+		p.getSubjects().remove(subjectId);
+		subjectRepository.findById(subjectId).get().setProduct(null);
+		subjectRepository.save(subjectRepository.findById(subjectId).get());		
 	}
 }

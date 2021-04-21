@@ -11,13 +11,16 @@ public interface ICommentService {
 	public Comment addComment(Comment c);
 	public void deleteComment(String id);
 	public Comment updateComment(Comment c);
-	void affecterCommentAuser(int commentId, int userId);
+	void affecterCommentAuser(int commentId);
+	public void disaffectCommentAuser(long commentId) ;
+	public void disaffectCommentASubject(long commentId);
+
 	public List<String> RecentComment(long subjectId);
 	public List<String> persComment(long subjectId);
-	public Comment updatelikescomment(int commentId, int userId);
-	public Comment updatedislikescomment(int commentId, int userId);
-	public void deleteDislikesComment(int commentId, int userId);
-	public void deletelikesComment(int commentId, int userId);
+	public Comment updatelikescomment(int commentId);
+	public Comment updatedislikescomment(int commentId);
+	public Comment deleteDislikesComment(int commentId);
+	public Comment deletelikesComment(int commentId);
 
 
 	
