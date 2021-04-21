@@ -2,6 +2,9 @@ package tn.esprit.configuration;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,10 +31,32 @@ public class MyUserDetails implements UserDetails {
         this.user = user;
     }
  
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+	
+	private GrantedAuthority authorities;
+
+	public MyUserDetails(Long id, String email, String password,
+			GrantedAuthority authorities) {
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.authorities = authorities;
+	}
+
+	public static MyUserDetails build(User user) {
+		GrantedAuthority authorities = new SimpleGrantedAuthority(user.getRole().getAuthority());
+
+				
+
+		return new MyUserDetails(user.getId(), user.getEmail(), user.getPassword(), authorities);
+	}
+
+	
+
+
+
+    public  GrantedAuthority getAuthoritie() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().getAuthority());
-        return Arrays.asList(authority);
+        return authority;
     }
  
     
@@ -81,5 +106,11 @@ public class MyUserDetails implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

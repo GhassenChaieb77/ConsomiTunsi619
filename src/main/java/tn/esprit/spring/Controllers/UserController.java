@@ -31,9 +31,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.configuration.JwtResponse;
 import tn.esprit.configuration.JwtUtils;
 import tn.esprit.configuration.LoginRequest;
 import tn.esprit.configuration.MyUserDetails;
+import tn.esprit.spring.Entities.Role;
 import tn.esprit.spring.Entities.Supplier;
 import tn.esprit.spring.Entities.Tokens;
 import tn.esprit.spring.Entities.User;
@@ -60,6 +62,8 @@ public class UserController {
 		TokenReopsitory tokenReopsitory;
 		@Autowired
 		AuthenticationManager authenticationManager;
+		@Autowired
+		BCryptPasswordEncoder ps;
 	@PostMapping("/add")
 	  public void createTutorial(@RequestBody User u) {
 	     up.saveUser(u);
@@ -105,10 +109,10 @@ public class UserController {
 	  
 	  @GetMapping("/thisuser")
 		 @ResponseBody
-		 public String getUser() {
- User u =up.getUserInfo();
+		 public User getUser() {
+ System.err.println("test");
 		 
-		 return u.getEmail() ;
+		 return up.getUserInfo();
 	 
 	  }
 	  
@@ -170,30 +174,33 @@ return "done";
 	  
 	  
 	  
-	  @PostMapping("/signin")
-		public String authenticateUser(@RequestBody LoginRequest loginRequest) {
-			User u=ur.findByEmail(loginRequest.getUsername());
+	  @GetMapping("/signin/{email}/{password}")
+		public ResponseEntity<?> authenticateUser(@PathVariable("email")String email,@PathVariable("password")String password) {
+			User u=ur.findByEmail(email);
+			if(u!=null & ps.matches(password, u.getPassword()) )
+					{
 			Authentication 
-			 authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
+			 authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
 			SecurityContextHolder.getContext().setAuthentication(authentication);
 			String jwt = jwtUtils.generateJwtToken(authentication);
+			   
 
-		//	MyUserDetails userDetails =  (MyUserDetails )authentication.getPrincipal();
-			///List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
-					//.collect(Collectors.toList());
-			//User user=ur.findById(userDetails.getId()).get();
+
+			  MyUserDetails  userDetails =(MyUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			  System.err.println(userDetails.getUsername());
+			String roles =  userDetails.getAuthoritie().toString();
 			Tokens t = new Tokens();
 			t.setName(jwt);
 			t.setUserId(u.getId());
 			tokenReopsitory.save(t);
-			//JwtResponse jt	= new JwtResponse(jwt, u.getId(), u.getEmail(), u.getRole().toString());
-
-			return "token " + t.getName();
-	}
-	
-	
+			
+			return ResponseEntity.ok(new JwtResponse(jwt, u.getId(), u.getEmail(), roles));					
 	  
+	  }
+	
+	return ResponseEntity.badRequest().body("wrong");
+		
+	  }
 	
 	  
 	  
