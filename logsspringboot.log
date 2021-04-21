@@ -1575,3 +1575,743 @@ Caused by: java.lang.InterruptedException: null
 
 2021-04-21 03:22:32.898  INFO 23148 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-04-21 03:22:33.656  INFO 23148 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-21 15:21:58.098  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:21:58.104  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:21:58.283  INFO 16552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-21 15:21:58.284  INFO 16552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-21 15:22:00.566  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:22:00.907  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 318 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:22:01.901  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:22:02.053  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:22:02.281  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@23efdc9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:22:02.295  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:22:03.158  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:22:03.187  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:22:03.188  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:22:03.463  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:22:03.469  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5184 ms
+2021-04-21 15:22:03.695  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:22:04.007  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:22:04.148  INFO 16552 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-21 15:22:04.459  INFO 16552 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-21 15:22:04.661  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-21 15:22:05.095  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-21 15:22:05.131  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:22:06.122  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:22:06.123  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:22:09.851  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:22:09.882  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:22:11.720  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:22:13.910  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e228702, org.springframework.security.web.context.SecurityContextPersistenceFilter@1944078d, org.springframework.security.web.header.HeaderWriterFilter@16dfb680, org.springframework.web.filter.CorsFilter@4bb890a4, org.springframework.security.web.authentication.logout.LogoutFilter@e6f25b3, tn.esprit.configuration.AuthTokenFilter@36fe70f8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43ce9c72, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bfd9552, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72e98bd5, org.springframework.security.web.session.SessionManagementFilter@41b4be95, org.springframework.security.web.access.ExceptionTranslationFilter@30c772f3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b0f7409]
+2021-04-21 15:22:14.105  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:22:14.467  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:22:14.753  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:22:14.776  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 17.611 seconds (JVM running for 19.443)
+2021-04-21 15:23:40.059  INFO 16552 --- [Thread-5] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:23:40.061  INFO 16552 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:23:40.104  INFO 16552 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:23:40.112  INFO 16552 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-21 15:23:40.154  INFO 16552 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-21 15:23:40.576  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:23:40.577  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:23:41.386  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:23:41.587  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 199 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:23:41.771  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:23:41.774  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:23:41.806  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e5c04ce' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:23:41.808  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:23:42.022  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:23:42.023  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:23:42.023  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:23:42.060  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:23:42.062  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1474 ms
+2021-04-21 15:23:42.157  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:23:42.281  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:23:42.294  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-04-21 15:23:42.299  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-04-21 15:23:42.299  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:23:42.552  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:23:42.553  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:23:45.532  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:23:45.532  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:23:46.267  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:23:48.392  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@937545c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e6e05c8, org.springframework.security.web.header.HeaderWriterFilter@6de59aa, org.springframework.web.filter.CorsFilter@3d903c9a, org.springframework.security.web.authentication.logout.LogoutFilter@53408112, tn.esprit.configuration.AuthTokenFilter@6b963e1e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11d5e73f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65b2efa6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39c88385, org.springframework.security.web.session.SessionManagementFilter@6e26c456, org.springframework.security.web.access.ExceptionTranslationFilter@525badef, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@38cb062c]
+2021-04-21 15:23:48.463  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:23:48.632  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:23:48.766  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:23:48.802  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 8.318 seconds (JVM running for 113.468)
+2021-04-21 15:23:48.815  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:26:40.269  INFO 16552 --- [Thread-9] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:26:40.273  INFO 16552 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:26:40.301  INFO 16552 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:26:40.306  INFO 16552 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-04-21 15:26:40.326  INFO 16552 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-04-21 15:26:40.738  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:26:40.741  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:26:41.486  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:26:41.757  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 269 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:26:42.016  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:26:42.024  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:26:42.049  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@778f7cd6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:26:42.049  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:26:42.321  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:26:42.322  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:26:42.324  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:26:42.403  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:26:42.405  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1660 ms
+2021-04-21 15:26:42.498  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:26:42.626  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:26:42.644  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-04-21 15:26:42.664  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-04-21 15:26:42.666  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:26:42.982  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:26:42.982  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:26:45.434  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:26:45.435  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:26:46.195  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:26:47.853  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@179bc976, org.springframework.security.web.context.SecurityContextPersistenceFilter@41f32130, org.springframework.security.web.header.HeaderWriterFilter@3e8767ac, org.springframework.web.filter.CorsFilter@514dfb07, org.springframework.security.web.authentication.logout.LogoutFilter@f81639, tn.esprit.configuration.AuthTokenFilter@ab35e4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@723d649f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7782d773, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@125a099c, org.springframework.security.web.session.SessionManagementFilter@6353848, org.springframework.security.web.access.ExceptionTranslationFilter@563cb821, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2271b09b]
+2021-04-21 15:26:47.955  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:26:48.064  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:26:48.178  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:26:48.197  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 7.535 seconds (JVM running for 292.863)
+2021-04-21 15:26:48.203  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:28:26.719  INFO 16552 --- [Thread-14] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:28:26.719  INFO 16552 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:28:26.727  INFO 16552 --- [Thread-14] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:28:26.730  INFO 16552 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-04-21 15:28:26.739  INFO 16552 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-04-21 15:28:27.224  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:28:27.225  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:28:27.920  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:28:28.156  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 235 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:28:28.346  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:28:28.349  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:28:28.365  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2767ca05' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:28:28.366  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:28:28.610  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:28:28.612  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:28:28.612  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:28:28.642  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:28:28.643  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1410 ms
+2021-04-21 15:28:28.717  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:28:28.839  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:28:28.863  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-04-21 15:28:28.871  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-04-21 15:28:28.871  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:28:29.106  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:28:29.108  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:28:31.759  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:28:31.760  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:28:32.063  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:28:32.931  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c9964eb, org.springframework.security.web.context.SecurityContextPersistenceFilter@20a04bd4, org.springframework.security.web.header.HeaderWriterFilter@44018d68, org.springframework.web.filter.CorsFilter@3f2b846c, org.springframework.security.web.authentication.logout.LogoutFilter@789caaa8, tn.esprit.configuration.AuthTokenFilter@63c0f639, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34ac226, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b6865ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d22f2a0, org.springframework.security.web.session.SessionManagementFilter@10f02929, org.springframework.security.web.access.ExceptionTranslationFilter@61684432, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a5e76b2]
+2021-04-21 15:28:32.973  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:28:33.044  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:28:33.107  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:28:33.119  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 5.969 seconds (JVM running for 397.786)
+2021-04-21 15:28:33.126  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:29:05.851  INFO 16552 --- [Thread-19] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:29:05.853  INFO 16552 --- [Thread-19] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:29:05.858  INFO 16552 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:29:05.860  INFO 16552 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-04-21 15:29:05.868  INFO 16552 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-04-21 15:29:06.329  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:29:06.331  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:29:07.046  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:29:07.249  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 202 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:29:07.417  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:07.420  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:29:07.434  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5ee952fd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:07.435  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:07.677  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:29:07.678  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:29:07.678  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:29:07.703  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:29:07.704  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1361 ms
+2021-04-21 15:29:07.750  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:29:07.841  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:29:07.850  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-04-21 15:29:07.856  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-04-21 15:29:07.857  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:29:08.060  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:29:08.060  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:29:10.242  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:29:10.242  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:29:10.546  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:29:11.576  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f64d89d, org.springframework.security.web.context.SecurityContextPersistenceFilter@15443df3, org.springframework.security.web.header.HeaderWriterFilter@94eb5dd, org.springframework.web.filter.CorsFilter@7652589d, org.springframework.security.web.authentication.logout.LogoutFilter@68aa2348, tn.esprit.configuration.AuthTokenFilter@4c617133, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@350fae22, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49130503, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44f1d94c, org.springframework.security.web.session.SessionManagementFilter@65fe19a0, org.springframework.security.web.access.ExceptionTranslationFilter@7bfb6203, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@511a1a04]
+2021-04-21 15:29:11.621  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:29:11.703  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:29:11.761  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:29:11.780  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 5.518 seconds (JVM running for 436.446)
+2021-04-21 15:29:11.788  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:29:36.089  INFO 16552 --- [Thread-24] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:29:36.091  INFO 16552 --- [Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:29:36.094  INFO 16552 --- [Thread-24] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:29:36.095  INFO 16552 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-04-21 15:29:36.101  INFO 16552 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-04-21 15:29:36.409  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:29:36.409  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:29:37.160  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:29:37.373  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 212 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:29:37.589  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:37.594  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:29:37.610  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1b16d700' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:37.611  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:37.812  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:29:37.813  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:29:37.813  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:29:37.844  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:29:37.844  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1430 ms
+2021-04-21 15:29:37.950  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:29:38.133  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:29:38.148  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-04-21 15:29:38.156  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-04-21 15:29:38.157  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:29:38.395  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:29:38.405  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:29:40.807  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:29:40.807  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:29:41.170  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:29:42.408  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72b95668, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a677230, org.springframework.security.web.header.HeaderWriterFilter@50493cb6, org.springframework.web.filter.CorsFilter@23dab872, org.springframework.security.web.authentication.logout.LogoutFilter@719eb5da, tn.esprit.configuration.AuthTokenFilter@1ea919d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13ac43df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a997190, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@217ac424, org.springframework.security.web.session.SessionManagementFilter@5c76df93, org.springframework.security.web.access.ExceptionTranslationFilter@12056ee5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@127a193b]
+2021-04-21 15:29:42.431  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:29:42.509  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:29:42.562  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:29:42.570  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 6.215 seconds (JVM running for 467.237)
+2021-04-21 15:29:42.573  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:29:53.809  INFO 16552 --- [Thread-29] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:29:53.810  INFO 16552 --- [Thread-29] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:29:53.813  INFO 16552 --- [Thread-29] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:29:53.815  INFO 16552 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-04-21 15:29:53.821  INFO 16552 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-04-21 15:29:54.236  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:29:54.237  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:29:54.627  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:29:54.869  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:29:55.075  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:55.079  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:29:55.093  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@461e7f4b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:55.093  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:29:55.190  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:29:55.193  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:29:55.193  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:29:55.224  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:29:55.224  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 984 ms
+2021-04-21 15:29:55.297  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:29:55.363  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:29:55.372  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-04-21 15:29:55.376  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-04-21 15:29:55.377  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:29:55.515  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:29:55.520  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:29:58.171  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:29:58.173  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:29:58.432  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:29:59.110  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a680bd6, org.springframework.security.web.context.SecurityContextPersistenceFilter@46963021, org.springframework.security.web.header.HeaderWriterFilter@3ec7697d, org.springframework.web.filter.CorsFilter@1d331075, org.springframework.security.web.authentication.logout.LogoutFilter@55bfa89e, tn.esprit.configuration.AuthTokenFilter@564363b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d356b05, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@583c6d5f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b4f37f5, org.springframework.security.web.session.SessionManagementFilter@ffeacf8, org.springframework.security.web.access.ExceptionTranslationFilter@45e5313e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2bb4e590]
+2021-04-21 15:29:59.147  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:29:59.228  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:29:59.269  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:29:59.277  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 5.098 seconds (JVM running for 483.943)
+2021-04-21 15:29:59.278  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:31:41.940  INFO 16552 --- [Thread-34] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:31:41.942  INFO 16552 --- [Thread-34] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:31:41.948  INFO 16552 --- [Thread-34] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:31:41.951  INFO 16552 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2021-04-21 15:31:41.962  INFO 16552 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2021-04-21 15:31:42.343  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:31:42.343  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:31:42.722  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:31:42.846  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:31:42.970  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:31:42.973  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:31:42.991  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@39b931fc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:31:42.992  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:31:43.173  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:31:43.174  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:31:43.175  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:31:43.216  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:31:43.216  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2021-04-21 15:31:43.252  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:31:43.319  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:31:43.331  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2021-04-21 15:31:43.337  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2021-04-21 15:31:43.337  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:31:43.470  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:31:43.470  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:31:51.663  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:31:51.664  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:31:52.102  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:31:53.399  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f7dce02, org.springframework.security.web.context.SecurityContextPersistenceFilter@222909e8, org.springframework.security.web.header.HeaderWriterFilter@78911a51, org.springframework.web.filter.CorsFilter@3d09caf5, org.springframework.security.web.authentication.logout.LogoutFilter@435697c1, tn.esprit.configuration.AuthTokenFilter@17a65cef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55b5eb8e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@250630fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48a9a146, org.springframework.security.web.session.SessionManagementFilter@585a9159, org.springframework.security.web.access.ExceptionTranslationFilter@44066dbe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7db97d52]
+2021-04-21 15:31:53.510  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:31:53.594  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:31:53.697  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:31:53.712  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 11.4 seconds (JVM running for 598.379)
+2021-04-21 15:31:53.717  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:37:33.532  INFO 20264 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 20264 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:37:33.543  INFO 20264 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:37:33.741  INFO 20264 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-21 15:37:33.742  INFO 20264 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-21 15:37:35.974  INFO 20264 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:37:36.301  INFO 20264 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 310 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:37:37.189  INFO 20264 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$faf39157] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:37:37.292  INFO 20264 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:37:37.483  INFO 20264 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5408e9ee' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:37:37.499  INFO 20264 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:37:38.349  INFO 20264 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:37:38.383  INFO 20264 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:37:38.384  INFO 20264 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:37:38.652  INFO 20264 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:37:38.652  INFO 20264 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4909 ms
+2021-04-21 15:37:38.916  WARN 20264 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:37:39.301  INFO 20264 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:37:39.456  INFO 20264 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-21 15:37:39.882  INFO 20264 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-21 15:37:40.114  INFO 20264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-21 15:37:40.575  INFO 20264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-21 15:37:40.615  INFO 20264 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:37:42.063  WARN 20264 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:37:42.064  WARN 20264 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:37:45.308  INFO 20264 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:37:45.326  INFO 20264 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:37:48.741  WARN 20264 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-04-21 15:37:53.468  INFO 20264 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24047e4b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f5c1ced, org.springframework.security.web.header.HeaderWriterFilter@7c5df968, org.springframework.web.filter.CorsFilter@53de4234, org.springframework.security.web.authentication.logout.LogoutFilter@7819cafc, tn.esprit.configuration.AuthTokenFilter@c510851, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31544b4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c3886ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ab38f23, org.springframework.security.web.session.SessionManagementFilter@14198b2a, org.springframework.security.web.access.ExceptionTranslationFilter@5c373c87, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fd6f885]
+2021-04-21 15:37:53.840  INFO 20264 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:37:54.389  INFO 20264 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:37:54.908  WARN 20264 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
+2021-04-21 15:37:54.912  INFO 20264 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:37:54.920  INFO 20264 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:37:54.971  INFO 20264 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:37:54.980  INFO 20264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-21 15:37:55.038  INFO 20264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-21 15:37:55.045  INFO 20264 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-21 15:37:55.081  INFO 20264 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-21 15:37:55.172 ERROR 20264 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2021-04-21 15:41:14.782  INFO 16552 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-21 15:41:14.790  INFO 16552 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-21 15:41:14.796  INFO 16552 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-04-21 15:41:15.354 ERROR 16552 --- [http-nio-8081-exec-1] tn.esprit.configuration.JwtUtils         : Invalid JWT signature: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2021-04-21 15:45:05.528  INFO 16552 --- [Thread-39] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:45:05.529  INFO 16552 --- [Thread-39] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:45:05.532  INFO 16552 --- [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:45:05.533  INFO 16552 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2021-04-21 15:45:05.538  INFO 16552 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2021-04-21 15:45:06.252  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:45:06.253  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:45:06.718  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:45:06.897  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 177 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:45:07.033  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:45:07.038  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:45:07.054  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e18d0e6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:45:07.056  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:45:07.188  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:45:07.189  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:45:07.189  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:45:07.211  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:45:07.211  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 955 ms
+2021-04-21 15:45:07.240  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:45:07.312  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:45:07.326  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2021-04-21 15:45:07.330  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2021-04-21 15:45:07.331  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:45:07.518  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:45:07.518  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:45:09.759  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:45:09.759  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:45:09.928  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:45:10.555  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c5b92a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@1671fdf, org.springframework.security.web.header.HeaderWriterFilter@659e6d8e, org.springframework.web.filter.CorsFilter@13c3ea33, org.springframework.security.web.authentication.logout.LogoutFilter@730025e7, tn.esprit.configuration.AuthTokenFilter@493f9a54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75aa2ff4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@634eced2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@585f40cf, org.springframework.security.web.session.SessionManagementFilter@4a3c7f67, org.springframework.security.web.access.ExceptionTranslationFilter@7b71e91e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@70132f11]
+2021-04-21 15:45:10.611  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:45:10.646  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:45:10.686  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:45:10.694  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 4.486 seconds (JVM running for 1395.36)
+2021-04-21 15:45:10.698  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:47:04.514  INFO 16552 --- [Thread-44] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:47:04.514  INFO 16552 --- [Thread-44] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:47:04.517  INFO 16552 --- [Thread-44] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:47:04.518  INFO 16552 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2021-04-21 15:47:04.521  INFO 16552 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2021-04-21 15:47:04.889  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:47:04.890  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:47:05.252  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:47:05.403  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:47:05.495  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:47:05.498  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:47:05.507  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1990cbe6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:47:05.508  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:47:05.643  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:47:05.646  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:47:05.646  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:47:05.675  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:47:05.675  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 783 ms
+2021-04-21 15:47:05.755  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:47:05.842  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:47:05.862  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2021-04-21 15:47:05.870  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2021-04-21 15:47:05.870  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:47:05.973  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:47:05.973  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:47:07.809  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:47:07.809  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:47:07.951  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:47:08.433  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31c88e3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@69195c3a, org.springframework.security.web.header.HeaderWriterFilter@2c48655a, org.springframework.web.filter.CorsFilter@15c5bf0f, org.springframework.security.web.authentication.logout.LogoutFilter@22d76e83, tn.esprit.configuration.AuthTokenFilter@3f5b7afc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5605eae8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@390827c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27d61174, org.springframework.security.web.session.SessionManagementFilter@658bb6f4, org.springframework.security.web.access.ExceptionTranslationFilter@1d2450e9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f5e0bb2]
+2021-04-21 15:47:08.459  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:47:08.488  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:47:08.518  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:47:08.523  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 3.677 seconds (JVM running for 1513.191)
+2021-04-21 15:47:08.527  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:49:30.998  INFO 16552 --- [Thread-49] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:49:31.000  INFO 16552 --- [Thread-49] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:49:31.003  INFO 16552 --- [Thread-49] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:49:31.007  INFO 16552 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2021-04-21 15:49:31.012  INFO 16552 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2021-04-21 15:49:31.347  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:49:31.347  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:49:31.654  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:49:31.757  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:49:31.839  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:31.842  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:49:31.852  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@8c15bac' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:31.853  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:31.962  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:49:31.963  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:49:31.963  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:49:31.983  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:49:31.983  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 632 ms
+2021-04-21 15:49:32.013  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:49:32.058  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:49:32.064  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2021-04-21 15:49:32.068  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2021-04-21 15:49:32.069  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:49:32.219  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:49:32.219  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:49:34.069  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:49:34.069  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:49:34.269  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:49:34.917  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@253bbbbb, org.springframework.security.web.context.SecurityContextPersistenceFilter@f2ac9d2, org.springframework.security.web.header.HeaderWriterFilter@7cfe6e0, org.springframework.web.filter.CorsFilter@3a4af492, org.springframework.security.web.authentication.logout.LogoutFilter@1e3e0468, tn.esprit.configuration.AuthTokenFilter@4421d797, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f5470a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57d46b4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5814c907, org.springframework.security.web.session.SessionManagementFilter@64fe8720, org.springframework.security.web.access.ExceptionTranslationFilter@6ba96ee3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11c65cea]
+2021-04-21 15:49:34.938  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:49:34.983  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:49:35.039  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:49:35.045  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 3.733 seconds (JVM running for 1659.711)
+2021-04-21 15:49:35.048  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:49:38.884  INFO 16552 --- [Thread-54] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:49:38.885  INFO 16552 --- [Thread-54] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:49:38.889  INFO 16552 --- [Thread-54] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:49:38.890  INFO 16552 --- [Thread-54] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2021-04-21 15:49:38.898  INFO 16552 --- [Thread-54] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2021-04-21 15:49:39.248  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:49:39.250  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:49:39.858  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:49:39.970  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:49:40.034  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:40.036  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:49:40.046  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fa55f49' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:40.046  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:40.120  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:49:40.120  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:49:40.121  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:49:40.139  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:49:40.139  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 883 ms
+2021-04-21 15:49:40.161  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:49:40.211  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:49:40.220  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2021-04-21 15:49:40.224  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2021-04-21 15:49:40.224  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:49:40.322  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:49:40.322  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:49:42.365  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:49:42.365  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:49:42.510  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:49:42.949  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a594bbc, org.springframework.security.web.context.SecurityContextPersistenceFilter@b976404, org.springframework.security.web.header.HeaderWriterFilter@6c8f044e, org.springframework.web.filter.CorsFilter@5fa8f3b1, org.springframework.security.web.authentication.logout.LogoutFilter@425df9a3, tn.esprit.configuration.AuthTokenFilter@2a9e7127, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7484130e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60bdd4a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@226179ee, org.springframework.security.web.session.SessionManagementFilter@773cb932, org.springframework.security.web.access.ExceptionTranslationFilter@23bb8ae2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b07bc09]
+2021-04-21 15:49:42.987  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:49:43.034  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:49:43.090  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:49:43.097  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 3.91 seconds (JVM running for 1667.763)
+2021-04-21 15:49:43.099  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:49:44.788  INFO 16552 --- [Thread-59] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:49:44.789  INFO 16552 --- [Thread-59] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:49:44.791  INFO 16552 --- [Thread-59] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:49:44.792  INFO 16552 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2021-04-21 15:49:44.798  INFO 16552 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2021-04-21 15:49:45.208  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:49:45.209  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:49:45.480  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:49:45.582  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:49:45.661  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:45.662  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:49:45.669  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5d8f5fff' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:45.670  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:49:45.711  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:49:45.712  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:49:45.713  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:49:45.731  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:49:45.732  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 520 ms
+2021-04-21 15:49:45.754  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:49:45.802  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:49:45.812  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2021-04-21 15:49:45.816  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2021-04-21 15:49:45.816  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:49:45.963  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:49:45.964  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:49:47.900  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:49:47.900  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:49:48.039  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:49:48.520  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7451fcb6, org.springframework.security.web.context.SecurityContextPersistenceFilter@595dbb9f, org.springframework.security.web.header.HeaderWriterFilter@16034301, org.springframework.web.filter.CorsFilter@62747972, org.springframework.security.web.authentication.logout.LogoutFilter@4b173224, tn.esprit.configuration.AuthTokenFilter@5dc8bb07, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55ac958d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59bbcf72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@549a51ba, org.springframework.security.web.session.SessionManagementFilter@6dd96cdd, org.springframework.security.web.access.ExceptionTranslationFilter@5a7ad0e1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6768890a]
+2021-04-21 15:49:48.543  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:49:48.571  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:49:48.600  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:49:48.605  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 3.428 seconds (JVM running for 1673.272)
+2021-04-21 15:49:48.608  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:50:54.283  INFO 16552 --- [Thread-64] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:50:54.284  INFO 16552 --- [Thread-64] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:50:54.286  INFO 16552 --- [Thread-64] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:50:54.287  INFO 16552 --- [Thread-64] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2021-04-21 15:50:54.293  INFO 16552 --- [Thread-64] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2021-04-21 15:50:54.708  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:50:54.708  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:50:55.021  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:50:55.113  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:50:55.198  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:50:55.199  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:50:55.210  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@192339e3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:50:55.211  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:50:55.359  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:50:55.360  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:50:55.360  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:50:55.382  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:50:55.382  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 671 ms
+2021-04-21 15:50:55.421  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:50:55.487  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:50:55.497  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2021-04-21 15:50:55.500  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2021-04-21 15:50:55.501  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:50:55.573  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:50:55.573  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:50:56.968  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:50:56.969  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:50:57.160  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:50:57.940  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f961755, org.springframework.security.web.context.SecurityContextPersistenceFilter@7992de23, org.springframework.security.web.header.HeaderWriterFilter@60ede25e, org.springframework.web.filter.CorsFilter@6fc8e3af, org.springframework.security.web.authentication.logout.LogoutFilter@41aff80d, tn.esprit.configuration.AuthTokenFilter@7ff2dbc1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@947e185, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6371de1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60ced21a, org.springframework.security.web.session.SessionManagementFilter@17f7f972, org.springframework.security.web.access.ExceptionTranslationFilter@18cd0d11, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b6ef47b]
+2021-04-21 15:50:57.971  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:50:58.020  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:50:58.068  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:50:58.073  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 3.394 seconds (JVM running for 1742.74)
+2021-04-21 15:50:58.076  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:51:53.531  INFO 16552 --- [Thread-69] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:51:53.532  INFO 16552 --- [Thread-69] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:51:53.535  INFO 16552 --- [Thread-69] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:51:53.536  INFO 16552 --- [Thread-69] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2021-04-21 15:51:53.540  INFO 16552 --- [Thread-69] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+2021-04-21 15:51:54.002  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:51:54.002  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:51:54.318  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:51:54.407  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:51:54.477  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:51:54.479  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:51:54.490  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@40278acb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:51:54.491  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:51:54.606  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:51:54.607  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:51:54.607  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:51:54.626  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:51:54.627  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 621 ms
+2021-04-21 15:51:54.654  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:51:54.701  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:51:54.709  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2021-04-21 15:51:54.712  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2021-04-21 15:51:54.712  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:51:54.805  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:51:54.807  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:51:56.088  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:51:56.089  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:51:56.250  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:51:56.717  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@295914d3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5095d4a3, org.springframework.security.web.header.HeaderWriterFilter@5f529f72, org.springframework.web.filter.CorsFilter@1594ccab, org.springframework.security.web.authentication.logout.LogoutFilter@419b0ba6, tn.esprit.configuration.AuthTokenFilter@23fe2fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a215c54, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7143ed6d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6266843d, org.springframework.security.web.session.SessionManagementFilter@674533bd, org.springframework.security.web.access.ExceptionTranslationFilter@12ff1439, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7824e920]
+2021-04-21 15:51:56.735  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:51:56.761  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:51:56.810  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:51:56.821  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 2.859 seconds (JVM running for 1801.488)
+2021-04-21 15:51:56.828  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:53:33.479  INFO 16552 --- [Thread-74] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:53:33.480  INFO 16552 --- [Thread-74] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:53:33.482  INFO 16552 --- [Thread-74] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:53:33.483  INFO 16552 --- [Thread-74] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2021-04-21 15:53:33.486  INFO 16552 --- [Thread-74] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2021-04-21 15:53:34.042  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:53:34.042  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:53:34.323  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:53:34.421  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:53:34.609  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:53:34.611  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:53:34.657  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@33718bbd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:53:34.658  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:53:34.907  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:53:34.951  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:53:34.951  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:53:34.989  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:53:34.989  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 944 ms
+2021-04-21 15:53:35.067  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:53:35.172  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:53:35.179  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2021-04-21 15:53:35.183  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2021-04-21 15:53:35.184  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:53:35.280  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:53:35.281  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:53:36.613  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:53:36.614  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:53:36.841  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:53:37.355  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55a43370, org.springframework.security.web.context.SecurityContextPersistenceFilter@21aafbc1, org.springframework.security.web.header.HeaderWriterFilter@4ab47afa, org.springframework.web.filter.CorsFilter@4dd8cae1, org.springframework.security.web.authentication.logout.LogoutFilter@326a041e, tn.esprit.configuration.AuthTokenFilter@1aa9f203, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34dfdd94, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dd5125f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46c88f44, org.springframework.security.web.session.SessionManagementFilter@413a6e2, org.springframework.security.web.access.ExceptionTranslationFilter@3ff542b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3daf0634]
+2021-04-21 15:53:37.383  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:53:37.425  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:53:37.473  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:53:37.480  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 3.473 seconds (JVM running for 1902.147)
+2021-04-21 15:53:37.485  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:53:39.177  INFO 16552 --- [Thread-79] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-04-21 15:53:39.178  INFO 16552 --- [Thread-79] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:53:39.181  INFO 16552 --- [Thread-79] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:53:39.182  INFO 16552 --- [Thread-79] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2021-04-21 15:53:39.187  INFO 16552 --- [Thread-79] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2021-04-21 15:53:39.897  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Starting Edalel619Application using Java 1.8.0_60 on DESKTOP-85SMQVJ with PID 16552 (C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel\target\classes started by maiss in C:\Users\maiss\OneDrive\Desktop\Wallahifinal\Edalel)
+2021-04-21 15:53:39.897  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : No active profile set, falling back to default profiles: default
+2021-04-21 15:53:40.162  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-21 15:53:40.245  INFO 16552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 25 JPA repository interfaces.
+2021-04-21 15:53:40.324  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$92bd2de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:53:40.325  INFO 16552 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-04-21 15:53:40.333  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3494f02a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:53:40.333  INFO 16552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-21 15:53:40.369  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-21 15:53:40.370  INFO 16552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-21 15:53:40.370  INFO 16552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-21 15:53:40.389  INFO 16552 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-04-21 15:53:40.389  INFO 16552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 488 ms
+2021-04-21 15:53:40.427  WARN 16552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-21 15:53:40.494  INFO 16552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-21 15:53:40.503  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2021-04-21 15:53:40.506  INFO 16552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2021-04-21 15:53:40.507  INFO 16552 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-21 15:53:40.584  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:53:40.584  WARN 16552 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): tn.esprit.spring.Entities.JacUserFK
+2021-04-21 15:53:41.612  INFO 16552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-21 15:53:41.613  INFO 16552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-21 15:53:41.793  INFO 16552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-21 15:53:42.505  INFO 16552 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f137677, org.springframework.security.web.context.SecurityContextPersistenceFilter@57b004a6, org.springframework.security.web.header.HeaderWriterFilter@4e16e65d, org.springframework.web.filter.CorsFilter@34e42d40, org.springframework.security.web.authentication.logout.LogoutFilter@1512b45e, tn.esprit.configuration.AuthTokenFilter@53e9844c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43af9cfe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3af2aed8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6490841a, org.springframework.security.web.session.SessionManagementFilter@30291e6e, org.springframework.security.web.access.ExceptionTranslationFilter@2186a1b7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79a9bd4f]
+2021-04-21 15:53:42.543  INFO 16552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-21 15:53:42.577  INFO 16552 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-21 15:53:42.605  INFO 16552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-04-21 15:53:42.612  INFO 16552 --- [restartedMain] tn.esprit.spring.Edalel619Application    : Started Edalel619Application in 2.739 seconds (JVM running for 1907.278)
+2021-04-21 15:53:42.617  INFO 16552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-21 15:53:52.466  INFO 16552 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-21 15:53:52.466  INFO 16552 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-21 15:53:52.468  INFO 16552 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-21 15:53:52.478 ERROR 16552 --- [http-nio-8081-exec-1] tn.esprit.configuration.JwtUtils         : Invalid JWT signature: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2021-04-21 15:54:33.068 ERROR 16552 --- [http-nio-8081-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/SpringMVC] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause
+
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:135) ~[na:1.8.0_60]
+	at tn.esprit.spring.Services.CartService.AddOrderLinesToCart(CartService.java:34) ~[classes/:na]
+	at tn.esprit.spring.Controllers.RestControlCart.AddOrderLinesToCart(RestControlCart.java:31) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at tn.esprit.configuration.AuthTokenFilter.doFilterInternal(AuthTokenFilter.java:48) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_60]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_60]
+
+2021-04-21 15:56:14.616 ERROR 16552 --- [http-nio-8081-exec-9] tn.esprit.configuration.JwtUtils         : Invalid JWT signature: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.

@@ -94,16 +94,34 @@ public class OrderLineService implements IOrderLineService {
 		
 		int qRest ;
 		
-		if (p.getQuantity()<= Newquantity) {
-			OL.setQuantity(OL.getQuantity()+p.getQuantity());
+		if (p.getQuantity()<= Newquantity && p.getQuantity()!=0) {
+			
+			
 			p.setQuantity(0);
+			OL.setQuantity(OL.getQuantity()+p.getQuantity());
 			productRepo.save(p);
-			orderlineRepo.UpdateQuantity(Newquantity, id);
+			orderlineRepo.save(OL);
 			return OL ;		
 		}
 
-			else{
+			else if (p.getQuantity()==0){
+				int qt= OL.getQuantity() ;
+					if(qt>Newquantity){
+						p.setQuantity(qt-Newquantity);
+						OL.setQuantity(Newquantity);
+						orderlineRepo.save(OL);	
+						productRepo.save(p);
+					}
+					else {
+						OL.setQuantity(p.getQuantity());
+						//p.setQuantity(0);	
+						//orderlineRepo.save(OL);	
+						productRepo.save(p);
+						
+					}
 		
+			}
+			else{
 		qRest= p.getQuantity()+(OL.getQuantity()-Newquantity) ;
 		OL.setQuantity(Newquantity);
 		p.setQuantity(qRest);
@@ -118,6 +136,7 @@ public class OrderLineService implements IOrderLineService {
 		//cartRepository.save(ca);
 		return OL ;
 		}
+		return OL;
 		
 	}
 

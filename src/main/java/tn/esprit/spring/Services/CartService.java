@@ -65,8 +65,8 @@ public class CartService implements ICartService {
 		return ca; 
 	}
 	
-	public void updateTotalPrice(Long user_id)
-	{   User user = userRepository.findById(user_id).get();
+	public void updateTotalPrice()
+	{   User user = userService.getUserInfo();
 		Cart ca = cartRepository.findById(user.getCart().getId()).get();
 		ca.setProdpricetotal(OLService.GetPriceTotal()) ;
    
@@ -123,10 +123,11 @@ public class CartService implements ICartService {
 
 
 	@Override
-	public Cart getCartByUserId(Long user_id) {
+	public Cart getCartByUserId() {
 		// TODO Auto-generated method stub
-		updateTotalPrice(user_id);
-		return cartRepository.getCartByUserId(user_id) ;
+		User user = userService.getUserInfo();
+		updateTotalPrice();
+		return cartRepository.getCartByUserId(user.getId()) ;
 	}
 
 
@@ -172,21 +173,18 @@ public class CartService implements ICartService {
 		return p;	
 	}
 
-		
-	
-		
 	@Override
-	public List<User> getUsers() {
+    public List<User> getUsers() {
 
-		List<User> p = new ArrayList<User>();
-		List<OrderLine> l=cartRepository.getOrderlines();
-		int nb= l.size();
-		for (int i=0;i<nb;i++)
-		{
-			p.add(l.get(i).getCart().getUser());
-		}
-		return p;
-}
+        List<User> p = new ArrayList<User>();
+        List<OrderLine> l=cartRepository.getOrderlines();
+        int nb= l.size();
+        for (int i=0;i<nb;i++)
+        {
+            p.add(l.get(i).getCart().getUser());
+        }
+        return p;
+	}
 
 
 }

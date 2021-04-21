@@ -72,7 +72,7 @@ public class User implements Serializable{
 	private List<Comment> comments = new ArrayList<>();
 	
 	
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToOne(mappedBy="user")
 	private Cart cart;
 

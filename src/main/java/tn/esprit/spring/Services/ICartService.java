@@ -13,13 +13,13 @@ public interface ICartService {
 	public Cart AddOrderLinesToCart(Long LineId,Long CartId) ;
 	public Cart RemoveOrderLinesFromCart(Long CartId) ;
 	public Cart addCart();
-	public Cart  getCartByUserId(Long user_id);
+	public Cart  getCartByUserId();
 	public <List> Cart getAllOrderLinesByCart(Long cart_id);
 
-
+	 public List<User> getUsers() ;
 	public List<Product> getCartProducts();
 
-	public List<User> getUsers();
- 
+
+
 
 }

@@ -49,6 +49,12 @@ public class Cart implements Serializable {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Cart [id=" + id + ", prodpricetotal=" + prodpricetotal + ", user=" + user + ", OrderLines=" + OrderLines
+				+ "]";
+	}
+
 	public float getProdpricetotal() {
 		return prodpricetotal;
 	}

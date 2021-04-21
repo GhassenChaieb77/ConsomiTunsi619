@@ -65,10 +65,11 @@ public class Order implements Serializable {
 
 	@OneToOne
 	private Donation donation ;
-	
+	@JsonIgnore
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Cart cart;
 	
+	@JsonIgnore
 	@ManyToOne(cascade=CascadeType.ALL)
 	private User user;
 	

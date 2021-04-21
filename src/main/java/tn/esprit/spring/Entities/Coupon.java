@@ -33,6 +33,13 @@ public class Coupon implements Serializable {
 		this.percentage = percentage;
 		this.isValid = isValid;
 	}
+	
+
+	@Override
+	public String toString() {
+		return "Coupon [id=" + id + ", code=" + code + ", percentage=" + percentage + ", isValid=" + isValid + "]";
+	}
+
 
 	public Long getId() {
 		return id;

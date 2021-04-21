@@ -94,5 +94,6 @@ public class Bill implements Serializable {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-	
+
+
 }

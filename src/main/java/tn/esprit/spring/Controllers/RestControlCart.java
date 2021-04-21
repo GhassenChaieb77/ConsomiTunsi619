@@ -3,6 +3,8 @@ package tn.esprit.spring.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,10 +54,23 @@ public class RestControlCart {
 			return icartService.RemoveOrderLinesFromCart(cart_id);
 		}
 		
-		@GetMapping(value = "/getCart/{user_id}")
-		public Cart getCartByUserId(@PathVariable("user_id") Long user_id) {
+		@GetMapping(value = "/getCart")
+		public  ResponseEntity<Cart>  getCartByUserId() {
 			
-			return icartService.getCartByUserId(user_id); 
+			try {
+				 Cart c = icartService.getCartByUserId(); 
+				
+			    return ResponseEntity
+		    	            .status(HttpStatus.ACCEPTED)
+		    	            .body(c);	
+			
+			}
+			catch (Exception e) {
+				return ResponseEntity
+	    	            .status(HttpStatus.ACCEPTED)
+	    	            .body(null);
+			}
+			
 		}
 		
 		
